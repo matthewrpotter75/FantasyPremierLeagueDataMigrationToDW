@@ -12,8 +12,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeague201415"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{9E48703C-2DBA-4F8A-B99A-039EE0556ACE}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{97FE739F-4F49-4609-ADA9-926EF95DD637}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAzoldNEjHW0+p+92fO7Eo4wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADXRXk+t44deHOY4cVRaS4YLuuGOqM5HhbwAucdk87NuAAAAAAOgAAAAAIAACAAAAANACsEE8R9a9sPhRm17mPS9UfUKjmBgV9ag22qejk6QnAAAACliuxfv7O2SjHTe2ykEXjzUaLF4tUNAw/LTdghm0Wvn6TaM6dg7Gjb5X0eZGWs/plMW0RtJI7vk85wbe0L6wYS5F4GRO1kNSAThBJ6JP8pSoBIDsetgkzITEt4JyDqhi56a15LwlmkThHIka5bu8fXQAAAAI25sSxSmiIyS79RonU809sMndJoMGOYkLqrWFa0Kpdb5nGMjSF5Si+xn3iGqTNPrv59+xS7Vm9/zqnr056gKZg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAzoldNEjHW0+p+92fO7Eo4wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADF9Q2+Mugdty15SVAFc97nhHTgYAN9z47qFkqSjfPPdgAAAAAOgAAAAAIAACAAAAC3QYR6LNue8BfWYDBGcXlIM5nNMTVsPpZHuirdN1Rm03AAAAC5I1/5wcciei8O6cQsKPH/3AvT/DkBe46c02FGXf9gz1arH0hbxiQWDuqhk2bUtF0I2C9b62UztppiLxRInLDZrlJEt4lqcFIKilUAZe/h6042ULDHf2I3Aqy4bl58dhB9gzT5TyS08suHIcUwlDGYQAAAAHEpMknJPOT6tATQRzLxSNI6ktXkfks3EisvaPpz8r95f0tuNIESlL1+m/JYmVuz0AQkNwGXSHZK2JSxaatE9Ao</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -1114,6 +1114,563 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
               endId="Package\DFT FactGameweekFixture\ADO_DST FactGameweekFixture.Inputs[ADO NET Destination Input]"
               name="Lookup No Match Output"
               startId="Package\DFT FactGameweekFixture\LKP FactGameweekFixture.Outputs[Lookup No Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A0491A6B-0C64-40C9-81BA-B3E55C984B28}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT FactGameweekFixture to DimTeamGameweekFixture"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO_DST DimTeamGameweekFixture"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimTeamGameweekFixture"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].Columns[GameweekFixtureKey]"
+                      cachedDataType="i4"
+                      cachedName="GameweekFixtureKey"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[GameweekFixtureKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekFixtureKey]" />
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].Columns[GameweekKey]"
+                      cachedDataType="i4"
+                      cachedName="GameweekKey"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[GameweekKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekKey]" />
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].Columns[SeasonKey]"
+                      cachedDataType="i4"
+                      cachedName="SeasonKey"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[SeasonKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[SeasonKey]" />
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].Columns[TeamKey]"
+                      cachedDataType="i4"
+                      cachedName="TeamKey"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[TeamKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[TeamKey]" />
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].Columns[OpponentTeamKey]"
+                      cachedDataType="i4"
+                      cachedName="OpponentTeamKey"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[OpponentTeamKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[OpponentTeamKey]" />
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].Columns[IsHome]"
+                      cachedDataType="i4"
+                      cachedName="IsHome"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[IsHome]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[IsHome]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[TeamKey]"
+                      dataType="i4"
+                      name="TeamKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[GameweekFixtureKey]"
+                      dataType="i4"
+                      name="GameweekFixtureKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[GameweekKey]"
+                      dataType="i4"
+                      name="GameweekKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[SeasonKey]"
+                      dataType="i4"
+                      name="SeasonKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[OpponentTeamKey]"
+                      dataType="i4"
+                      name="OpponentTeamKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input].ExternalColumns[IsHome]"
+                      dataType="bool"
+                      name="IsHome" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO_SRC FactGameweekFixture"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey AS TeamKey, AwayTeamKey AS OpponentTeamKey, 1 AS IsHome
+FROM dbo.FactGameweekFixture
+WHERE SeasonKey = 9
+
+UNION
+
+SELECT GameweekFixtureKey, GameweekKey, SeasonKey, AwayTeamKey AS TeamKey, HomeTeamKey AS OpponentTeamKey, 0 AS IsHome
+FROM dbo.FactGameweekFixture
+WHERE SeasonKey = 9</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekFixtureKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[GameweekFixtureKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekFixtureKey]"
+                      name="GameweekFixtureKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[GameweekKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekKey]"
+                      name="GameweekKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[SeasonKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[SeasonKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[SeasonKey]"
+                      name="SeasonKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[TeamKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[TeamKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[TeamKey]"
+                      name="TeamKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[OpponentTeamKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[OpponentTeamKey]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[OpponentTeamKey]"
+                      name="OpponentTeamKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[IsHome]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[IsHome]"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[IsHome]"
+                      name="IsHome"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[GameweekFixtureKey]"
+                      dataType="i4"
+                      name="GameweekFixtureKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[GameweekKey]"
+                      dataType="i4"
+                      name="GameweekKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[SeasonKey]"
+                      dataType="i4"
+                      name="SeasonKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[TeamKey]"
+                      dataType="i4"
+                      name="TeamKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[OpponentTeamKey]"
+                      dataType="i4"
+                      name="OpponentTeamKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].ExternalColumns[IsHome]"
+                      dataType="i4"
+                      name="IsHome" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[GameweekFixtureKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[GameweekFixtureKey]"
+                      name="GameweekFixtureKey" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[GameweekKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[GameweekKey]"
+                      name="GameweekKey" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[SeasonKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[SeasonKey]"
+                      name="SeasonKey" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[TeamKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[TeamKey]"
+                      name="TeamKey" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[OpponentTeamKey]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[OpponentTeamKey]"
+                      name="OpponentTeamKey" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[IsHome]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[IsHome]"
+                      name="IsHome" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="LKP DimTeamGameweekFixture"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey,  TeamKey, OpponentTeamKey, IsHome
+FROM dbo.DimTeamGameweekFixture
+WHERE SeasonKey = 9</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey,  TeamKey, OpponentTeamKey, IsHome
+FROM dbo.DimTeamGameweekFixture
+WHERE SeasonKey = 9) [refTable]
+where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ? and [refTable].[OpponentTeamKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GameweekFixtureKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GameweekKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SeasonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OpponentTeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsHome" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekKey]};#{Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[SeasonKey]};#{Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[TeamKey]};#{Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[OpponentTeamKey]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input].Columns[GameweekKey]"
+                      cachedDataType="i4"
+                      cachedName="GameweekKey"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[GameweekKey]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">GameweekKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input].Columns[SeasonKey]"
+                      cachedDataType="i4"
+                      cachedName="SeasonKey"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[SeasonKey]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">SeasonKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input].Columns[TeamKey]"
+                      cachedDataType="i4"
+                      cachedName="TeamKey"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[TeamKey]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TeamKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input].Columns[OpponentTeamKey]"
+                      cachedDataType="i4"
+                      cachedName="OpponentTeamKey"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output].Columns[OpponentTeamKey]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">OpponentTeamKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture.Paths[ADO NET Source Output]"
+              endId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input]"
+              name="ADO NET Source Output"
+              startId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture.Paths[Lookup No Match Output]"
+              endId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture.Inputs[ADO NET Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup No Match Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2560,7 +3117,7 @@ where [refTable].[PlayerName] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\51:invalid};</property>
+                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\1152:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2721,7 +3278,7 @@ where [refTable].[TeamShortName] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\353:invalid};</property>
+                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\1153:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7318,7 +7875,7 @@ where [refTable].[TeamName] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT PlayerDetails to DimPlayerAttribute\271:invalid};</property>
+                  name="ParameterMap">#{Package\DFT PlayerDetails to DimPlayerAttribute\1154:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10546,6 +11103,14 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\DFT PlayerData to FactPlayerHistory" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{68D0FE97-E993-4687-BA3F-99E52C7FD995}"
+      DTS:From="Package\DFT PlayerData to FactPlayerHistory"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\DFT FactGameweekFixture to DimTeamGameweekFixture" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -10560,6 +11125,14 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="205,42"
+          Id="Package\DFT FactGameweekFixture"
+          TopLeft="494,923" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\DFT PlayerData to FactPlayerHistory"
+          TopLeft="476,1033" />
+        <NodeLayout
           Size="225,42"
           Id="Package\DFT PlayerDetails to DimPlayer"
           TopLeft="474,444" />
@@ -10571,6 +11144,26 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
           Size="259,42"
           Id="Package\DFT PlayerDetails to DimPlayerSeason"
           TopLeft="465,701" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\DFT PlayerDetails to DimTeam"
+          TopLeft="466,209" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\DFT PlayerDetails to DimTeamSeason"
+          TopLeft="457,331" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\DFT Populate PlayerDetails"
+          TopLeft="480,2" />
+        <NodeLayout
+          Size="261,42"
+          Id="Package\SQL Insert DimGameweek  for 201415"
+          TopLeft="471,814" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\SQL Update PlayerName"
+          TopLeft="479,106" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="588.75,486">
@@ -10615,14 +11208,6 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="206,42"
-          Id="Package\DFT Populate PlayerDetails"
-          TopLeft="480,2" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\SQL Update PlayerName"
-          TopLeft="479,106" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="579.5,44">
@@ -10645,14 +11230,6 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="223,42"
-          Id="Package\DFT PlayerDetails to DimTeam"
-          TopLeft="466,209" />
-        <NodeLayout
-          Size="256,42"
-          Id="Package\DFT PlayerDetails to DimTeamSeason"
-          TopLeft="457,331" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="576.75,148">
@@ -10719,14 +11296,6 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="249,42"
-          Id="Package\DFT PlayerData to FactPlayerHistory"
-          TopLeft="476,1033" />
-        <NodeLayout
-          Size="261,42"
-          Id="Package\SQL Insert DimGameweek  for 201415"
-          TopLeft="471,814" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="598,743">
@@ -10749,10 +11318,6 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="205,42"
-          Id="Package\DFT FactGameweekFixture"
-          TopLeft="494,923" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
           TopLeft="599,856">
@@ -10797,568 +11362,63 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="350,42"
+          Id="Package\DFT FactGameweekFixture to DimTeamGameweekFixture"
+          TopLeft="424,1154" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="599.75,1075">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DFT PlayerDetails to DimPlayer">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="189,42"
-          Id="Package\DFT PlayerDetails to DimPlayer\ADO_SRC PlayerDetails"
-          TopLeft="462,56" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\DFT PlayerDetails to DimPlayer\ADO_DST DimPlayer"
-          TopLeft="478,269" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\DFT PlayerDetails to DimPlayer\LKP DimPlayer"
-          TopLeft="487,156" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayer.Paths[Lookup No Match Output]"
-          TopLeft="563.25,198">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71"
-              Start="0,0"
-              End="0,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,23.75,129.350078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayer.Paths[ADO NET Source Output]"
-          TopLeft="558.5,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58"
-              Start="0,0"
-              End="0,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="189,42"
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_SRC PlayerDetails"
-          TopLeft="393,62" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayer"
-          TopLeft="416,183" />
-        <NodeLayout
-          Size="217,42"
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_DST DimPlayerAttribute"
-          TopLeft="404,774" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[ADO NET Source Output]"
-          TopLeft="488.5,104">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79"
-              Start="0,0"
-              End="0,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute\DER Add SeasonKey"
-          TopLeft="404,316" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup Match Output]"
-          TopLeft="490.5,225">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,91"
-              Start="0,0"
-              End="0,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,83.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,35.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="184,42"
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerPosition"
-          TopLeft="405,434" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimTeam"
-          TopLeft="428,556" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Derived Column Output]"
-          TopLeft="494.25,358">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,76"
-              Start="0,0"
-              End="0,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup Match Output1]"
-          TopLeft="498.75,476">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,80"
-              Start="0,0"
-              End="0,72.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,72.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-57.0600390625,28.25,114.120078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="188,42"
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerAttribute"
-          TopLeft="412,658" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup Match Output2]"
-          TopLeft="503.25,598">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup No Match Output]"
-          TopLeft="509.25,700">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,74"
-              Start="0,0"
-              End="0,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,27.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DFT PlayerDetails to DimPlayerSeason">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="189,42"
-          Id="Package\DFT PlayerDetails to DimPlayerSeason\ADO_SRC PlayerDetails"
-          TopLeft="550,185" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\DFT PlayerDetails to DimPlayerSeason\LKP DimPlayer"
-          TopLeft="573,306" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\DFT PlayerDetails to DimPlayerSeason\ADO_DST DimPlayerSeason"
-          TopLeft="539,675" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\DFT PlayerDetails to DimPlayerSeason\DER Add SeasonKey"
-          TopLeft="561,439" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[ADO NET Source Output]"
-          TopLeft="645.5,227">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,79"
-              Start="0,0"
-              End="0,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[Lookup Match Output]"
-          TopLeft="647.5,348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,91"
-              Start="0,0"
-              End="0,83.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,83.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,35.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="181,42"
-          Id="Package\DFT PlayerDetails to DimPlayerSeason\LKP DimPlayerSeason"
-          TopLeft="554,552" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[Derived Column Output]"
-          TopLeft="646.5,481">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71"
-              Start="0,0"
-              End="0,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[Lookup No Match Output]"
-          TopLeft="644.25,594">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,81"
-              Start="0,0"
-              End="0,73.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,73.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,30.9453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayer\ADO_SRC PlayerDetails">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayer\ADO_DST DimPlayer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_SRC PlayerDetails">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayer">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_DST DimPlayerAttribute">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerPosition">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimTeam">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DFT Populate PlayerDetails">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="179,42"
-          Id="Package\DFT Populate PlayerDetails\FF_SRC PlayerDetails"
-          TopLeft="389,28" />
-        <NodeLayout
-          Size="189,42"
-          Id="Package\DFT Populate PlayerDetails\ADO_DST PlayerDetails"
-          TopLeft="385,174" />
-        <EdgeLayout
-          Id="Package\DFT Populate PlayerDetails.Paths[Flat File Source Output]"
-          TopLeft="479,70">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,104"
-              Start="0,0"
-              End="0,96.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,96.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,40.25,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT Populate PlayerDetails\ADO_DST PlayerDetails">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\DFT PlayerDetails to DimTeam">
+    design-time-name="Package\DFT FactGameweekFixture">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="179,42"
-          Id="Package\DFT PlayerDetails to DimTeam\FF_SRC PlayerDetails"
-          TopLeft="358,17" />
+          Id="Package\DFT FactGameweekFixture\ADO_SRC PlayerData"
+          TopLeft="65,60" />
         <NodeLayout
-          Size="145,42"
-          Id="Package\DFT PlayerDetails to DimTeam\LKP DimTeam"
-          TopLeft="389,368" />
+          Size="202,42"
+          Id="Package\DFT FactGameweekFixture\LKP DimTeam HomeTeam"
+          TopLeft="57,284" />
         <NodeLayout
-          Size="174,42"
-          Id="Package\DFT PlayerDetails to DimTeam\ADO_DST DimTeam"
-          TopLeft="382,487" />
+          Size="232,42"
+          Id="Package\DFT FactGameweekFixture\ADO_DST FactGameweekFixture"
+          TopLeft="54,594" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\DFT FactGameweekFixture\LKP DimTeam AwayTeam"
+          TopLeft="62,390" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DFT FactGameweekFixture\DER Add SeasonKey"
+          TopLeft="69,171" />
         <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeam.Paths[Lookup No Match Output]"
-          TopLeft="465.25,410">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77"
-              Start="0,0"
-              End="0,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,26.75,129.350078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="194,42"
-          Id="Package\DFT PlayerDetails to DimTeam\AGG Aggregate to Team"
-          TopLeft="358,123" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeam.Paths[Flat File Source Output]"
-          TopLeft="451.25,59">
+          Id="Package\DFT FactGameweekFixture.Paths[Lookup Match Output]"
+          TopLeft="160,326">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11375,16 +11435,36 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,22.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactGameweekFixture.Paths[ADO NET Source Output]"
+          TopLeft="155.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="277,42"
-          Id="Package\DFT PlayerDetails to DimTeam\DER Add TeamShortName and TeamCode"
-          TopLeft="318,236" />
         <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeam.Paths[Aggregate Output 1]"
-          TopLeft="455.75,165">
+          Id="Package\DFT FactGameweekFixture.Paths[Derived Column Output]"
+          TopLeft="157.25,213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11404,55 +11484,37 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT FactGameweekFixture\LKP FactGameweekFixture"
+          TopLeft="62,488" />
         <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeam.Paths[Derived Column Output]"
-          TopLeft="459,278">
+          Id="Package\DFT FactGameweekFixture.Paths[Lookup Match Output1]"
+          TopLeft="162.75,432">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,90"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,82.5">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,82.5" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,18.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
-    design-time-name="Package\DFT PlayerDetails to DimTeamSeason">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="179,42"
-          Id="Package\DFT PlayerDetails to DimTeamSeason\FF_SRC PlayerDetails"
-          TopLeft="100,60" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeam"
-          TopLeft="131,411" />
-        <NodeLayout
-          Size="194,42"
-          Id="Package\DFT PlayerDetails to DimTeamSeason\AGG Aggregate to Team"
-          TopLeft="100,166" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\DFT PlayerDetails to DimTeamSeason\DER Add SeasonKey"
-          TopLeft="110,279" />
         <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Flat File Source Output]"
-          TopLeft="193.25,102">
+          Id="Package\DFT FactGameweekFixture.Paths[Lookup No Match Output]"
+          TopLeft="166.75,530">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11469,106 +11531,8 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Aggregate Output 1]"
-          TopLeft="197.25,208">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71"
-              Start="0,0"
-              End="0,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Derived Column Output]"
-          TopLeft="200.5,321">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,90"
-              Start="0,0"
-              End="0,82.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,82.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="178,42"
-          Id="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeamSeason"
-          TopLeft="116,527" />
-        <NodeLayout
-          Size="207,42"
-          Id="Package\DFT PlayerDetails to DimTeamSeason\ADO_DST DimTeamSeason"
-          TopLeft="102,641" />
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Lookup Match Output]"
-          TopLeft="204.25,453">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,74"
-              Start="0,0"
-              End="0,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,27.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Lookup No Match Output]"
-          TopLeft="205.25,569">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72"
-              Start="0,0"
-              End="0,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,24.25,129.350078125,16"
+              BoundingBox="-64.6750390625,20.25,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11576,97 +11540,12 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimTeam\LKP DimTeam">
+    design-time-name="Package\DFT FactGameweekFixture\LKP DimTeam AwayTeam">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTeam]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimTeam\ADO_DST DimTeam">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeam">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTeam]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeamSeason">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTeamSeason]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimTeamSeason\ADO_DST DimTeamSeason">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayer\LKP DimPlayer">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -11676,7 +11555,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11684,20 +11563,12 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerSeason\ADO_DST DimPlayerSeason">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerSeason\LKP DimPlayerSeason">
+    design-time-name="Package\DFT FactGameweekFixture\LKP FactGameweekFixture">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -11707,7 +11578,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11715,12 +11586,28 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerAttribute">
+    design-time-name="Package\DFT FactGameweekFixture\ADO_SRC PlayerData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactGameweekFixture\ADO_DST FactGameweekFixture">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactGameweekFixture\LKP DimTeam HomeTeam">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -11730,7 +11617,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12200,8 +12087,23 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerData to FactPlayerHistory\ADO_SRC PlayerData">
+    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactGameweekFixture OpponentTeamKey only (Home)">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -12213,7 +12115,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -12223,7 +12125,107 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactPlayerHistory">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP DimTeam Team">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerData to FactPlayerHistory\ADO_SRC PlayerData">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactGameweekFixture">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP DimPlayer">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -12238,69 +12240,223 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactGameweekFixture OpponentTeamKey only (Away)">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\DFT FactGameweekFixture">
+    design-time-name="Package\DFT PlayerDetails to DimPlayer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="179,42"
-          Id="Package\DFT FactGameweekFixture\ADO_SRC PlayerData"
-          TopLeft="65,60" />
+          Size="189,42"
+          Id="Package\DFT PlayerDetails to DimPlayer\ADO_SRC PlayerDetails"
+          TopLeft="462,56" />
         <NodeLayout
-          Size="202,42"
-          Id="Package\DFT FactGameweekFixture\LKP DimTeam HomeTeam"
-          TopLeft="57,284" />
+          Size="176,42"
+          Id="Package\DFT PlayerDetails to DimPlayer\ADO_DST DimPlayer"
+          TopLeft="478,269" />
         <NodeLayout
-          Size="232,42"
-          Id="Package\DFT FactGameweekFixture\ADO_DST FactGameweekFixture"
-          TopLeft="54,594" />
-        <NodeLayout
-          Size="200,42"
-          Id="Package\DFT FactGameweekFixture\LKP DimTeam AwayTeam"
-          TopLeft="62,390" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\DFT FactGameweekFixture\DER Add SeasonKey"
-          TopLeft="69,171" />
+          Size="147,42"
+          Id="Package\DFT PlayerDetails to DimPlayer\LKP DimPlayer"
+          TopLeft="487,156" />
         <EdgeLayout
-          Id="Package\DFT FactGameweekFixture.Paths[Lookup Match Output]"
-          TopLeft="160,326">
+          Id="Package\DFT PlayerDetails to DimPlayer.Paths[Lookup No Match Output]"
+          TopLeft="563.25,198">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,71"
               Start="0,0"
-              End="0,56.5">
+              End="0,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,22.4453125,96.3827734375,11.609375"
+              BoundingBox="-64.6750390625,23.75,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT FactGameweekFixture.Paths[ADO NET Source Output]"
-          TopLeft="155.5,102">
+          Id="Package\DFT PlayerDetails to DimPlayer.Paths[ADO NET Source Output]"
+          TopLeft="558.5,98">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69"
+              EndConnector="0,58"
               Start="0,0"
-              End="0,61.5">
+              End="0,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayer\ADO_DST DimPlayer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayer\ADO_SRC PlayerDetails">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayer\LKP DimPlayer">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_SRC PlayerDetails"
+          TopLeft="393,62" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayer"
+          TopLeft="416,183" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_DST DimPlayerAttribute"
+          TopLeft="404,774" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[ADO NET Source Output]"
+          TopLeft="488.5,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute\DER Add SeasonKey"
+          TopLeft="404,316" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup Match Output]"
+          TopLeft="490.5,225">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,91"
+              Start="0,0"
+              End="0,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,35.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerPosition"
+          TopLeft="405,434" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimTeam"
+          TopLeft="428,556" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Derived Column Output]"
+          TopLeft="494.25,358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12310,8 +12466,266 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT FactGameweekFixture.Paths[Derived Column Output]"
-          TopLeft="157.25,213">
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup Match Output1]"
+          TopLeft="498.75,476">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,80"
+              Start="0,0"
+              End="0,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.0600390625,28.25,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerAttribute"
+          TopLeft="412,658" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup Match Output2]"
+          TopLeft="503.25,598">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerAttribute.Paths[Lookup No Match Output]"
+          TopLeft="509.25,700">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74"
+              Start="0,0"
+              End="0,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,27.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_SRC PlayerDetails">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimTeam">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayer">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerPosition">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\LKP DimPlayerAttribute">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerAttribute\ADO_DST DimPlayerAttribute">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT PlayerDetails to DimPlayerSeason">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189,42"
+          Id="Package\DFT PlayerDetails to DimPlayerSeason\ADO_SRC PlayerDetails"
+          TopLeft="550,185" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\DFT PlayerDetails to DimPlayerSeason\LKP DimPlayer"
+          TopLeft="573,306" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\DFT PlayerDetails to DimPlayerSeason\ADO_DST DimPlayerSeason"
+          TopLeft="539,675" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DFT PlayerDetails to DimPlayerSeason\DER Add SeasonKey"
+          TopLeft="561,439" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[ADO NET Source Output]"
+          TopLeft="645.5,227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[Lookup Match Output]"
+          TopLeft="647.5,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,91"
+              Start="0,0"
+              End="0,83.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,83.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,35.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="181,42"
+          Id="Package\DFT PlayerDetails to DimPlayerSeason\LKP DimPlayerSeason"
+          TopLeft="554,552" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[Derived Column Output]"
+          TopLeft="646.5,481">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12331,37 +12745,112 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="203,42"
-          Id="Package\DFT FactGameweekFixture\LKP FactGameweekFixture"
-          TopLeft="62,488" />
         <EdgeLayout
-          Id="Package\DFT FactGameweekFixture.Paths[Lookup Match Output1]"
-          TopLeft="162.75,432">
+          Id="Package\DFT PlayerDetails to DimPlayerSeason.Paths[Lookup No Match Output]"
+          TopLeft="644.25,594">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,81"
               Start="0,0"
-              End="0,48.5">
+              End="0,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,73.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,18.4453125,96.3827734375,11.609375"
+              BoundingBox="-55.80638671875,30.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerSeason\LKP DimPlayerSeason">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimPlayerSeason\ADO_DST DimPlayerSeason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT PlayerDetails to DimTeam">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DFT PlayerDetails to DimTeam\FF_SRC PlayerDetails"
+          TopLeft="358,17" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\DFT PlayerDetails to DimTeam\LKP DimTeam"
+          TopLeft="389,368" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\DFT PlayerDetails to DimTeam\ADO_DST DimTeam"
+          TopLeft="382,487" />
         <EdgeLayout
-          Id="Package\DFT FactGameweekFixture.Paths[Lookup No Match Output]"
-          TopLeft="166.75,530">
+          Id="Package\DFT PlayerDetails to DimTeam.Paths[Lookup No Match Output]"
+          TopLeft="465.25,410">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-64.6750390625,26.75,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="194,42"
+          Id="Package\DFT PlayerDetails to DimTeam\AGG Aggregate to Team"
+          TopLeft="358,123" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeam.Paths[Flat File Source Output]"
+          TopLeft="451.25,59">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12378,8 +12867,231 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="277,42"
+          Id="Package\DFT PlayerDetails to DimTeam\DER Add TeamShortName and TeamCode"
+          TopLeft="318,236" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeam.Paths[Aggregate Output 1]"
+          TopLeft="455.75,165">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeam.Paths[Derived Column Output]"
+          TopLeft="459,278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90"
+              Start="0,0"
+              End="0,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimTeam\LKP DimTeam">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTeam]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimTeam\ADO_DST DimTeam">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT PlayerDetails to DimTeamSeason">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DFT PlayerDetails to DimTeamSeason\FF_SRC PlayerDetails"
+          TopLeft="100,60" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeam"
+          TopLeft="131,411" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\DFT PlayerDetails to DimTeamSeason\AGG Aggregate to Team"
+          TopLeft="100,166" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DFT PlayerDetails to DimTeamSeason\DER Add SeasonKey"
+          TopLeft="110,279" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Flat File Source Output]"
+          TopLeft="193.25,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Aggregate Output 1]"
+          TopLeft="197.25,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Derived Column Output]"
+          TopLeft="200.5,321">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90"
+              Start="0,0"
+              End="0,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeamSeason"
+          TopLeft="116,527" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\DFT PlayerDetails to DimTeamSeason\ADO_DST DimTeamSeason"
+          TopLeft="102,641" />
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Lookup Match Output]"
+          TopLeft="204.25,453">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74"
+              Start="0,0"
+              End="0,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,20.25,129.350078125,16"
+              BoundingBox="-48.19138671875,27.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT PlayerDetails to DimTeamSeason.Paths[Lookup No Match Output]"
+          TopLeft="205.25,569">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-64.6750390625,24.25,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12387,7 +13099,183 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP DimPlayer">
+    design-time-name="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeam">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTeam]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimTeamSeason\LKP DimTeamSeason">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTeamSeason]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT PlayerDetails to DimTeamSeason\ADO_DST DimTeamSeason">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT Populate PlayerDetails">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\DFT Populate PlayerDetails\FF_SRC PlayerDetails"
+          TopLeft="389,28" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\DFT Populate PlayerDetails\ADO_DST PlayerDetails"
+          TopLeft="385,174" />
+        <EdgeLayout
+          Id="Package\DFT Populate PlayerDetails.Paths[Flat File Source Output]"
+          TopLeft="479,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,104"
+              Start="0,0"
+              End="0,96.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,96.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,40.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT Populate PlayerDetails\ADO_DST PlayerDetails">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DFT FactGameweekFixture to DimTeamGameweekFixture">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="232,42"
+          Id="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture"
+          TopLeft="352,53" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture"
+          TopLeft="361,173" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture"
+          TopLeft="349,284" />
+        <EdgeLayout
+          Id="Package\DFT FactGameweekFixture to DimTeamGameweekFixture.Paths[ADO NET Source Output]"
+          TopLeft="471.75,95">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactGameweekFixture to DimTeamGameweekFixture.Paths[Lookup No Match Output]"
+          TopLeft="476.75,215">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,24.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_SRC FactGameweekFixture">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\LKP DimTeamGameweekFixture">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -12410,200 +13298,8 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT FactGameweekFixture\ADO_SRC PlayerData">
+    design-time-name="Package\DFT FactGameweekFixture to DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactGameweekFixture\LKP DimTeam HomeTeam">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactGameweekFixture\ADO_DST FactGameweekFixture">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactGameweekFixture\LKP DimTeam AwayTeam">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactPlayerHistory">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactGameweekFixture">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP DimTeam Team">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactGameweekFixture\LKP FactGameweekFixture">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactGameweekFixture OpponentTeamKey only (Home)">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT PlayerData to FactPlayerHistory\LKP FactGameweekFixture OpponentTeamKey only (Away)">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
