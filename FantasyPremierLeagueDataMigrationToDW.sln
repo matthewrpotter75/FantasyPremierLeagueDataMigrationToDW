@@ -1,19 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "FantasyPremierLeagueDataMigrationToDW", "FantasyPremierLeagueDataMigrationToDW\FantasyPremierLeagueDataMigrationToDW.dtproj", "{3F2EA90D-7D90-4629-85E7-EEAC9C452449}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "FantasyPremierLeagueDataMigrationToDW", "FantasyPremierLeagueDataMigrationToDW\FantasyPremierLeagueDataMigrationToDW.dtproj", "{0E71F1C9-2A7B-4969-AA28-F4C816F5699B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3F2EA90D-7D90-4629-85E7-EEAC9C452449}.Development|Default.ActiveCfg = Development
-		{3F2EA90D-7D90-4629-85E7-EEAC9C452449}.Development|Default.Build.0 = Development
+		{0E71F1C9-2A7B-4969-AA28-F4C816F5699B}.Development|Default.ActiveCfg = Development
+		{0E71F1C9-2A7B-4969-AA28-F4C816F5699B}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3F30D92-7421-4E11-8581-2931007A662B}
 	EndGlobalSection
 EndGlobal
