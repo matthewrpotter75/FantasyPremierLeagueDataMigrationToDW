@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeagueToDWMigrationWeekly"
   DTS:PackageType="5"
-  DTS:VersionBuild="361"
-  DTS:VersionGUID="{781059EE-6BFE-4323-AB47-2BB7529DACCA}">
+  DTS:VersionBuild="370"
+  DTS:VersionGUID="{02ECDAD7-83C0-4B1E-934A-EC7A4BBA55F5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApZKxlkRSoE+CEu7/oUyv8wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABUXnFpI/3qUseePYx18lre7AOGHx5GVwROaob6FMzpygAAAAAOgAAAAAIAACAAAAApcDHr2+mrLlPgt5sB1JTNgmLSMzqjV7VyPP2NJINIu3AAAACXPIurEvGOW4WE/g9zP39nlIuIbiJURyfoAdXG+ytDN5j3VCgrddbhkOJzFacmeu/qmzhnuBawqDr2wqbSzX9gleehSM5MqjLNbYu4lp07U3FpQ7ILLuFsHf6OXNggC23EPEMX769k8JNFQLrOzqFNQAAAAHoAfO6vkGcbSCLwe/G624HAdzrrKt5c4GfyhwnGoFcPKvsI2Yjlw27RJac53Ywsu6tBVm1B9wn4eyEDIfyc47Q</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6TwOttI20EmWNsEDLGqsuAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAjimhzPsDalR9lgPd0HcOrR8Q+4MZo3c3GSn9OFGZEVQAAAAAOgAAAAAIAACAAAACf2NWv3QTod2mCAT8iKhFJXbg3UVdJf+BcOs29yrOiDXAAAACpJpCpkuCIUMOTRUWudTn8kXWP05rBqfMYDA0i7f8fwpSvYNXPI+zBDndrDeXMDojh/ygOi4rg0eQyr154OBNqEzKLwdvx3fur9ca5NTQrBeY3pUW4VOtteMdFtBwhEOMSeRnRFphrp75Arxfq+V2mQAAAAAXBm5Nc+SPHpKlU86GjIS8UHYfSbOHasQOcsfweAEBAsiEzghJk4zyRzurbBBPXpVP8wkJBbqXDsFPye0c8j5o</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -197,7 +197,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">27/11/2018</DTS:VariableValue>
+        DTS:DataType="8">05/01/2019</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -339,11 +339,439 @@ FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(13,0, 4, 30, 5);</DTS:
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
+          DTS:refId="Package\SEQ Weekly updated data\DFT DimPlayerNews"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E84FDD46-16C7-4118-8DE7-EB04C9E060C8}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT DimPlayerNews"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="ADO_DST DimPlayerNews"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimPlayerNews"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                      connectionManagerRefId="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].Columns[News]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="News"
+                          externalMetadataColumnId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[News]"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[PlayerNewsKey]"
+                          dataType="i4"
+                          name="PlayerNewsKey" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[News]"
+                          dataType="wstr"
+                          length="200"
+                          name="News" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[CreatedDate]"
+                          dataType="dbTimeStamp"
+                          name="CreatedDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+                  name="ADO_SRC Players"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement used by the component to extract data."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Id AS PlayerId, 
+[news] AS News, 
+teamId AS TeamId
+FROM dbo.Players
+WHERE [news] &lt;&gt; ''</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="The Source database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the mode to retrieve external column information"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FantasyPremierLeague]"
+                      connectionManagerRefId="Package.ConnectionManagers[FantasyPremierLeague]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output]"
+                      name="ADO NET Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[PlayerId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].ExternalColumns[PlayerId]"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[PlayerId]"
+                          name="PlayerId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].ExternalColumns[News]"
+                          length="200"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]"
+                          name="News"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[TeamId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].ExternalColumns[TeamId]"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[TeamId]"
+                          name="TeamId"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].ExternalColumns[PlayerId]"
+                          dataType="i4"
+                          name="PlayerId" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].ExternalColumns[News]"
+                          dataType="wstr"
+                          length="200"
+                          name="News" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].ExternalColumns[TeamId]"
+                          dataType="i4"
+                          name="TeamId" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output]"
+                      isErrorOut="true"
+                      name="ADO NET Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[PlayerId]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[PlayerId]"
+                          name="PlayerId" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[News]"
+                          dataType="wstr"
+                          length="200"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[News]"
+                          name="News" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[TeamId]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[TeamId]"
+                          name="TeamId" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="LKP DimPlayerNews"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerNewsKey, CAST(News AS NVARCHAR(400)) AS News
+FROM dbo.DimPlayerNews</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerNewsKey, CAST(News AS NVARCHAR(400)) AS News
+FROM dbo.DimPlayerNews) [refTable]
+where [refTable].[News] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerNewsKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="News" dataType="DT_WSTR" length="400" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                      connectionManagerRefId="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Inputs[Lookup Input].Columns[News]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="News"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">News</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]"
+                          name="PlayerNewsKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">PlayerNewsKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SEQ Weekly updated data\DFT DimPlayerNews.Paths[ADO NET Source Output]"
+                  endId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Inputs[Lookup Input]"
+                  name="ADO NET Source Output"
+                  startId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players.Outputs[ADO NET Source Output]" />
+                <path
+                  refId="Package\SEQ Weekly updated data\DFT DimPlayerNews.Paths[Lookup No Match Output]"
+                  endId="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews.Outputs[Lookup No Match Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{577D9165-3648-482D-95C7-7AB18CB1F42C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -469,9 +897,9 @@ FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(13,0, 4, 30, 5);</DTS:
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\ADO_DST DimPlayerAttribute.Inputs[ADO NET Destination Input].ExternalColumns[PlayerAttributeId]"
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\ADO_DST DimPlayerAttribute.Inputs[ADO NET Destination Input].ExternalColumns[PlayerAttributeKey]"
                           dataType="i4"
-                          name="PlayerAttributeId" />
+                          name="PlayerAttributeKey" />
                         <externalMetadataColumn
                           refId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\ADO_DST DimPlayerAttribute.Inputs[ADO NET Destination Input].ExternalColumns[PlayerKey]"
                           dataType="i4"
@@ -2730,7 +3158,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[id]};#{Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[teamId]};#{Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2754,22 +3182,6 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\LKP DimTeam.Inputs[Lookup Input].Columns[id]"
-                          cachedDataType="i4"
-                          cachedName="id"
-                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[id]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">TeamId</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\LKP DimTeam.Inputs[Lookup Input].Columns[SeasonKey]"
                           cachedDataType="i4"
                           cachedName="SeasonKey"
@@ -2779,6 +3191,22 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">SeasonKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\LKP DimTeam.Inputs[Lookup Input].Columns[teamId]"
+                          cachedDataType="i4"
+                          cachedName="teamId"
+                          lineageId="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[teamId]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">TeamId</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -12548,6 +12976,106 @@ where [refTable].[DateKey] = ? and [refTable].[PlayerKey] = ?</property>
               version="1">
               <components>
                 <component
+                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+                  name="ADO_DST DimPlayerNews"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The Destination database table name."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimPlayerNews"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                      connectionManagerRefId="Package.ConnectionManagers[FantasyPremierLeagueDW]"
+                      description="Managed connection manager"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="ADO NET Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].Columns[News]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="News"
+                          externalMetadataColumnId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[News]"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[PlayerNewsKey]"
+                          dataType="i4"
+                          name="PlayerNewsKey" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[News]"
+                          dataType="wstr"
+                          length="200"
+                          name="News" />
+                        <externalMetadataColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input].ExternalColumns[CreatedDate]"
+                          dataType="dbTimeStamp"
+                          name="CreatedDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="ADO NET Destination Error Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews"
                   componentClassID="Microsoft.ManagedComponentHost"
                   contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -12597,13 +13125,6 @@ where [refTable].[DateKey] = ? and [refTable].[PlayerKey] = ?</property>
                       name="ADO NET Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].Columns[News]"
-                          cachedDataType="wstr"
-                          cachedLength="200"
-                          cachedName="News"
-                          externalMetadataColumnId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].ExternalColumns[News]"
-                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]" />
-                        <inputColumn
                           refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].Columns[SeasonKey]"
                           cachedDataType="i4"
                           cachedName="SeasonKey"
@@ -12627,6 +13148,12 @@ where [refTable].[DateKey] = ? and [refTable].[PlayerKey] = ?</property>
                           cachedName="GameweekKey"
                           externalMetadataColumnId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].ExternalColumns[GameweekKey]"
                           lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Match Output].Columns[GameweekKey]" />
+                        <inputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].Columns[PlayerNewsKey]"
+                          cachedDataType="i4"
+                          cachedName="PlayerNewsKey"
+                          externalMetadataColumnId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].ExternalColumns[PlayerNewsKey]"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]" />
                         <inputColumn
                           refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].Columns[FactPlayerGameweekStatusKey]"
                           cachedDataType="i4"
@@ -12653,10 +13180,9 @@ where [refTable].[DateKey] = ? and [refTable].[PlayerKey] = ?</property>
                           dataType="i4"
                           name="GameweekKey" />
                         <externalMetadataColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].ExternalColumns[News]"
-                          dataType="wstr"
-                          length="200"
-                          name="News" />
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].ExternalColumns[PlayerNewsKey]"
+                          dataType="i4"
+                          name="PlayerNewsKey" />
                         <externalMetadataColumn
                           refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input].ExternalColumns[FactPlayerGameweekStatusKey]"
                           dataType="i4"
@@ -12847,7 +13373,7 @@ WHERE [news] &lt;&gt; ''</property>
                       expressionType="Notify"
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE dbo.FactPlayerGameweekNews
-SET News = ?
+SET PlayerNewsKey = ?
 WHERE PlayerKey = ?
 AND SeasonKey = ?
 AND GameweekKey = ?</property>
@@ -12891,21 +13417,17 @@ AND GameweekKey = ?</property>
                           externalMetadataColumnId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Match Output].Columns[GameweekKey]" />
                         <inputColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Inputs[OLE DB Command Input].Columns[NewsSTR]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="200"
-                          cachedName="NewsSTR"
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Inputs[OLE DB Command Input].Columns[PlayerNewsKey]"
+                          cachedDataType="i4"
+                          cachedName="PlayerNewsKey"
                           externalMetadataColumnId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Output].Columns[NewsSTR]" />
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                          codePage="1252"
-                          dataType="str"
-                          length="200"
+                          dataType="i4"
                           name="Param_0">
                           <properties>
                             <property
@@ -12975,84 +13497,6 @@ AND GameweekKey = ?</property>
                           refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode"
-                  componentClassID="Microsoft.DataConvert"
-                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Data Conversion"
-                  name="CNV Convert News to unicode"
-                  usesDispositions="true">
-                  <inputs>
-                    <input
-                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Inputs[Data Conversion Input]"
-                      name="Data Conversion Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Inputs[Data Conversion Input].Columns[News]"
-                          cachedDataType="wstr"
-                          cachedLength="200"
-                          cachedName="News"
-                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Output]"
-                      exclusionGroup="1"
-                      name="Data Conversion Output"
-                      synchronousInputId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Inputs[Data Conversion Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Output].Columns[NewsSTR]"
-                          codePage="1252"
-                          dataType="str"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          length="200"
-                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Output].Columns[NewsSTR]"
-                          name="NewsSTR"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]}</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                              name="FastParse">false</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Data Conversion Error Output"
-                      synchronousInputId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Inputs[Data Conversion Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -13287,6 +13731,166 @@ WHERE [DeadlineTime] &lt;= ?
                           refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="LKP DimPlayerNews"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerNewsKey, CAST(News AS NVARCHAR(400)) AS News
+FROM dbo.DimPlayerNews</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerNewsKey, CAST(News AS NVARCHAR(400)) AS News
+FROM dbo.DimPlayerNews) [refTable]
+where [refTable].[News] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerNewsKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="News" dataType="DT_WSTR" length="400" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                      connectionManagerRefId="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Inputs[Lookup Input].Columns[News]"
+                          cachedDataType="wstr"
+                          cachedLength="200"
+                          cachedName="News"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">News</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]"
+                          name="PlayerNewsKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">PlayerNewsKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -13999,7 +14603,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[PlayerKey] = ? and [refTable].[
                       expressionType="Notify"
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, GameweekKey, SeasonKey
-, CAST(News AS NVARCHAR(200)) AS News
+, PlayerNewsKey 
 
 FROM dbo.FactPlayerGameweekNews</property>
                     <property
@@ -14008,10 +14612,10 @@ FROM dbo.FactPlayerGameweekNews</property>
                       expressionType="Notify"
                       name="SqlCommandParam"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, GameweekKey, SeasonKey
-, CAST(News AS NVARCHAR(200)) AS News
+, PlayerNewsKey 
 
 FROM dbo.FactPlayerGameweekNews) [refTable]
-where [refTable].[News] = ? and [refTable].[SeasonKey] = ? and [refTable].[PlayerKey] = ? and [refTable].[GameweekKey] = ?</property>
+where [refTable].[SeasonKey] = ? and [refTable].[PlayerKey] = ? and [refTable].[GameweekKey] = ? and [refTable].[PlayerNewsKey] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -14042,12 +14646,12 @@ where [refTable].[News] = ? and [refTable].[SeasonKey] = ? and [refTable].[Playe
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GameweekKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SeasonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="News" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GameweekKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SeasonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PlayerNewsKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]};#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Match Output].Columns[GameweekKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Match Output].Columns[GameweekKey]};#{Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14119,16 +14723,15 @@ where [refTable].[News] = ? and [refTable].[SeasonKey] = ? and [refTable].[Playe
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews change News.Inputs[Lookup Input].Columns[News]"
-                          cachedDataType="wstr"
-                          cachedLength="200"
-                          cachedName="News"
-                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output].Columns[News]">
+                          refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews change News.Inputs[Lookup Input].Columns[PlayerNewsKey]"
+                          cachedDataType="i4"
+                          cachedName="PlayerNewsKey"
+                          lineageId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output].Columns[PlayerNewsKey]">
                           <properties>
                             <property
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">News</property>
+                              name="JoinToReferenceColumn">PlayerNewsKey</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -14379,11 +14982,6 @@ where [refTable].[SeasonKey] = ? and [refTable].[PlayerKey] = ? and [refTable].[
                   name="ADO NET Source Output"
                   startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players.Outputs[ADO NET Source Output]" />
                 <path
-                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Data Conversion Output]"
-                  endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Inputs[OLE DB Command Input]"
-                  name="Data Conversion Output"
-                  startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Outputs[Data Conversion Output]" />
-                <path
                   refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Derived Column Output]"
                   endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimSeason.Inputs[Lookup Input]"
                   name="Derived Column Output"
@@ -14410,22 +15008,32 @@ where [refTable].[SeasonKey] = ? and [refTable].[PlayerKey] = ? and [refTable].[
                   startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekStatus.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output4]"
-                  endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekStatus.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output5]"
                   endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews change News.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews.Outputs[Lookup Match Output]" />
                 <path
+                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output5]"
+                  endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output6]"
+                  endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekStatus.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup Match Output]" />
+                <path
                   refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup No Match Output]"
+                  endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews.Inputs[ADO NET Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup No Match Output1]"
                   endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews.Inputs[ADO NET Destination Input]"
                   name="Lookup No Match Output"
                   startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup No Match Output1]"
-                  endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode.Inputs[Data Conversion Input]"
+                  refId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup No Match Output2]"
+                  endId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
                   startId="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews change News.Outputs[Lookup No Match Output]" />
               </paths>
@@ -32500,20 +33108,20 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       name="Derived Column Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate.Outputs[Derived Column Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
@@ -32521,31 +33129,31 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId.Inputs[OLE DB Command Input]"
                       name="Lookup No Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Outputs[Lookup No Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output2]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Inputs[Lookup Input]"
                       name="Lookup No Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup No Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output2]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Inputs[Multicast Input 1]"
                       name="Lookup No Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup No Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestPlayerId.Inputs[OLE DB Command Input]"
                       name="Lookup No Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestPlayerId.Outputs[Lookup No Match Output]" />
@@ -32560,12 +33168,12 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       name="Multicast Output 1"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 1]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Inputs[Lookup Input]"
                       name="Multicast Output 2"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Outputs[Multicast Output 2]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
                       name="Multicast Output 2"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 2]" />
@@ -39471,10 +40079,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 13]"
           DTS:CreationName=""
-          DTS:DTSID="{68BD3304-B2FA-41A0-962D-7A66E50B15A4}"
+          DTS:DTSID="{B235C7CC-FE8F-4B60-9500-7007865C7229}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 13"
+          DTS:To="Package\SEQ Weekly updated data\DFT DimPlayerNews" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 14]"
+          DTS:CreationName=""
+          DTS:DTSID="{26B90989-97A8-4270-BB88-355DF7EF18B0}"
+          DTS:From="Package\SEQ Weekly updated data\DFT DimPlayerNews"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 14"
           DTS:To="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 15]"
@@ -39564,6 +40180,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="174,42"
+          Id="Package\SEQ Weekly updated data\DFT DimPlayerNews"
+          TopLeft="227,1275" />
+        <NodeLayout
           Size="393,42"
           Id="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)"
           TopLeft="119.5,768" />
@@ -39586,7 +40206,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="208,42"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerCurrentStats"
-          TopLeft="218.5,1550" />
+          TopLeft="220.5,1579" />
         <NodeLayout
           Size="200,42"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices"
@@ -39594,7 +40214,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="227,42"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews"
-          TopLeft="207.5,1287" />
+          TopLeft="205.5,1377" />
         <NodeLayout
           Size="231,43"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekStatus"
@@ -39602,7 +40222,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="183,42"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerHistory"
-          TopLeft="228.5,1413" />
+          TopLeft="228.5,1485" />
         <NodeLayout
           Size="241,42"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerHistoryPastSeasons"
@@ -39769,18 +40389,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 1]"
-          TopLeft="323,1592">
+          TopLeft="324,1621">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,96"
+              EndConnector="0,67"
               Start="0,0"
-              End="0,88.5">
+              End="0,59.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,88.5" />
+                    End="0,59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39813,18 +40433,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 11]"
-          TopLeft="320.5,1329">
+          TopLeft="319.5,1419">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,84"
+              EndConnector="0,66"
               Start="0,0"
-              End="0,76.5">
+              End="0,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.5" />
+                    End="0,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -39857,18 +40477,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 13]"
-          TopLeft="317.5,1222">
+          TopLeft="314,1222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,57.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.5" />
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 14]"
+          TopLeft="316.5,1317">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -40033,18 +40675,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 8]"
-          TopLeft="321.25,1455">
+          TopLeft="322.25,1527">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,95"
+              EndConnector="0,52"
               Start="0,0"
-              End="0,87.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,87.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -40085,6 +40727,97 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\SEQ Weekly updated data\DFT DimPlayerNews">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_SRC Players"
+          TopLeft="352,102" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\SEQ Weekly updated data\DFT DimPlayerNews\ADO_DST DimPlayerNews"
+          TopLeft="334,355" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews"
+          TopLeft="346,223" />
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT DimPlayerNews.Paths[Lookup No Match Output]"
+          TopLeft="433.5,265">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,90"
+              Start="0,0"
+              End="0,82.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,35.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT DimPlayerNews.Paths[ADO NET Source Output]"
+          TopLeft="432.75,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\DFT DimPlayerNews\LKP DimPlayerNews">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)">
     <LayoutInfo>
@@ -40149,9 +40882,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40186,7 +40917,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="52.0833333333335,26.7616968184653,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -40221,33 +40952,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory).Paths[Lookup No Match Output1]"
-          TopLeft="585.25,840">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,17.9453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40365,8 +41070,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory).Paths[Lookup No Match Output1]"
+          TopLeft="585.25,840">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-55.80638671875,17.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -40441,7 +41168,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -40451,7 +41178,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -42103,7 +42830,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42125,7 +42854,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -42465,194 +43196,192 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="229,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekStatus"
-          TopLeft="394,666" />
-        <NodeLayout
-          Size="228,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CNV Convert News to unicode"
-          TopLeft="782,997" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimSeason"
-          TopLeft="420,255" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players"
-          TopLeft="411,58" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimTeamSeason"
-          TopLeft="412,356" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek"
-          TopLeft="419,555" />
-        <NodeLayout
-          Size="226,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed"
-          TopLeft="776,1090" />
-        <NodeLayout
-          Size="225,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews"
-          TopLeft="394,779" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\DER Add RunDate"
-          TopLeft="413,150" />
-        <NodeLayout
-          Size="254,42"
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews"
-          TopLeft="378,902" />
-        <NodeLayout
           Size="181,42"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerSeason"
           TopLeft="408,455" />
         <NodeLayout
           Size="308,42"
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews change News"
-          TopLeft="739,898" />
+          TopLeft="735,1011" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekStatus"
+          TopLeft="390,779" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\CMD Update News if changed"
+          TopLeft="774,1126" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimSeason"
+          TopLeft="420,255" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek"
+          TopLeft="419,555" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews"
+          TopLeft="340,1014" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimTeamSeason"
+          TopLeft="412,356" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\DER Add RunDate"
+          TopLeft="413,150" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews"
+          TopLeft="411,665" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players"
+          TopLeft="411,58" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews"
+          TopLeft="719,776" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekNews"
+          TopLeft="390,892" />
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output]"
-          TopLeft="498.5,297">
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup No Match Output2]"
+          TopLeft="888,1053">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59"
+              EndConnector="0,73"
               Start="0,0"
-              End="0,51.5">
+              End="0,65.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.5" />
+                    End="0,65.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,19.9453125,96.3827734375,11.609375"
+              BoundingBox="-55.80638671875,26.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Derived Column Output]"
-          TopLeft="495.5,192">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,63"
-              Start="0,0"
-              End="0,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Data Conversion Output]"
-          TopLeft="892.5,1039">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51"
-              Start="0,0"
-              End="0,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[ADO NET Source Output]"
-          TopLeft="493.5,100">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup No Match Output1]"
-          TopLeft="894.5,940">
+          TopLeft="466.666666666667,934">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57"
+              EndConnector="0,80"
               Start="0,0"
-              End="0,49.5">
+              End="0,72.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.5" />
+                    End="0,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,18.9453125,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,30.4453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup No Match Output]"
-          TopLeft="505.75,821">
+          TopLeft="525,707">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,81"
+              EndConnector="294.5,69"
               Start="0,0"
-              End="0,73.5">
+              End="294.5,61.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.5" />
+                    End="0,23.979381443299" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.979381443299"
+                    Point2="0,27.979381443299"
+                    Point3="4,27.979381443299" />
+                  <mssgle:LineSegment
+                    End="290.5,27.979381443299" />
+                  <mssgle:CubicBezierSegment
+                    Point1="290.5,27.979381443299"
+                    Point2="294.5,27.979381443299"
+                    Point3="294.5,31.979381443299" />
+                  <mssgle:LineSegment
+                    End="294.5,61.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,28.75,129.350078125,16"
+              BoundingBox="91.44361328125,32.979381443299,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output6]"
+          TopLeft="501,707">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,26.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output5]"
-          TopLeft="542.666666666667,821">
+          TopLeft="500.75,597">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,24.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output4]"
+          TopLeft="538.666666666667,934">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -42663,17 +43392,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.126213592233" />
+                    End="0,27.1262135922329" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27.126213592233"
-                    Point2="0,31.126213592233"
-                    Point3="4,31.126213592233" />
+                    Point1="0,27.1262135922329"
+                    Point2="0,31.1262135922329"
+                    Point3="4,31.1262135922329" />
                   <mssgle:LineSegment
-                    End="346.333333333333,31.126213592233" />
+                    End="346.333333333333,31.1262135922329" />
                   <mssgle:CubicBezierSegment
-                    Point1="346.333333333333,31.126213592233"
-                    Point2="350.333333333333,31.126213592233"
-                    Point3="350.333333333333,35.126213592233" />
+                    Point1="346.333333333333,31.1262135922329"
+                    Point2="350.333333333333,31.1262135922329"
+                    Point3="350.333333333333,35.1262135922329" />
                   <mssgle:LineSegment
                     End="350.333333333333,69.5" />
                 </mssgle:SegmentCollection>
@@ -42682,37 +43411,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="126.975279947916,36.126213592233,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output4]"
-          TopLeft="506.25,597">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,69"
-              Start="0,0"
-              End="0,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,24.9453125,96.3827734375,11.609375"
+              BoundingBox="126.975279947917,36.1262135922329,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output3]"
-          TopLeft="507.5,708">
+          TopLeft="503.5,821">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -42782,11 +43487,83 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Lookup Match Output]"
+          TopLeft="498.5,297">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,19.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[Derived Column Output]"
+          TopLeft="495.5,192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews.Paths[ADO NET Source Output]"
+          TopLeft="493.5,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekStatus">
+    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerSeason">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -42832,61 +43609,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerSeason">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">true</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimTeamSeason">
+    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP FactPlayerGameweekStatus">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -42932,7 +43655,92 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimGameweek">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">true</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST FactPlayerGameweekNews">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimTeamSeason">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\LKP DimPlayerNews">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_SRC Players">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews\ADO_DST DimPlayerNews">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -43544,7 +44352,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43566,7 +44376,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -43960,7 +44772,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -45206,73 +46020,85 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="269,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position"
-          TopLeft="305,884" />
-        <NodeLayout
-          Size="256,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId"
-          TopLeft="1109,1526" />
-        <NodeLayout
           Size="216,44"
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players"
           TopLeft="852,1212" />
-        <NodeLayout
-          Size="233,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert PlayerName to STR"
-          TopLeft="323,779" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason"
-          TopLeft="349,336" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer"
-          TopLeft="522,1105" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC Players"
-          TopLeft="341,2" />
-        <NodeLayout
-          Size="259,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestPlayerId"
-          TopLeft="751,1527" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason"
-          TopLeft="338,442" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate"
-          TopLeft="346,112" />
-        <NodeLayout
-          Size="247,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode"
-          TopLeft="308,561" />
         <NodeLayout
           Size="258,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId"
           TopLeft="1109,1429" />
         <NodeLayout
-          Size="261,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestPlayerId"
-          TopLeft="751,1429" />
-        <NodeLayout
-          Size="330,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId"
-          TopLeft="886,1321" />
-        <NodeLayout
-          Size="340,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players"
-          TopLeft="114,1005" />
+          Size="178,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason"
+          TopLeft="338,442" />
         <NodeLayout
           Size="180,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add PlayerName"
           TopLeft="342,668" />
         <NodeLayout
+          Size="330,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId"
+          TopLeft="886,1321" />
+        <NodeLayout
           Size="176,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer"
           TopLeft="250,1179" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC Players"
+          TopLeft="341,2" />
+        <NodeLayout
+          Size="256,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId"
+          TopLeft="1109,1526" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players"
+          TopLeft="102,1097" />
+        <NodeLayout
+          Size="233,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert PlayerName to STR"
+          TopLeft="323,779" />
+        <NodeLayout
+          Size="340,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players"
+          TopLeft="114,1005" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek"
+          TopLeft="344,210" />
+        <NodeLayout
+          Size="269,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position"
+          TopLeft="305,884" />
+        <NodeLayout
+          Size="247,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode"
+          TopLeft="308,561" />
+        <NodeLayout
+          Size="261,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestPlayerId"
+          TopLeft="751,1429" />
+        <NodeLayout
+          Size="259,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestPlayerId"
+          TopLeft="751,1527" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason"
+          TopLeft="349,336" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate"
+          TopLeft="346,112" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimNewPlayers"
+          TopLeft="17,1178" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer"
+          TopLeft="522,1105" />
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Union All Output 1]"
           TopLeft="960,1256">
@@ -45304,11 +46130,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
           TopLeft="1104.66666666667,1363">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -45338,7 +46166,81 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+          TopLeft="266,1139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72,40"
+              Start="0,0"
+              End="72,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.1538461538462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1538461538462"
+                    Point2="0,16.1538461538462"
+                    Point3="4,16.1538461538462" />
+                  <mssgle:LineSegment
+                    End="68,16.1538461538462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68,16.1538461538462"
+                    Point2="72,16.1538461538462"
+                    Point3="72,20.1538461538462" />
+                  <mssgle:LineSegment
+                    End="72,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 11]"
+          TopLeft="186,1139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.5,39"
+              Start="0,0"
+              End="-68.5,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.75"
+                    Point2="0,15.75"
+                    Point3="-4,15.75" />
+                  <mssgle:LineSegment
+                    End="-64.5,15.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.5,15.75"
+                    Point2="-68.5,15.75"
+                    Point3="-68.5,19.75" />
+                  <mssgle:LineSegment
+                    End="-68.5,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45372,11 +46274,61 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
+          TopLeft="881,1471">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,18.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output2]"
+          TopLeft="227.333333333333,1047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,15.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
           TopLeft="396,926">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -45412,30 +46364,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
-          TopLeft="881,1471">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,18.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
           TopLeft="1237.5,1471">
           <EdgeLayout.Curve>
@@ -45456,6 +46384,66 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-55.80638671875,17.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
+          TopLeft="427,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
+          TopLeft="483,926">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="488.333333333333,286"
+              Start="0,0"
+              End="488.333333333333,278.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.7434065748045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,95.7434065748045"
+                    Point2="0,99.7434065748045"
+                    Point3="4,99.7434065748045" />
+                  <mssgle:LineSegment
+                    End="484.333333333333,99.7434065748045" />
+                  <mssgle:CubicBezierSegment
+                    Point1="484.333333333333,99.7434065748045"
+                    Point2="488.333333333333,99.7434065748045"
+                    Point3="488.333333333333,103.743406574804" />
+                  <mssgle:LineSegment
+                    End="488.333333333333,278.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="195.975279947917,104.743406574804,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -45485,25 +46473,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-          TopLeft="428.25,484">
+          TopLeft="339.333333333333,1047">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="256.166666666667,58"
               Start="0,0"
-              End="0,69.5">
+              End="256.166666666667,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,19.3629976580796" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3629976580796"
+                    Point2="0,23.3629976580796"
+                    Point3="4,23.3629976580796" />
+                  <mssgle:LineSegment
+                    End="252.166666666667,23.3629976580796" />
+                  <mssgle:CubicBezierSegment
+                    Point1="252.166666666667,23.3629976580796"
+                    Point2="256.166666666667,23.3629976580796"
+                    Point3="256.166666666667,27.3629976580796" />
+                  <mssgle:LineSegment
+                    End="256.166666666667,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
+              BoundingBox="79.8919466145833,28.3629976580796,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -45545,37 +46545,49 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
-          TopLeft="339.333333333333,1047">
+          TopLeft="428.25,484">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="256.166666666667,58"
+              EndConnector="0,77"
               Start="0,0"
-              End="256.166666666667,50.5">
+              End="0,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.3629976580796" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.3629976580796"
-                    Point2="0,23.3629976580796"
-                    Point3="4,23.3629976580796" />
-                  <mssgle:LineSegment
-                    End="252.166666666667,23.3629976580796" />
-                  <mssgle:CubicBezierSegment
-                    Point1="252.166666666667,23.3629976580796"
-                    Point2="256.166666666667,23.3629976580796"
-                    Point3="256.166666666667,27.3629976580796" />
-                  <mssgle:LineSegment
-                    End="256.166666666667,50.5" />
+                    End="0,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="79.8919466145833,28.3629976580796,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Derived Column Output1]"
+          TopLeft="428.5,154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -45598,7 +46610,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45620,7 +46634,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45642,7 +46658,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45664,192 +46682,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="248,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players"
-          TopLeft="102,1097" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-          TopLeft="483,926">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="488.333333333333,286"
-              Start="0,0"
-              End="488.333333333333,278.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,95.7434065748045" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,95.7434065748045"
-                    Point2="0,99.7434065748045"
-                    Point3="4,99.7434065748045" />
-                  <mssgle:LineSegment
-                    End="484.333333333333,99.7434065748045" />
-                  <mssgle:CubicBezierSegment
-                    Point1="484.333333333333,99.7434065748045"
-                    Point2="488.333333333333,99.7434065748045"
-                    Point3="488.333333333333,103.743406574804" />
-                  <mssgle:LineSegment
-                    End="488.333333333333,278.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="195.975279947917,104.743406574804,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
-          TopLeft="227.333333333333,1047">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,15.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
-          TopLeft="266,1139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="72,40"
-              Start="0,0"
-              End="72,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.1538461538462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.1538461538462"
-                    Point2="0,16.1538461538462"
-                    Point3="4,16.1538461538462" />
-                  <mssgle:LineSegment
-                    End="68,16.1538461538462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68,16.1538461538462"
-                    Point2="72,16.1538461538462"
-                    Point3="72,20.1538461538462" />
-                  <mssgle:LineSegment
-                    End="72,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="201,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimNewPlayers"
-          TopLeft="17,1178" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 11]"
-          TopLeft="186,1139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.5,39"
-              Start="0,0"
-              End="-68.5,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.75"
-                    Point2="0,15.75"
-                    Point3="-4,15.75" />
-                  <mssgle:LineSegment
-                    End="-64.5,15.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.5,15.75"
-                    Point2="-68.5,15.75"
-                    Point3="-68.5,19.75" />
-                  <mssgle:LineSegment
-                    End="-68.5,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek"
-          TopLeft="344,210" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Derived Column Output1]"
-          TopLeft="428.5,154">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-          TopLeft="427,252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,84"
-              Start="0,0"
-              End="0,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -45857,7 +46691,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position">
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -45874,37 +46708,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC Players">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -45934,7 +46737,69 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId">
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC Players">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q4:string">true</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -45980,7 +46845,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players">
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimNewPlayers">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -45997,14 +46870,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <Value
           type="q4:string">0</Value>
       </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer">
-    <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -46892,37 +47757,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimNewPlayers">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek">
-    <Properties>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q2:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q3:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q4:boolean">true</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
