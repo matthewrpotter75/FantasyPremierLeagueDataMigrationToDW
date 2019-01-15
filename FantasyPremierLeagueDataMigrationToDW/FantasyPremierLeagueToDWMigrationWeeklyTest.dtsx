@@ -5,72 +5,62 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MATTASUS"
   DTS:CreatorName="MATTASUS\Matthew"
-  DTS:DTSID="{874BA7E8-CDC8-4528-AF4D-D778F394A461}"
+  DTS:DTSID="{94294FAB-8502-41D9-862B-77552CB257EC}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3002.113"
   DTS:LocaleID="2057"
-  DTS:ObjectName="FantasyPremierLeagueToDWMigrationWeekly"
+  DTS:ObjectName="FantasyPremierLeagueToDWMigrationWeeklyTest"
   DTS:PackageType="5"
-  DTS:VersionBuild="377"
-  DTS:VersionGUID="{89DBA741-B6E1-4093-AF7F-7225B9F6BDB8}">
+  DTS:VersionBuild="379"
+  DTS:VersionGUID="{4D3A8C2E-F78A-453E-8AB0-B69161DB319E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FantasyPremierLeague]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{475CE36A-026D-46CD-8C1A-2AEE071205C6}"
+      DTS:DTSID="{D8B04D03-AD84-4009-B3B9-3B0A1C330ECE}"
       DTS:ObjectName="FantasyPremierLeague">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeague;Integrated Security=True;Application Name=SSIS-Package-{475CE36A-026D-46CD-8C1A-2AEE071205C6}MATTASUS\SQL2014.FantasyPremierLeague1;" />
+          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeagueTest;Integrated Security=True;Application Name=SSIS-Package-{D8B04D03-AD84-4009-B3B9-3B0A1C330ECE}MATTASUS\SQL2014.FantasyPremierLeague1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[FantasyPremierLeagueDW]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{44B41BED-C579-4CF7-9A0E-46C721F378D7}"
+      DTS:DTSID="{671AEE28-1B56-4B44-B8C3-9F832679871C}"
       DTS:ObjectName="FantasyPremierLeagueDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeagueDW;Integrated Security=True;Application Name=SSIS-Package-{44B41BED-C579-4CF7-9A0E-46C721F378D7}MATTASUS\SQL2014.FantasyPremierLeagueDW.FantasyPremierLeagueDW;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[FantasyPremierLeagueSeason1]"
-      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{B4211DCF-16E8-45D2-8AA9-CBE7D068FA07}"
-      DTS:ObjectName="FantasyPremierLeagueSeason1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeagueSeason1;Integrated Security=True;Application Name=SSIS-FantasyPremierLeagueToDWMigration-{B4211DCF-16E8-45D2-8AA9-CBE7D068FA07}MATTASUS\SQL2014.FantasyPremierLeagueSeason1;" />
+          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeagueDWTest;Integrated Security=True;Application Name=SSIS-Package-{671AEE28-1B56-4B44-B8C3-9F832679871C}MATTASUS\SQL2014.FantasyPremierLeagueDW.FantasyPremierLeagueDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[OLEDB FantasyPremierLeague]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{B648448F-687D-437B-BE03-B25CD481271D}"
+      DTS:DTSID="{D54A0529-E507-45BB-AEA7-EA52E4E5A22C}"
       DTS:ObjectName="OLEDB FantasyPremierLeague">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeague;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeagueTest;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{73B8020F-B8AA-4497-BB43-E25FA2AB931F}"
+      DTS:DTSID="{EC878B99-99A5-4E14-8BB8-3123E28E7549}"
       DTS:ObjectName="OLEDB FantasyPremierLeagueDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeagueDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=MATTASUS\SQL2014;Initial Catalog=FantasyPremierLeagueDWTest;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{FDA2F691-3D68-490C-8A3A-A411A2F780FD}"
+      DTS:DTSID="{AE23339A-9FF8-43B5-9BD8-1B489C01CFDD}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="GameweekKey">
@@ -79,7 +69,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5CD3D298-4A39-43BA-9BDB-435279C1940B}"
+      DTS:DTSID="{D7C411E6-872E-4089-823A-15139868B420}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId&#xA;FROM dbo.DimPlayer p&#xA;INNER JOIN dbo.DimPlayerAttribute pa&#xA;ON p.PlayerKey = pa.PlayerKey&#xA;AND pa.SeasonKey = &quot; +  (DT_WSTR, 4) (@[User::SeasonKey] -  1) + &quot;&#xA;&#xA;UNION&#xA;&#xA;SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId&#xA;FROM dbo.DimPlayer p&#xA;INNER JOIN dbo.DimPlayerAttribute pa&#xA;ON p.PlayerKey = pa.PlayerKey&#xA;AND pa.SeasonKey = &quot; +  (DT_WSTR, 4) @[User::SeasonKey]"
       DTS:IncludeInDebugDump="2345"
@@ -102,7 +92,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{54D61A85-6B55-44AF-B5BE-1F124C5D8297}"
+      DTS:DTSID="{091CB65A-DE73-4122-9C81-16209164466A}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestTeamId&#xA;FROM dbo.DimPlayer p&#xA;INNER JOIN dbo.DimPlayerAttribute pa&#xA;ON p.PlayerKey = pa.PlayerKey&#xA;AND pa.SeasonKey = &quot; +  (DT_WSTR, 4) (@[User::SeasonKey] -  1) + &quot;&#xA;&#xA;UNION&#xA;&#xA;SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestTeamId&#xA;FROM dbo.DimPlayer p&#xA;INNER JOIN dbo.DimPlayerAttribute pa&#xA;ON p.PlayerKey = pa.PlayerKey&#xA;AND pa.SeasonKey = &quot; +  (DT_WSTR, 4) @[User::SeasonKey]"
       DTS:IncludeInDebugDump="2345"
@@ -125,7 +115,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5CA83296-B812-483A-A65A-778C3E8356D7}"
+      DTS:DTSID="{68EFA29E-77C9-45D0-ACA0-3A955B3FB7CA}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.TeamKey&#xA;FROM dbo.DimPlayer p&#xA;INNER JOIN dbo.DimPlayerAttribute pa&#xA;ON p.PlayerKey = pa.PlayerKey&#xA;AND pa.SeasonKey = &quot; +  (DT_WSTR, 4) (@[User::SeasonKey] -  1)"
       DTS:IncludeInDebugDump="2345"
@@ -140,7 +130,7 @@ AND pa.SeasonKey = 12</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{242FA43A-8BD8-4F3D-8912-E9FDA1A1C418}"
+      DTS:DTSID="{48566528-1CF3-410C-B302-6484D9D2F7E7}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT TeamKey, TeamId, SeasonKey&#xA;FROM dbo.DimTeamSeason&#xA;WHERE SeasonKey = &quot; +  (DT_WSTR, 2) @[User::SeasonKey]"
       DTS:IncludeInDebugDump="2345"
@@ -153,7 +143,7 @@ WHERE SeasonKey = 13</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7163F1D0-A83D-4A82-9A91-C7B80E0CD78F}"
+      DTS:DTSID="{22EA6FEA-70FA-42C6-A4EB-99CA68EA89A0}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey&#xA;FROM dbo.DimPlayer p&#xA;INNER JOIN dbo.DimPlayerAttribute pa&#xA;ON p.PlayerKey = pa.PlayerKey&#xA;AND pa.SeasonKey = &quot; +  (DT_WSTR, 4) (@[User::SeasonKey] -  1) + &quot;&#xA;&#xA;UNION&#xA;&#xA;SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey&#xA;FROM dbo.DimPlayer p&#xA;INNER JOIN dbo.DimPlayerAttribute pa&#xA;ON p.PlayerKey = pa.PlayerKey&#xA;AND pa.SeasonKey = &quot; +  (DT_WSTR, 4) @[User::SeasonKey]"
       DTS:IncludeInDebugDump="2345"
@@ -176,7 +166,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{69150C42-83FC-45AA-A0BB-603E208B357C}"
+      DTS:DTSID="{A3BCDCCB-2522-4A04-841D-54A7D02B9EDD}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="RowCnt">
@@ -185,7 +175,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A0FCA1F6-0992-4B92-9217-E5E8294F1D37}"
+      DTS:DTSID="{AA8A601C-2FFE-4E20-AA0E-7F8C97A2575B}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;dd&quot; , GETDATE()), 2) + &quot;/&quot; + RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;mm&quot; , GETDATE()), 2) + &quot;/&quot; +  (DT_STR, 4, 1252) DATEPART(&quot;yy&quot; , GETDATE())"
       DTS:IncludeInDebugDump="2345"
@@ -196,7 +186,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{557CA718-A132-4871-865F-191CE5693DE5}"
+      DTS:DTSID="{F5517083-EC67-4C8C-86B7-F31C93F3533B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="SeasonKey">
@@ -205,7 +195,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2FC33B23-F615-43C7-8602-DF45CA36A35A}"
+      DTS:DTSID="{589ACB79-CB98-495A-ABAF-A8B02FAFE06C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 1, 30, 10)&#xA;&#xA;UNION&#xA;&#xA;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 2, 30, 10)&#xA;&#xA;UNION&#xA;&#xA;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 3, 30, 10)&#xA;&#xA;UNION&#xA;&#xA;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 4, 30, 10);&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -264,7 +254,7 @@ FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(13,0, 4, 30, 10);</DTS
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{42592243-641C-4F65-9D16-B47CF982DCD1}"
+      DTS:DTSID="{0D9351CF-9F17-43FE-8149-3BEE78C712C7}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 1, 30, 5)&#xA;&#xA;UNION&#xA;&#xA;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 2, 30, 5)&#xA;&#xA;UNION&#xA;&#xA;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 3, 30, 5)&#xA;&#xA;UNION&#xA;&#xA;SELECT &quot; + (DT_STR, 2, 1258)@[User::SeasonKey] +&quot; AS SeasonKey,&quot; + &#xA;(DT_STR, 2, 1258)@[User::GameweekKey] + &quot; AS GameweekKey, &#xA;PlayerKey, &#xA;PlayerPositionKey, &#xA;OpponentDifficulty, &#xA;30 AS MinutesLimit, &#xA;CAST(Points AS SMALLINT) AS Points, &#xA;CAST(Games AS TINYINT) AS Games , &#xA;CAST(PlayerMinutes AS SMALLINT) AS PlayerMinutes,&#xA;PPG&#xA;FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(&quot; + (DT_STR, 2, 1258)@[User::SeasonKey] + &quot;,&quot; + (DT_STR, 2, 1258)@[User::GameweekKey] + &quot;, 4, 30, 5);&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -328,7 +318,7 @@ FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(13,0, 4, 30, 5);</DTS:
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:DelayValidation="True"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{D3E17C7B-92E6-4B2A-B693-6D330E21515F}"
+      DTS:DTSID="{49F8032F-A3D9-41B3-9425-A8F067820D0F}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="SEQ Weekly updated data">
@@ -338,7 +328,7 @@ FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(13,0, 4, 30, 5);</DTS:
           DTS:refId="Package\SEQ Weekly updated data\DFT DimPlayerNews"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E84FDD46-16C7-4118-8DE7-EB04C9E060C8}"
+          DTS:DTSID="{793C907F-606D-4F6D-AE20-B6697D3ACBB8}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT DimPlayerNews"
@@ -768,7 +758,7 @@ where [refTable].[News] = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{577D9165-3648-482D-95C7-7AB18CB1F42C}"
+          DTS:DTSID="{3FF1A80A-4334-4087-96DC-967085200E3C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)"
@@ -3365,7 +3355,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{857FD5D4-C848-42A3-A341-A11F76E2EE65}"
+          DTS:DTSID="{67DC9D9B-34B4-4D81-9A80-89E2C4B54BD0}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT DimPlayerTeamGameweekFixture"
@@ -3733,7 +3723,7 @@ WHERE NOT EXISTS
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{ABB74CB2-B3E7-4221-B8BF-950DCCFC6F95}"
+          DTS:DTSID="{55BC95C7-595F-49E5-8B84-0AEAE76A561E}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT DimTeamGameweekFixture"
@@ -6026,7 +6016,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{36E62717-7483-401B-9606-4E573FA8CD91}"
+          DTS:DTSID="{E4B51FFC-4D66-43E5-88C5-A4B5A76CC7C6}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactGameweekFixture (Fixtures only)"
@@ -7514,7 +7504,7 @@ AND SeasonKey = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{4EC0D3C9-244A-4512-9A48-04D46318C54B}"
+          DTS:DTSID="{5825FC95-B1CD-472B-9162-4165C2F3DBD9}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactGameweekFixture (PlayerHistory) Update scores"
@@ -9107,7 +9097,7 @@ AND AwayTeamScore IS NULL</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7C87BDAC-52A3-462D-B909-83C364233EB4}"
+          DTS:DTSID="{4C89CCF1-AF99-42B6-B9D7-D6E32F08CBBB}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactPlayerCurrentStats"
@@ -10721,7 +10711,7 @@ where [refTable].[PlayerId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerCurrentStats\1147:invalid};#{Package\SEQ Weekly updated data\DFT FactPlayerCurrentStats\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerCurrentStats\1152:invalid};#{Package\SEQ Weekly updated data\DFT FactPlayerCurrentStats\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11799,7 +11789,7 @@ WHERE PlayerKey = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{bf3f3dfc-3c3d-420b-b3c6-f16bd43d26ec}"
+          DTS:DTSID="{747B6007-43B1-4DC7-AE0E-E4D18C94F852}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactPlayerDailyPrices"
@@ -12494,7 +12484,7 @@ where [refTable].[PlayerId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1148:invalid};#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1149:invalid};</property>
+                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1153:invalid};#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1154:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12655,7 +12645,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1150:invalid};#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1149:invalid};</property>
+                      name="ParameterMap">#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1155:invalid};#{Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices\1154:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12961,7 +12951,7 @@ where [refTable].[DateKey] = ? and [refTable].[PlayerKey] = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{B439D365-15D0-4BFC-90BE-FC7A572713FC}"
+          DTS:DTSID="{CD436FC0-D27D-41A9-A45F-FF670E8F1F6A}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactPlayerGameweekNews"
@@ -15041,7 +15031,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[PlayerKey] = ? and [refTable].[
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{428C5D08-BDFD-4B1E-89FC-22BD80F2AA4A}"
+          DTS:DTSID="{69FA3EA3-C94E-49E1-9F7D-44FD376E6EDB}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactPlayerGameweekStatus"
@@ -17596,7 +17586,7 @@ where [refTable].[PlayerStatus] = ? and [refTable].[SeasonKey] = ? and [refTable
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{43D198DC-8BEC-47E1-9008-04DCD265A5FB}"
+          DTS:DTSID="{1E994FB5-2C15-4EFE-8B6C-A83CB4867FD8}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactPlayerHistory"
@@ -24600,7 +24590,7 @@ where [refTable].[TotalPoints] = ? and [refTable].[SeasonKey] = ? and [refTable]
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{76C07DD0-33D3-459A-A88D-61A2CC1D6826}"
+          DTS:DTSID="{E50D9DC0-89DE-4A79-9A9C-2CB3B6043385}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactPlayerHistoryPastSeasons"
@@ -26673,7 +26663,7 @@ where [refTable].[PlayerId] = ? and [refTable].[SeasonKey] = ?</property>
           DTS:CreationName="Microsoft.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{F837C0FE-D35B-4A98-B0A0-BAA2D81FBFC7}"
+          DTS:DTSID="{DC54738D-AEFB-4161-9263-AFC698F4AF6A}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT FactTeamResults (PlayerHistory)"
@@ -28931,7 +28921,7 @@ where [refTable].[TeamKey] = ? and [refTable].[OpponentTeamKey] = ? and [refTabl
           DTS:refId="Package\SEQ Weekly updated data\DFT Update PlayerPointsPerGame"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{1A6F9F12-A8AA-4003-BB9D-0B2C61962DDA}"
+          DTS:DTSID="{94D18A8C-9F89-496F-AB5B-F31BD69F0496}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="DFT Update PlayerPointsPerGame"
@@ -29820,7 +29810,7 @@ where [refTable].[PlayerKey] = ? and [refTable].[PlayerPositionKey] = ? and [ref
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:DelayValidation="True"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{41AD527F-CDB2-4F89-BFF3-5B52770C9B5F}"
+          DTS:DTSID="{82254E21-E11F-44A3-9DE7-2EDAB528B230}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SEQ Populate or update DimPlayer">
@@ -29831,7 +29821,7 @@ where [refTable].[PlayerKey] = ? and [refTable].[PlayerPositionKey] = ? and [ref
               DTS:CreationName="Microsoft.Pipeline"
               DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{49788E36-712C-4149-807F-F50191606ECC}"
+              DTS:DTSID="{631CFF59-ECA6-46B5-AE19-F124F8713B41}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="DFT DimPlayer"
@@ -33106,9 +33096,9 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
@@ -33116,9 +33106,9 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
@@ -33126,14 +33116,14 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId.Inputs[OLE DB Command Input]"
@@ -33188,7 +33178,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
               DTS:CreationName="Microsoft.Pipeline"
               DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{9EE3F368-B752-4AC4-8A91-B3A13289D49D}"
+              DTS:DTSID="{1E5C3490-62E9-4D9F-8524-5443B0F599A9}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="DFT DimPlayerSeason and DimPlayerAttribute"
@@ -35634,7 +35624,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\1151:invalid};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\1156:invalid};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -35883,7 +35873,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT Populate SeasonKey GameweekKey"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{D99CFD99-8FEE-46EA-96F7-66BDA0AE7B37}"
+              DTS:DTSID="{110B2DE6-29FD-487D-8B0F-EFEABA7256D4}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="DFT Populate SeasonKey GameweekKey"
@@ -36947,7 +36937,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{94373BDE-DB0E-4116-A290-C5DD14B35E88}"
+              DTS:DTSID="{69A5C4FE-6DFC-43E6-B504-4023EDB4A56A}"
               DTS:From="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT Populate SeasonKey GameweekKey"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -36955,7 +36945,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer.PrecedenceConstraints[Constraint 1]"
               DTS:CreationName=""
-              DTS:DTSID="{E34C6DCA-990B-4DE2-8EFC-A95F4E9C3297}"
+              DTS:DTSID="{E3B4D7F9-F96A-44B5-AC75-3F8BC34DA18C}"
               DTS:From="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 1"
@@ -36967,7 +36957,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:DelayValidation="True"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{831DAA11-C708-487D-A555-1A84DA011BB0}"
+          DTS:DTSID="{D2298983-5DFB-42CA-A5F4-BB59872746E4}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="SEQ Populate PlayerPointsPerGames tables">
@@ -36977,7 +36967,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Insert PlayerPointsPerGamePrevious10"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{AC84201A-DD6E-4E7D-B7A1-E5ED23B34EB0}"
+              DTS:DTSID="{3F253150-0944-4621-B46B-B38BED99FA18}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="DFT Insert PlayerPointsPerGamePrevious10"
@@ -37957,7 +37947,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[GameweekKey] = ? and [refTable]
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Insert PlayerPointsPerGamePrevious5"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{59E541FF-C4A7-4890-9F75-BA5CFBFC3400}"
+              DTS:DTSID="{7DB3DAE0-E37D-4386-AA0C-74FB180753C9}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="DFT Insert PlayerPointsPerGamePrevious5"
@@ -38937,7 +38927,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[GameweekKey] = ? and [refTable]
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey"
               DTS:CreationName="Microsoft.Pipeline"
               DTS:Description="Data Flow Task"
-              DTS:DTSID="{4CC4D47A-B28C-4F4E-9F28-1A8783DB613C}"
+              DTS:DTSID="{1D4D59F2-E96E-4F5A-82DF-7CE6F9B5CEDF}"
               DTS:ExecutableType="Microsoft.Pipeline"
               DTS:LocaleID="-1"
               DTS:ObjectName="DFT Populate SeasonKey GameweekKey"
@@ -40001,7 +39991,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables.PrecedenceConstraints[Constraint]"
               DTS:CreationName=""
-              DTS:DTSID="{80787434-018B-435F-ACCA-2458134799A2}"
+              DTS:DTSID="{DCCDE955-7320-4250-A575-D22A9399B388}"
               DTS:From="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Insert PlayerPointsPerGamePrevious5"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint"
@@ -40009,7 +39999,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <DTS:PrecedenceConstraint
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables.PrecedenceConstraints[Constraint 5]"
               DTS:CreationName=""
-              DTS:DTSID="{4FD934DD-13B0-4517-8598-5060C95E74C9}"
+              DTS:DTSID="{38EEDF7E-51ED-4CCA-A24E-104F182B5001}"
               DTS:From="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey"
               DTS:LogicalAnd="True"
               DTS:ObjectName="Constraint 5"
@@ -40020,7 +40010,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           DTS:refId="Package\SEQ Weekly updated data\SQL Get updated fixtures and update GameFixture"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{EAF01B92-AB02-44D6-9FF4-9D8F75F95DCC}"
+          DTS:DTSID="{87F0517B-BA28-48E1-9FD9-8D11E2CB5588}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Get updated fixtures and update GameFixture"
@@ -40028,7 +40018,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{B648448F-687D-437B-BE03-B25CD481271D}"
+              SQLTask:Connection="{D54A0529-E507-45BB-AEA7-EA52E4E5A22C}"
               SQLTask:SqlStatementSource="MERGE INTO dbo.GameweekFixtures AS Target &#xA;USING &#xA;(&#xA;&#x9;SELECT f.id, ph.gameweekId, t.id AS homeTeamId, ot.id AS awayTeamId, t.short_name AS homeTeam_Shortname, ot.short_name AS awayTeam_Shortname, ph.kickoff_time&#xA;&#x9;FROM dbo.PlayerHistory ph&#xA;&#x9;INNER JOIN dbo.Teams ot&#xA;&#x9;ON ph.opponent_teamId = ot.id&#xA;&#x9;INNER JOIN dbo.Players p&#xA;&#x9;ON ph.playerId = p.id&#xA;&#x9;INNER JOIN dbo.Teams t&#xA;&#x9;ON p.teamId = t.id&#xA;&#x9;LEFT JOIN dbo.Fixtures f&#xA;&#x9;ON ph.gameweekId = f.gameweekId&#xA;&#x9;AND t.id = f.team_h&#xA;&#x9;AND ot.id = f.team_a&#xA;&#x9;WHERE ph.was_home = 1&#xA;&#x9;GROUP BY f.id, ph.gameweekId, t.id, ot.id, t.short_name, ot.short_name, ph.kickoff_time&#xA;&#x9;HAVING COUNT(DISTINCT ph.playerId) &gt; 2&#xA;&#xA;&#x9;UNION&#xA;&#xA;&#x9;SELECT f.id, f.gameweekId, f.team_h, f.team_a, ht.short_name, at.short_name, f.kickoff_time&#xA;&#x9;FROM dbo.Fixtures f&#xA;&#x9;INNER JOIN dbo.Teams ht&#xA;&#x9;ON f.team_h = ht.id&#xA;&#x9;INNER JOIN dbo.Teams at&#xA;&#x9;ON f.team_a = at.id&#xA;&#x9;WHERE NOT EXISTS&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT ph.gameweekId, t.id AS team_h, ot.id AS team_a, ph.kickoff_time&#xA;&#x9;&#x9;FROM dbo.PlayerHistory ph&#xA;&#x9;&#x9;INNER JOIN dbo.GameweekFixtures gf&#xA;&#x9;&#x9;ON ph.fixtureId = gf.id&#xA;&#x9;&#x9;INNER JOIN dbo.Teams ot&#xA;&#x9;&#x9;ON ph.opponent_teamId = ot.id&#xA;&#x9;&#x9;INNER JOIN dbo.Players p&#xA;&#x9;&#x9;ON ph.playerId = p.id&#xA;&#x9;&#x9;INNER JOIN dbo.Teams t&#xA;&#x9;&#x9;ON p.teamId = t.id&#xA;&#x9;&#x9;WHERE ph.gameweekId = f.gameweekId&#xA;&#x9;&#x9;AND team_h = gf.homeTeamId&#xA;&#x9;&#x9;AND team_a = gf.awayTeamId&#xA;&#x9;) &#xA;&#x9;AND f.gameweekId IS NOT NULL&#xA;)&#xA;AS Source&#xA;ON Target.homeTeamId = Source.homeTeamId&#xA;AND Target.awayTeamId = Source.awayTeamId&#xA;WHEN MATCHED THEN &#xA;UPDATE SET &#xA;gameweekId = Source.gameweekId,&#xA;homeTeamId = Source.homeTeamId,&#xA;awayTeamId = Source.awayTeamId,&#xA;homeTeam_Shortname = Source.homeTeam_Shortname, &#xA;awayTeam_Shortname = Source.awayTeam_Shortname,&#xA;kickoff_time = Source.kickoff_time&#xA;WHEN NOT MATCHED BY TARGET THEN &#xA;INSERT (gameweekId, homeTeamId, awayTeamId, homeTeam_Shortname, awayTeam_Shortname, kickoff_time) &#xA;VALUES (Source.gameweekId, Source.homeTeamId, Source.awayTeamId, Source.homeTeam_Shortname, Source.awayTeam_Shortname, Source.kickoff_time);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -40037,7 +40027,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{379122E2-BFB7-40E3-8470-9E5BED6E0716}"
+          DTS:DTSID="{2B641E53-875D-40B9-81D4-5430C9FD9A0B}"
           DTS:From="Package\SEQ Weekly updated data\SQL Get updated fixtures and update GameFixture"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -40045,7 +40035,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{4612C5F2-8DE0-4BC1-80DD-42942977DD0E}"
+          DTS:DTSID="{26876588-8B8F-440B-8453-03BA388EF1F2}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactPlayerCurrentStats"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -40053,7 +40043,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 10]"
           DTS:CreationName=""
-          DTS:DTSID="{11CBE706-B47A-4519-9043-8A7165F49A5E}"
+          DTS:DTSID="{DFBAF8AA-FF98-4C2C-A3AC-30E4D6E41E48}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactPlayerHistoryPastSeasons"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 10"
@@ -40061,7 +40051,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 11]"
           DTS:CreationName=""
-          DTS:DTSID="{4564D00C-6AF8-4FB5-B05B-A547BE8C0CD9}"
+          DTS:DTSID="{438A659C-722B-4613-9FBB-3746DEADC1B2}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactPlayerGameweekNews"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 11"
@@ -40069,7 +40059,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 12]"
           DTS:CreationName=""
-          DTS:DTSID="{47782FB3-1C07-45D6-A604-13B59189D8A8}"
+          DTS:DTSID="{D20B6A83-4660-468F-BE4D-5D70A51F7514}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactPlayerGameweekStatus"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 12"
@@ -40077,7 +40067,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 13]"
           DTS:CreationName=""
-          DTS:DTSID="{B235C7CC-FE8F-4B60-9500-7007865C7229}"
+          DTS:DTSID="{952BDCAB-0EDF-4F12-91A5-8371B60CB783}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactPlayerDailyPrices"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 13"
@@ -40085,7 +40075,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 14]"
           DTS:CreationName=""
-          DTS:DTSID="{26B90989-97A8-4270-BB88-355DF7EF18B0}"
+          DTS:DTSID="{C9CA491A-62B6-40CF-A084-8BBCCBC34E9A}"
           DTS:From="Package\SEQ Weekly updated data\DFT DimPlayerNews"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 14"
@@ -40093,7 +40083,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 15]"
           DTS:CreationName=""
-          DTS:DTSID="{78346BAF-C07A-48C5-9ACF-3A5A88ECB89C}"
+          DTS:DTSID="{914C479F-CDB5-450D-8641-4FE1091B9E91}"
           DTS:From="Package\SEQ Weekly updated data\DFT DimTeamGameweekFixture"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 15"
@@ -40101,7 +40091,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{AD4DF93D-CD5C-4A85-8FF8-E56D820D9A5D}"
+          DTS:DTSID="{0B31A26D-C824-482B-8525-7D5A62708099}"
           DTS:From="Package\SEQ Weekly updated data\DFT DimPlayerTeamGameweekFixture"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -40109,7 +40099,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{60EC6874-F886-4A9F-8869-59DF20F71A1B}"
+          DTS:DTSID="{4EF0228A-5F61-4D2B-9948-1730D206BFD2}"
           DTS:From="Package\SEQ Weekly updated data\DFT Update PlayerPointsPerGame"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -40117,7 +40107,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{72179EA9-1C64-42C3-91AE-5FAD33B83E45}"
+          DTS:DTSID="{372D9709-EFA3-48B3-834C-3B35FF86D61A}"
           DTS:From="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -40125,7 +40115,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{AD29DCDD-2C98-42D8-9533-71889B806B39}"
+          DTS:DTSID="{D866F6BE-C008-4F14-A5DA-4CACF281E593}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactGameweekFixture (PlayerHistory) Update scores"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -40133,7 +40123,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 6]"
           DTS:CreationName=""
-          DTS:DTSID="{3D3E8817-56A9-4EC4-BFB4-35CEA4553A4D}"
+          DTS:DTSID="{2EBC226C-37C3-42A1-A590-08D5D5F24432}"
           DTS:From="Package\SEQ Weekly updated data\DFT DimPlayerSeason and DimPlayerAttribute (from PlayerHistory)"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
@@ -40141,7 +40131,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 7]"
           DTS:CreationName=""
-          DTS:DTSID="{75FC4A7C-0BCA-438F-A568-AFE770D68895}"
+          DTS:DTSID="{943189EE-5C00-468A-9E35-DF6CA7FA1849}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactTeamResults (PlayerHistory)"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 7"
@@ -40149,7 +40139,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 8]"
           DTS:CreationName=""
-          DTS:DTSID="{CB243A32-A054-499B-977D-9B0E245F3B51}"
+          DTS:DTSID="{747917DC-B32F-4ABE-84C9-E8D85DD75162}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactPlayerHistory"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 8"
@@ -40157,7 +40147,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Weekly updated data.PrecedenceConstraints[Constraint 9]"
           DTS:CreationName=""
-          DTS:DTSID="{7E439391-CA93-4492-B9CE-F4750858B37A}"
+          DTS:DTSID="{92E20422-CCE5-47BF-9F3F-DF77B58D9611}"
           DTS:From="Package\SEQ Weekly updated data\DFT FactGameweekFixture (Fixtures only)"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 9"
@@ -40880,7 +40870,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40914,7 +40906,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -40948,7 +40942,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -41090,7 +41086,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -46385,6 +46383,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+          TopLeft="427,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
           TopLeft="483,926">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -46420,30 +46442,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-          TopLeft="427,252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,84"
-              Start="0,0"
-              End="0,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
           TopLeft="426,378">
           <EdgeLayout.Curve>
@@ -46469,25 +46467,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-          TopLeft="428.25,484">
+          TopLeft="339.333333333333,1047">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="256.166666666667,58"
               Start="0,0"
-              End="0,69.5">
+              End="256.166666666667,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,19.3629976580796" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3629976580796"
+                    Point2="0,23.3629976580796"
+                    Point3="4,23.3629976580796" />
+                  <mssgle:LineSegment
+                    End="252.166666666667,23.3629976580796" />
+                  <mssgle:CubicBezierSegment
+                    Point1="252.166666666667,23.3629976580796"
+                    Point2="256.166666666667,23.3629976580796"
+                    Point3="256.166666666667,27.3629976580796" />
+                  <mssgle:LineSegment
+                    End="256.166666666667,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
+              BoundingBox="79.8919466145833,28.3629976580796,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -46529,37 +46539,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-          TopLeft="339.333333333333,1047">
+          TopLeft="428.25,484">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="256.166666666667,58"
+              EndConnector="0,77"
               Start="0,0"
-              End="256.166666666667,50.5">
+              End="0,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.3629976580796" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.3629976580796"
-                    Point2="0,23.3629976580796"
-                    Point3="4,23.3629976580796" />
-                  <mssgle:LineSegment
-                    End="252.166666666667,23.3629976580796" />
-                  <mssgle:CubicBezierSegment
-                    Point1="252.166666666667,23.3629976580796"
-                    Point2="256.166666666667,23.3629976580796"
-                    Point3="256.166666666667,27.3629976580796" />
-                  <mssgle:LineSegment
-                    End="256.166666666667,50.5" />
+                    End="0,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="79.8919466145833,28.3629976580796,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
