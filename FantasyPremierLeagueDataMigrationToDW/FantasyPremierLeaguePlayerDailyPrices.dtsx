@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeaguePlayerDailyPrices"
   DTS:PackageType="5"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{0EB23F63-3523-4B92-8FB8-439858370AEC}">
+  DTS:VersionBuild="106"
+  DTS:VersionGUID="{0FF8EC58-7115-41E5-8F24-3B67930D059C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -265,7 +265,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">05/03/2019</DTS:VariableValue>
+        DTS:DataType="8">08/03/2019</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2349,7 +2349,7 @@ where [refTable].[PlayerId] = ? and [refTable].[SeasonKey] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT FactPlayerCurrentStatus\1177:invalid};#{Package\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
+                  name="ParameterMap">#{Package\DFT FactPlayerCurrentStatus\1171:invalid};#{Package\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2526,7 +2526,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT FactPlayerCurrentStatus\1178:invalid};#{Package\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
+                  name="ParameterMap">#{Package\DFT FactPlayerCurrentStatus\1172:invalid};#{Package\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2845,7 +2845,7 @@ where [refTable].[Cost] = ? and [refTable].[PlayerKey] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT FactPlayerCurrentStatus\1179:invalid};#{Package\DFT FactPlayerCurrentStatus\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};</property>
+                  name="ParameterMap">#{Package\DFT FactPlayerCurrentStatus\1173:invalid};#{Package\DFT FactPlayerCurrentStatus\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5539,7 +5539,7 @@ where [refTable].[PlayerId] = ? and [refTable].[SeasonKey] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT FactPlayerDailyAttributes\1172:invalid};#{Package\DFT FactPlayerDailyAttributes\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
+                  name="ParameterMap">#{Package\DFT FactPlayerDailyAttributes\1174:invalid};#{Package\DFT FactPlayerDailyAttributes\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5716,7 +5716,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT FactPlayerDailyAttributes\1173:invalid};#{Package\DFT FactPlayerDailyAttributes\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
+                  name="ParameterMap">#{Package\DFT FactPlayerDailyAttributes\1175:invalid};#{Package\DFT FactPlayerDailyAttributes\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7208,7 +7208,7 @@ where [refTable].[DateKey] = ? and [refTable].[PlayerKey] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\DFT FactPlayerDailyPrices\1174:invalid};</property>
+                  name="ParameterMap">#{Package\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\DFT FactPlayerDailyPrices\1176:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7367,7 +7367,7 @@ where [refTable].[Cost] = ? and [refTable].[DateKey] = ? and [refTable].[PlayerK
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT FactPlayerDailyPrices\1175:invalid};#{Package\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\DFT FactPlayerDailyPrices\1176:invalid};</property>
+                  name="ParameterMap">#{Package\DFT FactPlayerDailyPrices\1177:invalid};#{Package\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\DFT FactPlayerDailyPrices\1178:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8668,6 +8668,235 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ? and [refTable].[Op
                   </outputs>
                 </component>
                 <component
+                  refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT SeasonKey, ISNULL(GameweekKey,-1) AS GameweekKey, 
+
+TeamKey, 
+OpponentTeamKey
+, IsHome, IsScheduled FROM  dbo.DimTeamGameweekFixture</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT SeasonKey, ISNULL(GameweekKey,-1) AS GameweekKey, 
+
+TeamKey, 
+OpponentTeamKey
+, IsHome, IsScheduled FROM  dbo.DimTeamGameweekFixture) [refTable]
+where [refTable].[GameweekKey] = ISNULL(?,-1) and [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ? and [refTable].[OpponentTeamKey] = ? and [refTable].[IsScheduled] = ? and [refTable].[IsHome] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SeasonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GameweekKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OpponentTeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsHome" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsScheduled" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[gameweekId]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[SeasonKey]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[TeamKey]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[OpponentTeamKey]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsScheduled]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsHomeBoolean]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                      connectionManagerRefId="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[SeasonKey]"
+                          cachedDataType="i4"
+                          cachedName="SeasonKey"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[SeasonKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">SeasonKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[TeamKey]"
+                          cachedDataType="i4"
+                          cachedName="TeamKey"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[TeamKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">TeamKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[OpponentTeamKey]"
+                          cachedDataType="i4"
+                          cachedName="OpponentTeamKey"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[OpponentTeamKey]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">OpponentTeamKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[IsScheduled]"
+                          cachedDataType="bool"
+                          cachedName="IsScheduled"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsScheduled]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">IsScheduled</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[IsHomeBoolean]"
+                          cachedDataType="bool"
+                          cachedName="IsHomeBoolean"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsHomeBoolean]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">IsHome</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[gameweekId]"
+                          cachedDataType="i4"
+                          cachedName="gameweekId"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[gameweekId]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">GameweekKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamSeason OpponentTeamKey"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -8726,7 +8955,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\1180:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\1179:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8902,7 +9131,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\1181:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\1180:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9428,235 +9657,6 @@ where [refTable].[SeasonKey] = ? and [refTable].[HomeTeamKey] = ? and [refTable]
                   </outputs>
                 </component>
                 <component
-                  refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="LKP Update GameweekKey, IsScheduled if different"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT SeasonKey, GameweekKey, 
-
-TeamKey, 
-OpponentTeamKey
-, IsHome, IsScheduled FROM  dbo.DimTeamGameweekFixture</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT SeasonKey, GameweekKey, 
-
-TeamKey, 
-OpponentTeamKey
-, IsHome, IsScheduled FROM  dbo.DimTeamGameweekFixture) [refTable]
-where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ? and [refTable].[OpponentTeamKey] = ? and [refTable].[IsScheduled] = ? and [refTable].[IsHome] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SeasonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GameweekKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="OpponentTeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsHome" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsScheduled" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[gameweekId]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[SeasonKey]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[TeamKey]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[OpponentTeamKey]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsScheduled]};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsHomeBoolean]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
-                      connectionManagerRefId="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[SeasonKey]"
-                          cachedDataType="i4"
-                          cachedName="SeasonKey"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[SeasonKey]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">SeasonKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[TeamKey]"
-                          cachedDataType="i4"
-                          cachedName="TeamKey"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[TeamKey]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">TeamKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[OpponentTeamKey]"
-                          cachedDataType="i4"
-                          cachedName="OpponentTeamKey"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[OpponentTeamKey]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">OpponentTeamKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[IsScheduled]"
-                          cachedDataType="bool"
-                          cachedName="IsScheduled"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsScheduled]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">IsScheduled</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[IsHomeBoolean]"
-                          cachedDataType="bool"
-                          cachedName="IsHomeBoolean"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[IsHomeBoolean]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">IsHome</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input].Columns[gameweekId]"
-                          cachedDataType="i4"
-                          cachedName="gameweekId"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures.Outputs[Union All Output 1].Columns[gameweekId]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">GameweekKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures"
                   componentClassID="Microsoft.UnionAll"
                   contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -10020,7 +10020,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
                   startId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup Match Output4]"
-                  endId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Inputs[Lookup Input]"
+                  endId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Outputs[Lookup Match Output]" />
                 <path
@@ -10037,7 +10037,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
                   refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup No Match Output1]"
                   endId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\CMD Update GameweekKey, IsScheduled where changed.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
-                  startId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different.Outputs[Lookup No Match Output]" />
+                  startId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Union All Output 1]"
                   endId="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture.Inputs[Lookup Input]"
@@ -10609,7 +10609,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\1182:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\1181:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10785,7 +10785,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\1183:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\1182:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11088,11 +11088,11 @@ where [refTable].[SeasonKey] = ? and [refTable].[HomeTeamKey] = ? and [refTable]
                   </outputs>
                 </component>
                 <component
-                  refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime"
+                  refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="LKP FactGameweekFixture Only changed GameweekId or KickoffTime"
+                  name="LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled"
                   usesDispositions="true"
                   version="6">
                   <properties>
@@ -11102,7 +11102,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[HomeTeamKey] = ? and [refTable]
                       expressionType="Notify"
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT  
-SeasonKey, GameweekKey, 
+SeasonKey, ISNULL(GameweekKey,-1) AS GameweekKey, 
 
 
 
@@ -11111,6 +11111,7 @@ HomeTeamKey,
 AwayTeamKey, 
 
 KickoffTime , IsScheduled
+
 
 
 
@@ -11133,7 +11134,7 @@ KickoffTime</property>
                       expressionType="Notify"
                       name="SqlCommandParam"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT  
-SeasonKey, GameweekKey, 
+SeasonKey, ISNULL(GameweekKey,-1) AS GameweekKey, 
 
 
 
@@ -11145,19 +11146,12 @@ KickoffTime , IsScheduled
 
 
 
+
 FROM  dbo.FactGameweekFixture
 
 
 
-ORDER BY SeasonKey, 
-
-HomeTeamKey, 
-
-AwayTeamKey, 
-
-GameweekKey, 
-
-KickoffTime) [refTable]
+) [refTable]
 where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTable].[IsScheduled] = ? and [refTable].[SeasonKey] = ? and [refTable].[HomeTeamKey] = ? and [refTable].[AwayTeamKey] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -11168,7 +11162,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                       dataType="System.Int32"
                       description="Specifies the cache type of the lookup table."
                       name="CacheType"
-                      typeConverter="CacheType">0</property>
+                      typeConverter="CacheType">1</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -11206,7 +11200,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Connections[OleDbConnection]"
+                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
                       connectionManagerRefId="Package.ConnectionManagers[OLEDB FantasyPremierLeagueDW]"
                       description="Connection manager used to access lookup data."
@@ -11214,11 +11208,11 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input]"
+                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input].Columns[kickoff_time]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input].Columns[kickoff_time]"
                           cachedDataType="dbTimeStamp"
                           cachedName="kickoff_time"
                           lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\ADO_SRC GameweekFixture.Outputs[ADO NET Source Output].Columns[kickoff_time]">
@@ -11234,7 +11228,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input].Columns[HomeTeamKey]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input].Columns[HomeTeamKey]"
                           cachedDataType="i4"
                           cachedName="HomeTeamKey"
                           lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimTeamSeason Home.Outputs[Lookup Match Output].Columns[HomeTeamKey]">
@@ -11250,7 +11244,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input].Columns[AwayTeamKey]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input].Columns[AwayTeamKey]"
                           cachedDataType="i4"
                           cachedName="AwayTeamKey"
                           lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimTeamSeason Away.Outputs[Lookup Match Output].Columns[AwayTeamKey]">
@@ -11266,7 +11260,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input].Columns[SeasonKey]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input].Columns[SeasonKey]"
                           cachedDataType="i4"
                           cachedName="SeasonKey"
                           lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]">
@@ -11282,7 +11276,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input].Columns[gameweekId]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input].Columns[gameweekId]"
                           cachedDataType="i4"
                           cachedName="gameweekId"
                           lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\ADO_SRC GameweekFixture.Outputs[ADO NET Source Output].Columns[gameweekId]">
@@ -11298,7 +11292,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input].Columns[IsScheduled]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input].Columns[IsScheduled]"
                           cachedDataType="bool"
                           cachedName="IsScheduled"
                           lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\ADO_SRC GameweekFixture.Outputs[ADO NET Source Output].Columns[IsScheduled]">
@@ -11319,38 +11313,38 @@ where [refTable].[GameweekKey] = ? and [refTable].[KickoffTime] = ? and [refTabl
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup Match Output]"
+                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input]">
+                      synchronousInputId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup No Match Output]"
+                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input]">
+                      synchronousInputId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup Error Output]"
+                      refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input]">
+                      synchronousInputId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -11551,7 +11545,7 @@ AND SeasonKey = ?</property>
                   startId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\ADO_SRC GameweekFixture.Outputs[ADO NET Source Output]" />
                 <path
                   refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only).Paths[Lookup Match Output]"
-                  endId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Inputs[Lookup Input]"
+                  endId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture.Outputs[Lookup Match Output]" />
                 <path
@@ -11578,7 +11572,7 @@ AND SeasonKey = ?</property>
                   refId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only).Paths[Lookup No Match Output1]"
                   endId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\OLEDB Update changed FactGameweekFixture.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
-                  startId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime.Outputs[Lookup No Match Output]" />
+                  startId="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled.Outputs[Lookup No Match Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -13202,7 +13196,7 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1184:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1185:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1183:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1184:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -13397,7 +13391,7 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[LatestTeamId] = ? and [ref
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1184:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1186:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1183:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1185:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -13871,7 +13865,7 @@ where [refTable].[PlayerPositionKey] = ? and [refTable].[FirstName] = ? and [ref
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1185:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1184:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14229,7 +14223,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1186:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\1185:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14994,34 +14988,34 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
-                  name="Lookup Match Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
-                  name="Lookup Match Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
                   name="Lookup Match Output"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
                   name="Lookup Match Output"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
                   name="Lookup Match Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
+                  name="Lookup Match Output"
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId.Inputs[OLE DB Command Input]"
@@ -15054,14 +15048,14 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 1]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
-                  name="Multicast Output 2"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 2]" />
-                <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Inputs[Lookup Input]"
                   name="Multicast Output 2"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
+                  name="Multicast Output 2"
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 2]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Union All Output 1]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Inputs[Multicast Input 1]"
@@ -16659,7 +16653,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\1187:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\1186:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -18001,6 +17995,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="214,42"
+          Id="Package\DFT FactPlayerCurrentStatus"
+          TopLeft="255,595" />
+        <NodeLayout
           Size="218,42"
           Id="Package\DFT FactPlayerDailyAttributes"
           TopLeft="250,707" />
@@ -18008,10 +18006,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="200,42"
           Id="Package\DFT FactPlayerDailyPrices"
           TopLeft="263,489" />
-        <NodeLayout
-          Size="214,42"
-          Id="Package\DFT FactPlayerCurrentStatus"
-          TopLeft="255,595" />
         <NodeLayout
           Size="230,42"
           Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture"
@@ -18229,6 +18223,288 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\DFT FactPlayerCurrentStatus">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="302,42"
+          Id="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats check cost changed"
+          TopLeft="376,766" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\DFT FactPlayerCurrentStatus\CMD Update FactPlayerCurrentStats"
+          TopLeft="387,868" />
+        <NodeLayout
+          Size="239,42"
+          Id="Package\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey"
+          TopLeft="369,347" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\DFT FactPlayerCurrentStatus\ADO_SRC PlayerPrices"
+          TopLeft="395,250" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\DFT FactPlayerCurrentStatus\LKP DimPlayerSeason"
+          TopLeft="405,567" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats"
+          TopLeft="391,668" />
+        <NodeLayout
+          Size="267,42"
+          Id="Package\DFT FactPlayerCurrentStatus\ADO_DST Insert FactPlayerCurrentStats"
+          TopLeft="721,767" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\DFT FactPlayerCurrentStatus\LKP DimTeamSeason"
+          TopLeft="407,447" />
+        <EdgeLayout
+          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup No Match Output]"
+          TopLeft="512.5,808">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,20.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup Match Output2]"
+          TopLeft="497.166666666667,710">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,18.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup Match Output1]"
+          TopLeft="495,609">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59"
+              Start="0,0"
+              End="0,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,19.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup Match Output]"
+          TopLeft="495.75,489">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,29.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactPlayerCurrentStatus.Paths[Derived Column Output]"
+          TopLeft="492.25,389">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactPlayerCurrentStatus.Paths[ADO NET Source Output]"
+          TopLeft="487.75,292">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup No Match Output1]"
+          TopLeft="527.666666666667,710">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="326.833333333333,57"
+              Start="0,0"
+              End="326.833333333333,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0623202301055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0623202301055"
+                    Point2="0,23.0623202301055"
+                    Point3="4,23.0623202301055" />
+                  <mssgle:LineSegment
+                    End="322.833333333333,23.0623202301055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="322.833333333333,23.0623202301055"
+                    Point2="326.833333333333,23.0623202301055"
+                    Point3="326.833333333333,27.0623202301055" />
+                  <mssgle:LineSegment
+                    End="326.833333333333,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="107.610279947917,28.0623202301055,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats check cost changed">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactPlayerCurrentStatus\ADO_SRC PlayerPrices">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT FactPlayerCurrentStatus\ADO_DST Insert FactPlayerCurrentStats">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DFT FactPlayerDailyAttributes">
     <LayoutInfo>
@@ -18784,9 +19060,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -18808,9 +19082,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -18948,93 +19220,87 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\DFT FactPlayerCurrentStatus">
+    design-time-name="Package\SEQ Fixtures\DFT DimTeamGameweekFixture">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="302,42"
-          Id="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats check cost changed"
-          TopLeft="376,766" />
+          Size="152,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason"
+          TopLeft="458,149" />
         <NodeLayout
-          Size="248,42"
-          Id="Package\DFT FactPlayerCurrentStatus\CMD Update FactPlayerCurrentStats"
-          TopLeft="387,868" />
+          Size="234,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP FactGameweekFixture Home"
+          TopLeft="275,627" />
         <NodeLayout
-          Size="239,42"
-          Id="Package\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey"
-          TopLeft="369,347" />
+          Size="255,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures"
+          TopLeft="425,750" />
         <NodeLayout
-          Size="184,42"
-          Id="Package\DFT FactPlayerCurrentStatus\ADO_SRC PlayerPrices"
-          TopLeft="395,250" />
+          Size="217,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\ADO_SRC GameweekFixtures"
+          TopLeft="424,63" />
         <NodeLayout
-          Size="181,42"
-          Id="Package\DFT FactPlayerCurrentStatus\LKP DimPlayerSeason"
-          TopLeft="405,567" />
+          Size="229,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture"
+          TopLeft="431,836" />
         <NodeLayout
-          Size="207,42"
-          Id="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats"
-          TopLeft="391,668" />
+          Size="204,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\CSPL Split home and away"
+          TopLeft="437,524" />
         <NodeLayout
-          Size="267,42"
-          Id="Package\DFT FactPlayerCurrentStatus\ADO_DST Insert FactPlayerCurrentStats"
-          TopLeft="721,767" />
+          Size="349,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\CMD Update GameweekKey, IsScheduled where changed"
+          TopLeft="784,1035" />
+        <NodeLayout
+          Size="417,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different"
+          TopLeft="745,934" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamSeason TeamKey"
+          TopLeft="427,243" />
+        <NodeLayout
+          Size="272,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamSeason OpponentTeamKey"
+          TopLeft="407,330" />
         <NodeLayout
           Size="178,42"
-          Id="Package\DFT FactPlayerCurrentStatus\LKP DimTeamSeason"
-          TopLeft="407,447" />
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\CNV Convert IsHome"
+          TopLeft="448,425" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture"
+          TopLeft="415,936" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP FactGameweekFixture Away"
+          TopLeft="604,628" />
         <EdgeLayout
-          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup No Match Output]"
-          TopLeft="512.5,808">
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Union All Output 1]"
+          TopLeft="549,792">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,52.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,20.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup Match Output2]"
-          TopLeft="497.166666666667,710">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,18.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup Match Output1]"
-          TopLeft="495,609">
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup No Match Output1]"
+          TopLeft="956,976">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -19052,232 +19318,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,19.9453125,96.3827734375,11.609375"
+              BoundingBox="-64.6750390625,17.75,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup Match Output]"
-          TopLeft="495.75,489">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,78"
-              Start="0,0"
-              End="0,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,29.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT FactPlayerCurrentStatus.Paths[Derived Column Output]"
-          TopLeft="492.25,389">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,58"
-              Start="0,0"
-              End="0,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT FactPlayerCurrentStatus.Paths[ADO NET Source Output]"
-          TopLeft="487.75,292">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT FactPlayerCurrentStatus.Paths[Lookup No Match Output1]"
-          TopLeft="527.666666666667,710">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="326.833333333333,57"
-              Start="0,0"
-              End="326.833333333333,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.0623202301055" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.0623202301055"
-                    Point2="0,23.0623202301055"
-                    Point3="4,23.0623202301055" />
-                  <mssgle:LineSegment
-                    End="322.833333333333,23.0623202301055" />
-                  <mssgle:CubicBezierSegment
-                    Point1="322.833333333333,23.0623202301055"
-                    Point2="326.833333333333,23.0623202301055"
-                    Point3="326.833333333333,27.0623202301055" />
-                  <mssgle:LineSegment
-                    End="326.833333333333,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="107.610279947917,28.0623202301055,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats check cost changed">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactPlayerCurrentStatus\ADO_SRC PlayerPrices">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactPlayerCurrentStatus\LKP FactPlayerCurrentStats">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT FactPlayerCurrentStatus\ADO_DST Insert FactPlayerCurrentStats">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\SEQ Fixtures\DFT DimTeamGameweekFixture">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="272,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamSeason OpponentTeamKey"
-          TopLeft="407,330" />
-        <NodeLayout
-          Size="225,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamSeason TeamKey"
-          TopLeft="427,243" />
-        <NodeLayout
-          Size="217,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\ADO_SRC GameweekFixtures"
-          TopLeft="424,63" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason"
-          TopLeft="458,149" />
-        <NodeLayout
-          Size="321,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different"
-          TopLeft="745,934" />
-        <NodeLayout
-          Size="255,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\UA Combine Home and Away fixtures"
-          TopLeft="425,750" />
-        <NodeLayout
-          Size="349,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\CMD Update GameweekKey, IsScheduled where changed"
-          TopLeft="738,1035" />
-        <NodeLayout
-          Size="232,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP FactGameweekFixture Away"
-          TopLeft="604,628" />
-        <NodeLayout
-          Size="234,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP FactGameweekFixture Home"
-          TopLeft="275,627" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture"
-          TopLeft="431,836" />
-        <NodeLayout
-          Size="204,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\CSPL Split home and away"
-          TopLeft="437,524" />
-        <NodeLayout
-          Size="258,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\ADO_DST DimTeamGameweekFixture"
-          TopLeft="415,936" />
         <EdgeLayout
           Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup No Match Output]"
           TopLeft="544.5,878">
@@ -19303,14 +19347,38 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup Match Output5]"
+          TopLeft="540,372">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53"
+              Start="0,0"
+              End="0,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,16.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup Match Output4]"
           TopLeft="582.333333333333,878">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="323.166666666667,56"
+              EndConnector="371.166666666667,56"
               Start="0,0"
-              End="323.166666666667,48.5">
+              End="371.166666666667,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -19321,20 +19389,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,22.633130962706"
                     Point3="4,22.633130962706" />
                   <mssgle:LineSegment
-                    End="319.166666666667,22.633130962706" />
+                    End="367.166666666667,22.633130962706" />
                   <mssgle:CubicBezierSegment
-                    Point1="319.166666666667,22.633130962706"
-                    Point2="323.166666666667,22.633130962706"
-                    Point3="323.166666666667,26.633130962706" />
+                    Point1="367.166666666667,22.633130962706"
+                    Point2="371.166666666667,22.633130962706"
+                    Point3="371.166666666667,26.633130962706" />
                   <mssgle:LineSegment
-                    End="323.166666666667,48.5" />
+                    End="371.166666666667,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="113.391946614583,27.633130962706,96.3827734375,11.609375"
+              BoundingBox="137.391946614583,27.633130962706,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19418,7 +19486,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-111.358053385417,52.7007014809042,96.3827734375,11.609375"
+              BoundingBox="-111.358053385416,52.7007014809042,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19490,8 +19558,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-70.5880143229166,29.6848249027237,26.8426953125,9.421875"
+              BoundingBox="-70.5880143229165,29.6848249027237,26.8426953125,9.421875"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Data Conversion Output]"
+          TopLeft="538,467">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57"
+              Start="0,0"
+              End="0,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -19526,7 +19616,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="61.3316666666667,30.0894941634241,25.67,11.2822265625"
+              BoundingBox="61.3316666666665,30.0894941634241,25.67,11.2822265625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19544,102 +19634,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Union All Output 1]"
-          TopLeft="549,792">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup No Match Output1]"
-          TopLeft="909,976">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59"
-              Start="0,0"
-              End="0,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,17.75,129.350078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="178,42"
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\CNV Convert IsHome"
-          TopLeft="448,425" />
-        <EdgeLayout
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Lookup Match Output5]"
-          TopLeft="540,372">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53"
-              Start="0,0"
-              End="0,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Fixtures\DFT DimTeamGameweekFixture.Paths[Data Conversion Output]"
-          TopLeft="538,467">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -19703,12 +19697,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP Update GameweekKey, IsScheduled if different">
+    design-time-name="Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimTeamGameweekFixture GameweekKey, IsScheduled if different">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">true</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -19718,7 +19712,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -19778,8 +19772,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimTeamSeason Home"
           TopLeft="136,242" />
         <NodeLayout
-          Size="407,42"
-          Id="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime"
+          Size="436,42"
+          Id="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled"
           TopLeft="289,495" />
         <NodeLayout
           Size="152,42"
@@ -19795,7 +19789,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           TopLeft="139,404" />
         <EdgeLayout
           Id="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only).Paths[Lookup No Match Output1]"
-          TopLeft="496.25,537">
+          TopLeft="503.5,537">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -19813,7 +19807,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,15.4453125,111.6127734375,11.609375"
+              BoundingBox="-64.6750390625,13.25,129.350078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19931,9 +19925,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="219.5,49"
+              EndConnector="234,49"
               Start="0,0"
-              End="219.5,41.5">
+              End="234,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -19944,20 +19938,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                     Point2="0,19.8299120234604"
                     Point3="4,19.8299120234604" />
                   <mssgle:LineSegment
-                    End="215.5,19.8299120234604" />
+                    End="230,19.8299120234604" />
                   <mssgle:CubicBezierSegment
-                    Point1="215.5,19.8299120234604"
-                    Point2="219.5,19.8299120234604"
-                    Point3="219.5,23.8299120234604" />
+                    Point1="230,19.8299120234604"
+                    Point2="234,19.8299120234604"
+                    Point3="234,23.8299120234604" />
                   <mssgle:LineSegment
-                    End="219.5,41.5" />
+                    End="234,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="61.55861328125,24.8299120234604,96.3827734375,11.609375"
+              BoundingBox="68.80861328125,24.8299120234604,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -19987,12 +19981,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture Only changed GameweekId or KickoffTime">
+    design-time-name="Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP FactGameweekFixture changed GameweekId, KickoffTime, IsScheduled">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">true</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -20002,7 +19996,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -20152,7 +20146,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
           TopLeft="1169.66666666667,1363">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20186,7 +20180,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
           TopLeft="329,1175">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20396,7 +20390,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
+          TopLeft="492,252">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84"
+              Start="0,0"
+              End="0,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
           TopLeft="547,926">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20432,31 +20450,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-          TopLeft="492,252">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,84"
-              Start="0,0"
-              End="0,76.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,76.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,32.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
           TopLeft="491,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20480,31 +20474,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-          TopLeft="493.25,484">
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+          TopLeft="402.333333333333,1048">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="259.166666666667,88"
               Start="0,0"
-              End="0,69.5">
+              End="259.166666666667,80.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
+                    End="0,31.4473067915691" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.4473067915691"
+                    Point2="0,35.4473067915691"
+                    Point3="4,35.4473067915691" />
+                  <mssgle:LineSegment
+                    End="255.166666666667,35.4473067915691" />
+                  <mssgle:CubicBezierSegment
+                    Point1="255.166666666667,35.4473067915691"
+                    Point2="259.166666666667,35.4473067915691"
+                    Point3="259.166666666667,39.4473067915691" />
+                  <mssgle:LineSegment
+                    End="259.166666666667,80.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
+              BoundingBox="81.3919466145835,40.4473067915691,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
           TopLeft="661.5,1178">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -20540,38 +20546,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-          TopLeft="402.333333333333,1048">
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+          TopLeft="493.25,484">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="259.166666666667,88"
+              EndConnector="0,77"
               Start="0,0"
-              End="259.166666666667,80.5">
+              End="0,69.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.4473067915691" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.4473067915691"
-                    Point2="0,35.4473067915691"
-                    Point3="4,35.4473067915691" />
-                  <mssgle:LineSegment
-                    End="255.166666666667,35.4473067915691" />
-                  <mssgle:CubicBezierSegment
-                    Point1="255.166666666667,35.4473067915691"
-                    Point2="259.166666666667,35.4473067915691"
-                    Point3="259.166666666667,39.4473067915691" />
-                  <mssgle:LineSegment
-                    End="259.166666666667,80.5" />
+                    End="0,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="81.3919466145835,40.4473067915691,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
