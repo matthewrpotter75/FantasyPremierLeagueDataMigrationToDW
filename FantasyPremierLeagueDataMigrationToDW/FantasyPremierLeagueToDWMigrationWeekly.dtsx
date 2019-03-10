@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeagueToDWMigrationWeekly"
   DTS:PackageType="5"
-  DTS:VersionBuild="435"
-  DTS:VersionGUID="{830B750C-0258-4F3E-8C7A-643A06723E62}">
+  DTS:VersionBuild="436"
+  DTS:VersionGUID="{6D286226-8C24-49D9-B1D6-EECD50C4C8A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -273,7 +273,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">07/03/2019</DTS:VariableValue>
+        DTS:DataType="8">08/03/2019</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -17516,34 +17516,34 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId.Inputs[OLE DB Command Input]"
@@ -17576,14 +17576,14 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 1]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Inputs[Lookup Input]"
-                      name="Multicast Output 2"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Outputs[Multicast Output 2]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
                       name="Multicast Output 2"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 2]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Inputs[Lookup Input]"
+                      name="Multicast Output 2"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Outputs[Multicast Output 2]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Union All Output 1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Inputs[Multicast Input 1]"
@@ -36461,6 +36461,10 @@ FROM dbo.fnGetPPGByPlayerPlayerPositionDificulty(" + (DT_WSTR,4)@[User::SeasonKe
                               name="PPG"
                               precision="4"
                               scale="2" />
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_DST PlayerPointsPerGame.Inputs[ADO NET Destination Input].ExternalColumns[LastUpdated]"
+                              dataType="dbTimeStamp"
+                              name="LastUpdated" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -37354,6 +37358,10 @@ where [refTable].[PlayerKey] = ? and [refTable].[OpponentDifficulty] = ? and [re
                               name="PPG"
                               precision="4"
                               scale="2" />
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10.Inputs[ADO NET Destination Input].ExternalColumns[LastUpdated]"
+                              dataType="dbTimeStamp"
+                              name="LastUpdated" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -38319,6 +38327,10 @@ where [refTable].[SeasonKey] = ? and [refTable].[GameweekKey] = ? and [refTable]
                               name="PPG"
                               precision="4"
                               scale="2" />
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5.Inputs[ADO NET Destination Input].ExternalColumns[LastUpdated]"
+                              dataType="dbTimeStamp"
+                              name="LastUpdated" />
                           </externalMetadataColumns>
                         </input>
                       </inputs>
@@ -40530,6 +40542,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer"
           TopLeft="100,357" />
         <NodeLayout
+          Size="201,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame"
+          TopLeft="108,131" />
+        <NodeLayout
           Size="252,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10"
           TopLeft="71,350" />
@@ -40541,10 +40557,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="269,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey"
           TopLeft="72,34" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame"
-          TopLeft="108,131" />
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables.PrecedenceConstraints[Constraint]"
           TopLeft="199.5,280">
@@ -43464,7 +43476,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
           TopLeft="266,1139">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43500,7 +43512,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
           TopLeft="1104.66666666667,1363">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43716,7 +43728,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
           TopLeft="339.333333333333,1047">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43752,7 +43764,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
           TopLeft="428.25,484">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43776,7 +43788,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
           TopLeft="595.5,1147">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43812,7 +43824,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
           TopLeft="483,926">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43848,7 +43860,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
           TopLeft="426,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -43872,7 +43884,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
           TopLeft="427,252">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -46729,344 +46741,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="382,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks10"
-          TopLeft="274,253" />
-        <NodeLayout
-          Size="292,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\CMD Update PlayerPointsPerGamePrevious10"
-          TopLeft="697,470" />
-        <NodeLayout
-          Size="251,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\LKP PlayerPointsPerGamePrevious10"
-          TopLeft="342,358" />
-        <NodeLayout
-          Size="280,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10"
-          TopLeft="284,473" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10.Paths[OLE DB Source Output]"
-          TopLeft="466.25,295">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,63"
-              Start="0,0"
-              End="0,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10.Paths[Lookup No Match Output]"
-          TopLeft="425.5,400">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,73"
-              Start="0,0"
-              End="0,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,26.9453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10.Paths[Lookup Match Output]"
-          TopLeft="508,400">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="335,70"
-              Start="0,0"
-              End="335,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.2660332541568" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.2660332541568"
-                    Point2="0,28.2660332541568"
-                    Point3="4,28.2660332541568" />
-                  <mssgle:LineSegment
-                    End="331,28.2660332541568" />
-                  <mssgle:CubicBezierSegment
-                    Point1="331,28.2660332541568"
-                    Point2="335,28.2660332541568"
-                    Point3="335,32.2660332541568" />
-                  <mssgle:LineSegment
-                    End="335,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="119.30861328125,33.2660332541568,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks10">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\LKP PlayerPointsPerGamePrevious10">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="370,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks"
-          TopLeft="279,252" />
-        <NodeLayout
-          Size="286,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\CMD Update PlayerPointsPerGamePrevious5"
-          TopLeft="697,470" />
-        <NodeLayout
-          Size="245,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5"
-          TopLeft="342,358" />
-        <NodeLayout
-          Size="274,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5"
-          TopLeft="290,476" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[OLE DB Source Output]"
-          TopLeft="464.25,294">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64"
-              Start="0,0"
-              End="0,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[Lookup No Match Output]"
-          TopLeft="426,400">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,76"
-              Start="0,0"
-              End="0,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,28.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[Lookup Match Output]"
-          TopLeft="504,400">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="336,70"
-              Start="0,0"
-              End="336,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.2725060827251" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.2725060827251"
-                    Point2="0,28.2725060827251"
-                    Point3="4,28.2725060827251" />
-                  <mssgle:LineSegment
-                    End="332,28.2725060827251" />
-                  <mssgle:CubicBezierSegment
-                    Point1="332,28.2725060827251"
-                    Point2="336,28.2725060827251"
-                    Point3="336,32.2725060827251" />
-                  <mssgle:LineSegment
-                    End="336,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="119.80861328125,33.2725060827251,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="271,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey\SCR_COM Set SeasonKey GameweekKey"
-          TopLeft="241,228" />
-        <NodeLayout
-          Size="199,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey\ADO_SRC DimGameweek"
-          TopLeft="273,92" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey.Paths[ADO NET Source Output]"
-          TopLeft="374.5,134">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,94"
-              Start="0,0"
-              End="0,86.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,86.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,35.25,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey\ADO_SRC DimGameweek">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame">
     <LayoutInfo>
       <GraphLayout
@@ -47087,6 +46761,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="316,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_SRC fnGetPPGByPlayerPlayerPositionDificulty"
           TopLeft="292,89" />
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame.Paths[Lookup No Match Output]"
+          TopLeft="454.333333333333,245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,24.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame.Paths[Lookup Match Output]"
           TopLeft="487.333333333333,245">
@@ -47145,30 +46843,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame.Paths[Lookup No Match Output]"
-          TopLeft="453.333333333333,245">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,68"
-              Start="0,0"
-              End="0,60.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,24.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -47178,7 +46852,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -47188,7 +46862,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -47205,6 +46879,344 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_SRC fnGetPPGByPlayerPlayerPositionDificulty">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="292,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\CMD Update PlayerPointsPerGamePrevious10"
+          TopLeft="697,470" />
+        <NodeLayout
+          Size="382,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks10"
+          TopLeft="274,253" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\LKP PlayerPointsPerGamePrevious10"
+          TopLeft="342,358" />
+        <NodeLayout
+          Size="280,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10"
+          TopLeft="284,473" />
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10.Paths[Lookup Match Output]"
+          TopLeft="508,400">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="335,70"
+              Start="0,0"
+              End="335,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2660332541568" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2660332541568"
+                    Point2="0,28.2660332541568"
+                    Point3="4,28.2660332541568" />
+                  <mssgle:LineSegment
+                    End="331,28.2660332541568" />
+                  <mssgle:CubicBezierSegment
+                    Point1="331,28.2660332541568"
+                    Point2="335,28.2660332541568"
+                    Point3="335,32.2660332541568" />
+                  <mssgle:LineSegment
+                    End="335,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="119.30861328125,33.2660332541568,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10.Paths[OLE DB Source Output]"
+          TopLeft="466.25,295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10.Paths[Lookup No Match Output]"
+          TopLeft="425.5,400">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,26.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks10">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\LKP PlayerPointsPerGamePrevious10">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="286,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\CMD Update PlayerPointsPerGamePrevious5"
+          TopLeft="697,470" />
+        <NodeLayout
+          Size="370,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks"
+          TopLeft="279,252" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5"
+          TopLeft="342,358" />
+        <NodeLayout
+          Size="274,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5"
+          TopLeft="290,476" />
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[Lookup Match Output]"
+          TopLeft="504,400">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="336,70"
+              Start="0,0"
+              End="336,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2725060827251" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2725060827251"
+                    Point2="0,28.2725060827251"
+                    Point3="4,28.2725060827251" />
+                  <mssgle:LineSegment
+                    End="332,28.2725060827251" />
+                  <mssgle:CubicBezierSegment
+                    Point1="332,28.2725060827251"
+                    Point2="336,28.2725060827251"
+                    Point3="336,32.2725060827251" />
+                  <mssgle:LineSegment
+                    End="336,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="119.80861328125,33.2725060827251,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[OLE DB Source Output]"
+          TopLeft="464.25,294">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[Lookup No Match Output]"
+          TopLeft="426,400">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,28.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="271,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey\SCR_COM Set SeasonKey GameweekKey"
+          TopLeft="241,228" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey\ADO_SRC DimGameweek"
+          TopLeft="273,92" />
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey.Paths[ADO NET Source Output]"
+          TopLeft="374.5,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,94"
+              Start="0,0"
+              End="0,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,35.25,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey\ADO_SRC DimGameweek">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
