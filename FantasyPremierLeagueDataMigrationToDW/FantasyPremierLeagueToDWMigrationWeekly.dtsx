@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeagueToDWMigrationWeekly"
   DTS:PackageType="5"
-  DTS:VersionBuild="451"
-  DTS:VersionGUID="{BB7917A8-FDAD-43F8-ABE0-C8D037EDDEBF}">
+  DTS:VersionBuild="452"
+  DTS:VersionGUID="{8D5A7F3F-DF3E-466D-8AF9-BE8F3ECBF52A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -273,7 +273,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">12/03/2019</DTS:VariableValue>
+        DTS:DataType="8">18/03/2019</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -15996,34 +15996,34 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId.Inputs[OLE DB Command Input]"
@@ -16056,14 +16056,14 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 1]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
-                      name="Multicast Output 2"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 2]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Inputs[Lookup Input]"
                       name="Multicast Output 2"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Outputs[Multicast Output 2]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
+                      name="Multicast Output 2"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 2]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Union All Output 1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Inputs[Multicast Input 1]"
@@ -28330,11 +28330,43 @@ where [refTable].[PlayerStatus] = ? and [refTable].[SeasonKey] = ? and [refTable
                           expressionType="Notify"
                           name="SqlCommand"
                           UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE dbo.FactPlayerHistory
-SET TotalPoints = ?
+SET TotalPoints = ?,
+[Minutes] = ?,
+GoalsScored = ?,
+Assists = ?,
+CleanSheets = ?,
+GoalsConceded = ?,
+OwnGoals = ?,
+PenaltiesSaved = ?,
+PenaltiesMissed = ?,
+YellowCards = ?,
+RedCards = ?,
+Saves = ?,
+Bonus = ?,
+BPS = ?,
+OpenPlayCrosses = ?,
+BigChancesCreated = ?,
+ClearancesBlocksInterceptions = ?,
+Recoveries = ?,
+KeyPasses = ?,
+Tackles = ?,
+WinningGoals = ?,
+AttemptedPasses = ?,
+CompletedPasses = ?,
+PenaltiesConceded = ?,
+BigChancesMissed = ?,
+ErrorsLeadingToGoal = ?,
+ErrorsLeadingToGoalAttempt = ?,
+Tackled = ?,
+Offside = ?,
+TargetMissed = ?,
+Fouls = ?,
+Dribbles = ?
 WHERE SeasonKey = ?
 AND GameweekKey = ?
 AND PlayerKey = ?
-AND OpponentTeamKey = ?</property>
+AND OpponentTeamKey = ?
+AND GameweekFixtureKey = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -28357,35 +28389,227 @@ AND OpponentTeamKey = ?</property>
                           name="OLE DB Command Input">
                           <inputColumns>
                             <inputColumn
-                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[OpponentTeamKey]"
-                              cachedDataType="i4"
-                              cachedName="OpponentTeamKey"
-                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[OpponentTeamKey]" />
-                            <inputColumn
                               refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[total_points]"
                               cachedDataType="i2"
                               cachedName="total_points"
                               externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                               lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[total_points]" />
                             <inputColumn
-                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[SeasonKey]"
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[GameweekFixtureKey]"
                               cachedDataType="i4"
-                              cachedName="SeasonKey"
-                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[SeasonKey]" />
+                              cachedName="GameweekFixtureKey"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[GameweekFixtureKey]" />
                             <inputColumn
-                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[gameweekId]"
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[OpponentTeamKey]"
                               cachedDataType="i4"
-                              cachedName="gameweekId"
-                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[gameweekId]" />
+                              cachedName="OpponentTeamKey"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[OpponentTeamKey]" />
                             <inputColumn
                               refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[PlayerKey]"
                               cachedDataType="i4"
                               cachedName="PlayerKey"
-                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
                               lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[gameweekId]"
+                              cachedDataType="i4"
+                              cachedName="gameweekId"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[gameweekId]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[SeasonKey]"
+                              cachedDataType="i4"
+                              cachedName="SeasonKey"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[SeasonKey]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[fouls]"
+                              cachedDataType="ui1"
+                              cachedName="fouls"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[fouls]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[dribbles]"
+                              cachedDataType="ui1"
+                              cachedName="dribbles"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[dribbles]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[tackled]"
+                              cachedDataType="ui1"
+                              cachedName="tackled"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[tackled]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[offside]"
+                              cachedDataType="ui1"
+                              cachedName="offside"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[offside]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[target_missed]"
+                              cachedDataType="ui1"
+                              cachedName="target_missed"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[target_missed]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[attempted_passes]"
+                              cachedDataType="ui1"
+                              cachedName="attempted_passes"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[attempted_passes]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[completed_passes]"
+                              cachedDataType="ui1"
+                              cachedName="completed_passes"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[completed_passes]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[penalties_conceded]"
+                              cachedDataType="ui1"
+                              cachedName="penalties_conceded"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[penalties_conceded]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[big_chances_missed]"
+                              cachedDataType="ui1"
+                              cachedName="big_chances_missed"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[big_chances_missed]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[errors_leading_to_goal]"
+                              cachedDataType="ui1"
+                              cachedName="errors_leading_to_goal"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[errors_leading_to_goal]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[errors_leading_to_goal_attempt]"
+                              cachedDataType="ui1"
+                              cachedName="errors_leading_to_goal_attempt"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[errors_leading_to_goal_attempt]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[big_chances_created]"
+                              cachedDataType="ui1"
+                              cachedName="big_chances_created"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[big_chances_created]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[clearances_blocks_interceptions]"
+                              cachedDataType="ui1"
+                              cachedName="clearances_blocks_interceptions"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[clearances_blocks_interceptions]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[recoveries]"
+                              cachedDataType="ui1"
+                              cachedName="recoveries"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[recoveries]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[key_passes]"
+                              cachedDataType="ui1"
+                              cachedName="key_passes"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[key_passes]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[winning_goals]"
+                              cachedDataType="ui1"
+                              cachedName="winning_goals"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[winning_goals]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[tackles]"
+                              cachedDataType="ui1"
+                              cachedName="tackles"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[tackles]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[open_play_crosses]"
+                              cachedDataType="ui1"
+                              cachedName="open_play_crosses"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[open_play_crosses]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[bonus]"
+                              cachedDataType="ui1"
+                              cachedName="bonus"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[bonus]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[bps]"
+                              cachedDataType="i2"
+                              cachedName="bps"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[bps]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[yellow_cards]"
+                              cachedDataType="ui1"
+                              cachedName="yellow_cards"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[yellow_cards]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[red_cards]"
+                              cachedDataType="ui1"
+                              cachedName="red_cards"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[red_cards]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[own_goals]"
+                              cachedDataType="ui1"
+                              cachedName="own_goals"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[own_goals]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[penalties_saved]"
+                              cachedDataType="ui1"
+                              cachedName="penalties_saved"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[penalties_saved]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[penalties_missed]"
+                              cachedDataType="ui1"
+                              cachedName="penalties_missed"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[penalties_missed]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[minutes]"
+                              cachedDataType="i4"
+                              cachedName="minutes"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[minutes]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[goals_scored]"
+                              cachedDataType="ui1"
+                              cachedName="goals_scored"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[goals_scored]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[assists]"
+                              cachedDataType="ui1"
+                              cachedName="assists"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[assists]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[clean_sheets]"
+                              cachedDataType="ui1"
+                              cachedName="clean_sheets"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[clean_sheets]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[goals_conceded]"
+                              cachedDataType="ui1"
+                              cachedName="goals_conceded"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[goals_conceded]" />
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].Columns[saves]"
+                              cachedDataType="ui1"
+                              cachedName="saves"
+                              externalMetadataColumnId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[saves]" />
                           </inputColumns>
                           <externalMetadataColumns
                             isUsed="True">
@@ -28413,7 +28637,7 @@ AND OpponentTeamKey = ?</property>
                             </externalMetadataColumn>
                             <externalMetadataColumn
                               refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                              dataType="i4"
+                              dataType="ui1"
                               name="Param_2">
                               <properties>
                                 <property
@@ -28424,7 +28648,7 @@ AND OpponentTeamKey = ?</property>
                             </externalMetadataColumn>
                             <externalMetadataColumn
                               refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                              dataType="i4"
+                              dataType="ui1"
                               name="Param_3">
                               <properties>
                                 <property
@@ -28435,8 +28659,360 @@ AND OpponentTeamKey = ?</property>
                             </externalMetadataColumn>
                             <externalMetadataColumn
                               refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                              dataType="i4"
+                              dataType="ui1"
                               name="Param_4">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                              dataType="ui1"
+                              name="Param_5">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                              dataType="ui1"
+                              name="Param_6">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                              dataType="ui1"
+                              name="Param_7">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                              dataType="ui1"
+                              name="Param_8">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                              dataType="ui1"
+                              name="Param_9">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                              dataType="ui1"
+                              name="Param_10">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                              dataType="ui1"
+                              name="Param_11">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                              dataType="ui1"
+                              name="Param_12">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                              dataType="i2"
+                              name="Param_13">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                              dataType="ui1"
+                              name="Param_14">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                              dataType="ui1"
+                              name="Param_15">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                              dataType="ui1"
+                              name="Param_16">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                              dataType="ui1"
+                              name="Param_17">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                              dataType="ui1"
+                              name="Param_18">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                              dataType="ui1"
+                              name="Param_19">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                              dataType="ui1"
+                              name="Param_20">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                              dataType="ui1"
+                              name="Param_21">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                              dataType="ui1"
+                              name="Param_22">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                              dataType="ui1"
+                              name="Param_23">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
+                              dataType="ui1"
+                              name="Param_24">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
+                              dataType="ui1"
+                              name="Param_25">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
+                              dataType="ui1"
+                              name="Param_26">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
+                              dataType="ui1"
+                              name="Param_27">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
+                              dataType="ui1"
+                              name="Param_28">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
+                              dataType="ui1"
+                              name="Param_29">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
+                              dataType="ui1"
+                              name="Param_30">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
+                              dataType="ui1"
+                              name="Param_31">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">65</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
+                              dataType="i4"
+                              name="Param_32">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
+                              dataType="i4"
+                              name="Param_33">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
+                              dataType="i4"
+                              name="Param_34">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
+                              dataType="i4"
+                              name="Param_35">
+                              <properties>
+                                <property
+                                  dataType="System.Int32"
+                                  description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                                  name="DBParamInfoFlags">81</property>
+                              </properties>
+                            </externalMetadataColumn>
+                            <externalMetadataColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\CMD Update Player Gameweek Points.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
+                              dataType="i4"
+                              name="Param_36">
                               <properties>
                                 <property
                                   dataType="System.Int32"
@@ -29782,7 +30358,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[GameweekFixtureKey] = ? and [re
                           name="SqlCommand"
                           UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, SeasonKey, GameweekFixtureKey, TotalPoints 
 
-
+, [Minutes] 
 FROM dbo.FactPlayerHistory</property>
                         <property
                           dataType="System.String"
@@ -29791,9 +30367,9 @@ FROM dbo.FactPlayerHistory</property>
                           name="SqlCommandParam"
                           UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, SeasonKey, GameweekFixtureKey, TotalPoints 
 
-
+, [Minutes] 
 FROM dbo.FactPlayerHistory) [refTable]
-where [refTable].[TotalPoints] = ? and [refTable].[SeasonKey] = ? and [refTable].[GameweekFixtureKey] = ? and [refTable].[PlayerKey] = ?</property>
+where [refTable].[TotalPoints] = ? and [refTable].[Minutes] = ? and [refTable].[SeasonKey] = ? and [refTable].[GameweekFixtureKey] = ? and [refTable].[PlayerKey] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the type of connection used to access the reference dataset."
@@ -29824,12 +30400,12 @@ where [refTable].[TotalPoints] = ? and [refTable].[SeasonKey] = ? and [refTable]
                         <property
                           dataType="System.String"
                           description="Indicates whether to reference metadata in an XML format."
-                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SeasonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GameweekFixtureKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalPoints" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                          name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SeasonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GameweekFixtureKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TotalPoints" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Minutes" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[total_points]};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[SeasonKey]};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[GameweekFixtureKey]};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};</property>
+                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[total_points]};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[minutes]};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[SeasonKey]};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[GameweekFixtureKey]};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -29910,6 +30486,22 @@ where [refTable].[TotalPoints] = ? and [refTable].[SeasonKey] = ? and [refTable]
                                   dataType="System.String"
                                   description="Specifies the column in the reference table that a column joins."
                                   name="JoinToReferenceColumn">TotalPoints</property>
+                                <property
+                                  dataType="System.Null"
+                                  description="Specifies the column in the reference table from which a column is copied."
+                                  name="CopyFromReferenceColumn" />
+                              </properties>
+                            </inputColumn>
+                            <inputColumn
+                              refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP FactPlayerHistory Points match.Inputs[Lookup Input].Columns[minutes]"
+                              cachedDataType="i4"
+                              cachedName="minutes"
+                              lineageId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\UA Combine Home and Away Fixtures.Outputs[Union All Output 1].Columns[minutes]">
+                              <properties>
+                                <property
+                                  dataType="System.String"
+                                  description="Specifies the column in the reference table that a column joins."
+                                  name="JoinToReferenceColumn">Minutes</property>
                                 <property
                                   dataType="System.Null"
                                   description="Specifies the column in the reference table from which a column is copied."
@@ -35639,7 +36231,7 @@ where [refTable].[PlayerKey] = ? and [refTable].[PlayerPositionKey] = ? and [ref
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\39:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\40:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\41:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\42:invalid};</property>
+                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1149:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1150:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1151:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1152:invalid};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -41960,49 +42552,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
-          TopLeft="266,1139">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="72,40"
-              Start="0,0"
-              End="72,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.1538461538462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.1538461538462"
-                    Point2="0,16.1538461538462"
-                    Point3="4,16.1538461538462" />
-                  <mssgle:LineSegment
-                    End="68,16.1538461538462" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68,16.1538461538462"
-                    Point2="72,16.1538461538462"
-                    Point3="72,20.1538461538462" />
-                  <mssgle:LineSegment
-                    End="72,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
           TopLeft="1104.66666666667,1363">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42032,9 +42586,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+          TopLeft="266,1139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72,40"
+              Start="0,0"
+              End="72,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.1538461538462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.1538461538462"
+                    Point2="0,16.1538461538462"
+                    Point3="4,16.1538461538462" />
+                  <mssgle:LineSegment
+                    End="68,16.1538461538462" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68,16.1538461538462"
+                    Point2="72,16.1538461538462"
+                    Point3="72,20.1538461538462" />
+                  <mssgle:LineSegment
+                    End="72,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42068,9 +42654,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42104,9 +42688,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42129,7 +42711,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,16.25,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,18.4453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -42213,108 +42795,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,15.75,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,17.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-          TopLeft="339.333333333333,1047">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="256.166666666667,58"
-              Start="0,0"
-              End="256.166666666667,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.3629976580796" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.3629976580796"
-                    Point2="0,23.3629976580796"
-                    Point3="4,23.3629976580796" />
-                  <mssgle:LineSegment
-                    End="252.166666666667,23.3629976580796" />
-                  <mssgle:CubicBezierSegment
-                    Point1="252.166666666667,23.3629976580796"
-                    Point2="256.166666666667,23.3629976580796"
-                    Point3="256.166666666667,27.3629976580796" />
-                  <mssgle:LineSegment
-                    End="256.166666666667,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="79.8919466145833,28.3629976580796,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-          TopLeft="428.25,484">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77"
-              Start="0,0"
-              End="0,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
-          TopLeft="595.5,1147">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="338.166666666667,65"
-              Start="0,0"
-              End="338.166666666667,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.7132352941176" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.7132352941176"
-                    Point2="0,38.7132352941176"
-                    Point3="4,38.7132352941176" />
-                  <mssgle:LineSegment
-                    End="334.166666666667,38.7132352941176" />
-                  <mssgle:CubicBezierSegment
-                    Point1="334.166666666667,38.7132352941176"
-                    Point2="338.166666666667,38.7132352941176"
-                    Point3="338.166666666667,42.7132352941176" />
-                  <mssgle:LineSegment
-                    End="338.166666666667,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="120.891946614583,43.7132352941176,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
           TopLeft="483,926">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42350,31 +42836,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
-          TopLeft="426,378">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64"
-              Start="0,0"
-              End="0,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,22.4453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
           TopLeft="427,252">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42398,6 +42860,126 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
+          TopLeft="426,378">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,22.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+          TopLeft="428.25,484">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77"
+              Start="0,0"
+              End="0,69.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,28.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+          TopLeft="595.5,1147">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="338.166666666667,65"
+              Start="0,0"
+              End="338.166666666667,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.7132352941176" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.7132352941176"
+                    Point2="0,38.7132352941176"
+                    Point3="4,38.7132352941176" />
+                  <mssgle:LineSegment
+                    End="334.166666666667,38.7132352941176" />
+                  <mssgle:CubicBezierSegment
+                    Point1="334.166666666667,38.7132352941176"
+                    Point2="338.166666666667,38.7132352941176"
+                    Point3="338.166666666667,42.7132352941176" />
+                  <mssgle:LineSegment
+                    End="338.166666666667,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="120.891946614584,43.7132352941176,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+          TopLeft="339.333333333333,1047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="256.166666666667,58"
+              Start="0,0"
+              End="256.166666666667,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3629976580796" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.3629976580796"
+                    Point2="0,23.3629976580796"
+                    Point3="4,23.3629976580796" />
+                  <mssgle:LineSegment
+                    End="252.166666666667,23.3629976580796" />
+                  <mssgle:CubicBezierSegment
+                    Point1="252.166666666667,23.3629976580796"
+                    Point2="256.166666666667,23.3629976580796"
+                    Point3="256.166666666667,27.3629976580796" />
+                  <mssgle:LineSegment
+                    End="256.166666666667,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="79.8919466145835,28.3629976580796,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Derived Column Output1]"
           TopLeft="428.5,154">
           <EdgeLayout.Curve>
@@ -42416,9 +42998,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42440,9 +43020,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42464,9 +43042,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42488,9 +43064,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -42512,9 +43086,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -44577,9 +45149,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44601,9 +45171,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -44997,9 +45565,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -45011,7 +45577,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -45021,7 +45587,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -45236,43 +45802,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="199,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\LKP PlayerPointsPerGame"
-          TopLeft="356,203" />
+          Size="316,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_SRC fnGetPPGByPlayerPlayerPositionDificulty"
+          TopLeft="292,89" />
         <NodeLayout
           Size="241,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\CMD Update PlayerPointsPerGame"
           TopLeft="684,311" />
         <NodeLayout
-          Size="316,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_SRC fnGetPPGByPlayerPlayerPositionDificulty"
-          TopLeft="292,89" />
+          Size="199,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\LKP PlayerPointsPerGame"
+          TopLeft="356,203" />
         <NodeLayout
           Size="228,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_DST PlayerPointsPerGame"
           TopLeft="340,313" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame.Paths[ADO NET Source Output]"
-          TopLeft="452.75,131">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72"
-              Start="0,0"
-              End="0,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame.Paths[Lookup No Match Output]"
           TopLeft="453.833333333333,245">
@@ -45333,9 +45877,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame.Paths[ADO NET Source Output]"
+          TopLeft="452.75,131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_SRC fnGetPPGByPlayerPlayerPositionDificulty">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\LKP PlayerPointsPerGame">
     <Properties>
@@ -45360,14 +45936,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_SRC fnGetPPGByPlayerPlayerPositionDificulty">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\ADO_DST PlayerPointsPerGame">
     <Properties>
       <Property>
@@ -45381,21 +45949,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="292,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\CMD Update PlayerPointsPerGamePrevious10"
-          TopLeft="697,470" />
-        <NodeLayout
-          Size="251,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\LKP PlayerPointsPerGamePrevious10"
-          TopLeft="342,358" />
-        <NodeLayout
           Size="382,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks10"
           TopLeft="274,253" />
         <NodeLayout
+          Size="292,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\CMD Update PlayerPointsPerGamePrevious10"
+          TopLeft="697,470" />
+        <NodeLayout
           Size="280,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10"
           TopLeft="284,473" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\LKP PlayerPointsPerGamePrevious10"
+          TopLeft="342,358" />
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10.Paths[OLE DB Source Output]"
           TopLeft="466.25,295">
@@ -45415,7 +45983,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -45482,6 +46052,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks10">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\LKP PlayerPointsPerGamePrevious10">
     <Properties>
       <Property>
@@ -45504,22 +46090,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks10">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10\ADO_DST PlayerPointsPerGamePrevious10">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5">
     <LayoutInfo>
@@ -45530,39 +46100,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\CMD Update PlayerPointsPerGamePrevious5"
           TopLeft="696,470" />
         <NodeLayout
-          Size="245,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5"
-          TopLeft="342,358" />
+          Size="274,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5"
+          TopLeft="290,479" />
         <NodeLayout
           Size="370,42"
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\OLE_SRC fnGetPPGByPlayerPlayerPositionDificultyGameweeks"
           TopLeft="278,250" />
         <NodeLayout
-          Size="274,42"
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5"
-          TopLeft="290,479" />
-        <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[OLE DB Source Output]"
-          TopLeft="463.75,292">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66"
-              Start="0,0"
-              End="0,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="245,42"
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5"
+          TopLeft="342,358" />
         <EdgeLayout
           Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[Lookup No Match Output]"
           TopLeft="426,400">
@@ -45623,27 +46171,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5.Paths[OLE DB Source Output]"
+          TopLeft="463.75,292">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5">
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5">
     <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
@@ -45658,8 +46215,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\ADO_DST PlayerPointsPerGamePrevious5">
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5\LKP PlayerPointsPerGamePrevious5">
     <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
