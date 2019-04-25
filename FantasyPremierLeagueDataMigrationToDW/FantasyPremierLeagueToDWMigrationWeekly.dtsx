@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeagueToDWMigrationWeekly"
   DTS:PackageType="5"
-  DTS:VersionBuild="452"
-  DTS:VersionGUID="{8D5A7F3F-DF3E-466D-8AF9-BE8F3ECBF52A}">
+  DTS:VersionBuild="453"
+  DTS:VersionGUID="{1E1E42FF-8E8B-4A40-AE13-FBD420322542}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -273,7 +273,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">18/03/2019</DTS:VariableValue>
+        DTS:DataType="8">25/04/2019</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -434,6 +434,7 @@ FROM dbo.fnGetPPGByPlayerPlayerPositionDificultyGameweeks(13,0, 4, 30, 5);</DTS:
         <DTS:Executable
           DTS:refId="Package\SEQ Weekly updated data\DFT DimPlayerNews"
           DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{E84FDD46-16C7-4118-8DE7-EB04C9E060C8}"
           DTS:ExecutableType="Microsoft.Pipeline"
@@ -9417,6 +9418,7 @@ where [refTable].[TeamKey] = ? and [refTable].[OpponentTeamKey] = ? and [refTabl
         <DTS:Executable
           DTS:refId="Package\SEQ Weekly updated data\DFT PlayerPrices"
           DTS:CreationName="Microsoft.Pipeline"
+          DTS:DelayValidation="True"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{09005EE5-4817-43B8-B1BF-6149DEBBBD6D}"
           DTS:ExecutableType="Microsoft.Pipeline"
@@ -12614,6 +12616,7 @@ where [refTable].[PlayerId] = ?</property>
         <DTS:Executable
           DTS:refId="Package\SEQ Weekly updated data\EPT PlayerDailyPrices"
           DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:DelayValidation="True"
           DTS:Description="Execute Package Task"
           DTS:DTSID="{3A5295A0-01CB-4C52-8613-639401D5AF58}"
           DTS:ExecutableType="Microsoft.ExecutePackageTask"
@@ -15996,34 +15999,34 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate.Outputs[Derived Column Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
-                      name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer.Inputs[Lookup Input]"
                       name="Lookup Match Output"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check team for different position players.Outputs[Lookup Match Output]" />
                     <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Inputs[Lookup Input]"
                       name="Lookup Match Output"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 1]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup Match Output]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
+                      name="Lookup Match Output"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek.Outputs[Lookup Match Output]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId.Inputs[OLE DB Command Input]"
@@ -16056,14 +16059,14 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 1]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
-                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Inputs[Lookup Input]"
-                      name="Multicast Output 2"
-                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Outputs[Multicast Output 2]" />
-                    <path
-                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
                       name="Multicast Output 2"
                       startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Output new players to DimNewPlayers and Dim Players.Outputs[Multicast Output 2]" />
+                    <path
+                      refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+                      endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Inputs[Lookup Input]"
+                      name="Multicast Output 2"
+                      startId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Outputs[Multicast Output 2]" />
                     <path
                       refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Union All Output 1]"
                       endId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId.Inputs[Multicast Input 1]"
@@ -18524,7 +18527,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\1147:invalid};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\1246:invalid};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -23409,7 +23412,7 @@ where [refTable].[PlayerId] = ? and [refTable].[SeasonKey] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerCurrentStats (using PlayerHistory aggregation)\1148:invalid};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerCurrentStats (using PlayerHistory aggregation)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerCurrentStats (using PlayerHistory aggregation)\1247:invalid};#{Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerCurrentStats (using PlayerHistory aggregation)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -34214,6 +34217,7 @@ where [refTable].[TotalPoints] = ? and [refTable].[Minutes] = ? and [refTable].[
             <DTS:Executable
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT Populate SeasonKey GameweekKey"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{D99CFD99-8FEE-46EA-96F7-66BDA0AE7B37}"
               DTS:ExecutableType="Microsoft.Pipeline"
@@ -35340,6 +35344,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <DTS:Executable
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{1A6F9F12-A8AA-4003-BB9D-0B2C61962DDA}"
               DTS:ExecutableType="Microsoft.Pipeline"
@@ -36231,7 +36236,7 @@ where [refTable].[PlayerKey] = ? and [refTable].[PlayerPositionKey] = ? and [ref
                           containsID="true"
                           dataType="System.String"
                           description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1149:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1150:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1151:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1152:invalid};</property>
+                          name="ParameterMap">#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1248:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1249:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1250:invalid};#{Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGame\1251:invalid};</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -36387,6 +36392,7 @@ where [refTable].[PlayerKey] = ? and [refTable].[PlayerPositionKey] = ? and [ref
             <DTS:Executable
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious10"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{AC84201A-DD6E-4E7D-B7A1-E5ED23B34EB0}"
               DTS:ExecutableType="Microsoft.Pipeline"
@@ -37448,6 +37454,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[GameweekKey] = ? and [refTable]
             <DTS:Executable
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT PlayerPointsPerGamePrevious5"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{59E541FF-C4A7-4890-9F75-BA5CFBFC3400}"
               DTS:ExecutableType="Microsoft.Pipeline"
@@ -38525,6 +38532,7 @@ where [refTable].[SeasonKey] = ? and [refTable].[GameweekKey] = ? and [refTable]
             <DTS:Executable
               DTS:refId="Package\SEQ Weekly updated data\SEQ Populate PlayerPointsPerGames tables\DFT Populate SeasonKey GameweekKey"
               DTS:CreationName="Microsoft.Pipeline"
+              DTS:DelayValidation="True"
               DTS:Description="Data Flow Task"
               DTS:DTSID="{4CC4D47A-B28C-4F4E-9F28-1A8783DB613C}"
               DTS:ExecutableType="Microsoft.Pipeline"
@@ -42556,7 +42564,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
           TopLeft="1104.66666666667,1363">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42590,7 +42598,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 2]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 21]"
           TopLeft="266,1139">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42800,7 +42808,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
           TopLeft="483,926">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42836,7 +42844,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
           TopLeft="427,252">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42860,7 +42868,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
           TopLeft="426,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42884,7 +42892,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
           TopLeft="428.25,484">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42908,7 +42916,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
           TopLeft="595.5,1147">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -42944,7 +42952,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
+          Id="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
           TopLeft="339.333333333333,1047">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -45572,75 +45580,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP FactPlayerHistory Points match">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP DimSeason">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">true</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP DimTeamSeason OpponentTeamKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP FactGameweekFixture Away">
     <Properties>
       <Property>
@@ -45733,7 +45672,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\ADO_SRC PlayerHistory">
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\ADO_DST FactPlayerHistory">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -45741,7 +45680,76 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\ADO_DST FactPlayerHistory">
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP FactPlayerHistory Points match">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP DimSeason">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">true</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\LKP DimTeamSeason OpponentTeamKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SEQ Weekly updated data\SEQ Populate or update DimPlayer\DFT FactPlayerHistory\ADO_SRC PlayerHistory">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
