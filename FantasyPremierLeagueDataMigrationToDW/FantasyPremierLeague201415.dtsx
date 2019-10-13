@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="8/31/2017 12:49:19 AM"
@@ -8,12 +8,12 @@
   DTS:DelayValidation="True"
   DTS:DTSID="{90BE23DF-3C9C-49DD-BF0E-7457F28C5C75}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeague201415"
   DTS:PackageType="5"
   DTS:VersionBuild="52"
-  DTS:VersionGUID="{97FE739F-4F49-4609-ADA9-926EF95DD637}">
+  DTS:VersionGUID="{8C0D09BC-4172-4CE2-82A7-1C3C95F26C1C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -38,7 +38,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAzoldNEjHW0+p+92fO7Eo4wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADF9Q2+Mugdty15SVAFc97nhHTgYAN9z47qFkqSjfPPdgAAAAAOgAAAAAIAACAAAAC3QYR6LNue8BfWYDBGcXlIM5nNMTVsPpZHuirdN1Rm03AAAAC5I1/5wcciei8O6cQsKPH/3AvT/DkBe46c02FGXf9gz1arH0hbxiQWDuqhk2bUtF0I2C9b62UztppiLxRInLDZrlJEt4lqcFIKilUAZe/h6042ULDHf2I3Aqy4bl58dhB9gzT5TyS08suHIcUwlDGYQAAAAHEpMknJPOT6tATQRzLxSNI6ktXkfks3EisvaPpz8r95f0tuNIESlL1+m/JYmVuz0AQkNwGXSHZK2JSxaatE9Ao</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAABpDKyY2qhkqkS29pnk/QiQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADlnhA0XdW4DY3kcPvRomN5FqS9tiD9yIYXXNrZ0+P5wQAAAAAOgAAAAAIAACAAAABhYBluVceFWpj3ah2Fs0OxJDztEOEcLTdL4eDLCPhMAXAAAABlYS+ulqACxCiYT/Psup1wbbvZkABQT1mmY/6xJXTqp2x0e+RAlnbmuQs2lUF1Gqw8WWBalLcW7FEz1xWW7AyPeDBBqGqTJlq3QupAbemmTPm4y8B18avoQMYaQEwZmC5loA+8vtmwZc9yl7T76ErCQAAAALafm9ryUoF5iC2MvgtHVF93KcW3bHsPxVf8QoWDs6ITUgNdOsbCQCMPlOZidr2DRfKPkyK6XOlsl2Nat20vKtI</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -584,7 +584,7 @@ ORDER BY Gameweek</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
 
 FROM dbo.DimTeam</property>
                 <property
@@ -592,7 +592,7 @@ FROM dbo.DimTeam</property>
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
 
 FROM dbo.DimTeam) [refTable]
 where [refTable].[TeamShortName] = ?</property>
@@ -747,7 +747,7 @@ where [refTable].[TeamShortName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
 
 FROM dbo.DimTeam</property>
                 <property
@@ -755,7 +755,7 @@ FROM dbo.DimTeam</property>
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
 
 FROM dbo.DimTeam) [refTable]
 where [refTable].[TeamName] = ?</property>
@@ -910,14 +910,14 @@ where [refTable].[TeamName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT SeasonKey, GameweekKey, HomeTeamKey, AwayTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT SeasonKey, GameweekKey, HomeTeamKey, AwayTeamKey
 FROM dbo.FactGameweekFixture</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT SeasonKey, GameweekKey, HomeTeamKey, AwayTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT SeasonKey, GameweekKey, HomeTeamKey, AwayTeamKey
 FROM dbo.FactGameweekFixture) [refTable]
 where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable].[HomeTeamKey] = ? and [refTable].[AwayTeamKey] = ?</property>
                 <property
@@ -1480,7 +1480,7 @@ WHERE SeasonKey = 9</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey,  TeamKey, OpponentTeamKey, IsHome
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey,  TeamKey, OpponentTeamKey, IsHome
 FROM dbo.DimTeamGameweekFixture
 WHERE SeasonKey = 9</property>
                 <property
@@ -1488,7 +1488,7 @@ WHERE SeasonKey = 9</property>
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey,  TeamKey, OpponentTeamKey, IsHome
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey,  TeamKey, OpponentTeamKey, IsHome
 FROM dbo.DimTeamGameweekFixture
 WHERE SeasonKey = 9) [refTable]
 where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ? and [refTable].[OpponentTeamKey] = ?</property>
@@ -3072,14 +3072,14 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer) [refTable]
 where [refTable].[PlayerName] = ?</property>
                 <property
@@ -3117,7 +3117,7 @@ where [refTable].[PlayerName] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\1152:invalid};</property>
+                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\924:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3233,14 +3233,14 @@ where [refTable].[PlayerName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
 FROM dbo.DimTeam</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamShortName AS NVARCHAR(3)) AS TeamShortName
 FROM dbo.DimTeam) [refTable]
 where [refTable].[TeamShortName] = ?</property>
                 <property
@@ -3278,7 +3278,7 @@ where [refTable].[TeamShortName] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\1153:invalid};</property>
+                  name="ParameterMap">#{Package\DFT PlayerData to FactPlayerHistory\925:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3394,7 +3394,7 @@ where [refTable].[TeamShortName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
 
 FROM dbo.DimTeam</property>
                 <property
@@ -3402,7 +3402,7 @@ FROM dbo.DimTeam</property>
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
 
 FROM dbo.DimTeam) [refTable]
 where [refTable].[TeamName] = ?</property>
@@ -3557,14 +3557,14 @@ where [refTable].[TeamName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
 FROM dbo.FactGameweekFixture</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
 FROM dbo.FactGameweekFixture) [refTable]
 where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable].[HomeTeamKey] = ? and [refTable].[AwayTeamKey] = ?</property>
                 <property
@@ -3764,7 +3764,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
 FROM dbo.FactGameweekFixture
 WHERE SeasonKey = 9
 AND GameweekKey NOT IN (31,34)</property>
@@ -3773,7 +3773,7 @@ AND GameweekKey NOT IN (31,34)</property>
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey, AwayTeamKey
 FROM dbo.FactGameweekFixture
 WHERE SeasonKey = 9
 AND GameweekKey NOT IN (31,34)) [refTable]
@@ -3960,7 +3960,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey
 FROM dbo.FactGameweekFixture
 WHERE SeasonKey = 9
 AND GameweekKey NOT IN (28,31,34)</property>
@@ -3969,7 +3969,7 @@ AND GameweekKey NOT IN (28,31,34)</property>
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT GameweekFixtureKey, GameweekKey, SeasonKey, HomeTeamKey
 FROM dbo.FactGameweekFixture
 WHERE SeasonKey = 9
 AND GameweekKey NOT IN (28,31,34)) [refTable]
@@ -4155,14 +4155,14 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ? and [refTable]
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT SeasonKey, GameweekFixtureKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT SeasonKey, GameweekFixtureKey
 FROM dbo.FactPlayerHistory</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT SeasonKey, GameweekFixtureKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT SeasonKey, GameweekFixtureKey
 FROM dbo.FactPlayerHistory) [refTable]
 where [refTable].[SeasonKey] = ? and [refTable].[GameweekFixtureKey] = ?</property>
                 <property
@@ -6659,14 +6659,14 @@ FROM  dbo.PlayerDetails</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer) [refTable]
 where [refTable].[PlayerName] = ?</property>
                 <property
@@ -7350,14 +7350,14 @@ FROM dbo.PlayerDetails</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer) [refTable]
 where [refTable].[PlayerName] = ?</property>
                 <property
@@ -7511,14 +7511,14 @@ where [refTable].[PlayerName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, SeasonKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, SeasonKey
 FROM dbo.DimPlayerAttribute</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, SeasonKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, SeasonKey
 FROM dbo.DimPlayerAttribute) [refTable]
 where [refTable].[PlayerKey] = ? and [refTable].[SeasonKey] = ?</property>
                 <property
@@ -7670,14 +7670,14 @@ where [refTable].[PlayerKey] = ? and [refTable].[SeasonKey] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerPositionKey, CAST(SingularName AS NVARCHAR(50)) AS Position
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerPositionKey, CAST(SingularName AS NVARCHAR(50)) AS Position
 FROM dbo.DimPlayerPosition</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerPositionKey, CAST(SingularName AS NVARCHAR(50)) AS Position
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerPositionKey, CAST(SingularName AS NVARCHAR(50)) AS Position
 FROM dbo.DimPlayerPosition) [refTable]
 where [refTable].[Position] = ?</property>
                 <property
@@ -7830,14 +7830,14 @@ where [refTable].[Position] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
 FROM dbo.DimTeam</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT TeamKey, CAST(TeamName AS NVARCHAR(50)) AS TeamName
 FROM dbo.DimTeam) [refTable]
 where [refTable].[TeamName] = ?</property>
                 <property
@@ -7875,7 +7875,7 @@ where [refTable].[TeamName] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DFT PlayerDetails to DimPlayerAttribute\1154:invalid};</property>
+                  name="ParameterMap">#{Package\DFT PlayerDetails to DimPlayerAttribute\926:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8504,14 +8504,14 @@ FROM dbo.PlayerDetails</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, CAST(PlayerName AS NVARCHAR(100)) AS PlayerName
 FROM dbo.DimPlayer) [refTable]
 where [refTable].[PlayerName] = ?</property>
                 <property
@@ -8665,14 +8665,14 @@ where [refTable].[PlayerName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, SeasonKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT PlayerKey, SeasonKey
 FROM dbo.DimPlayerSeason</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, SeasonKey
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT PlayerKey, SeasonKey
 FROM dbo.DimPlayerSeason) [refTable]
 where [refTable].[PlayerKey] = ? and [refTable].[SeasonKey] = ?</property>
                 <property
@@ -9453,13 +9453,13 @@ where [refTable].[PlayerKey] = ? and [refTable].[SeasonKey] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimTeam]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimTeam]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimTeam]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimTeam]) [refTable]
 where [refTable].[TeamName] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -10178,13 +10178,13 @@ where [refTable].[TeamName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimTeam]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimTeam]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimTeam]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimTeam]) [refTable]
 where [refTable].[TeamName] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -10351,13 +10351,13 @@ where [refTable].[TeamName] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimTeamSeason]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimTeamSeason]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimTeamSeason]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimTeamSeason]) [refTable]
 where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
                 <property
                   dataType="System.Int32"

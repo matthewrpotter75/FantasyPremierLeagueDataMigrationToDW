@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/28/2017 10:55:23 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="MATTASUS\Matthew"
   DTS:DTSID="{9D38E690-9B90-462D-BCEA-D731C9C45B81}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeagueToDWMigration"
   DTS:PackageType="5"
   DTS:VersionBuild="355"
-  DTS:VersionGUID="{209821E6-9DEE-42B4-AB19-41D91EB21D7C}">
+  DTS:VersionGUID="{B25D337F-3327-4CDF-805B-1FFFA873E41B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -192,7 +192,7 @@ AND pa.SeasonKey = 13</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">12/01/2019</DTS:VariableValue>
+        DTS:DataType="8">26/08/2019</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
