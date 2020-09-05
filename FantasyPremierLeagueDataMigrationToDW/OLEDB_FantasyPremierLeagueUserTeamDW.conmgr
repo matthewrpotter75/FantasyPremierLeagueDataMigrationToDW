@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MATTASUS_SQL2017.FantasyPremierLeagueUserTeamDW"
+  DTS:DTSID="{8B92646B-C2A6-453E-837A-D2633D2729D4}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeamDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

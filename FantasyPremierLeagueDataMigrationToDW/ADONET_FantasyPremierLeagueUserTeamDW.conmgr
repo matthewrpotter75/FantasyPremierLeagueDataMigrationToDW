@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MATTASUS_SQL2017.FantasyPremierLeagueUserTeamDW1"
+  DTS:DTSID="{7E2E4939-A5F3-455B-AB6B-5CDDC0021130}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeamDW;Integrated Security=True;Application Name=SSIS-FantasyPremierLeagueDataMigrationToDW-{7E2E4939-A5F3-455B-AB6B-5CDDC0021130}MATTASUS\SQL2017.FantasyPremierLeagueUserTeam;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

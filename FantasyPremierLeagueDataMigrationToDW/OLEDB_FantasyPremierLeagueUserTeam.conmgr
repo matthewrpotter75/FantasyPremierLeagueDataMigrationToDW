@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MATTASUS_SQL2017.FantasyPremierLeagueUserTeam.FantasyPremierLeagueUserTeam"
+  DTS:DTSID="{BA1D83AB-131E-42CC-A9B9-1E79D2AF5D4E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;User ID=FantasyPremierLeagueUserTeam;Initial Catalog=FantasyPremierLeagueUserTeam;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RQlBXNWfUyozsRQX1RrcgAAAAACAAAAAAAQZgAAAAEAACAAAAALNjJ8s9HvECBD2T0B+p4CckNTRykIBFV25oEU3mO6uwAAAAAOgAAAAAIAACAAAADgsP5qw+hKWkhqe1VXdS0ApXq5+wedkkN8BJvCTJbBKrAAAADSYod8BLpyqh76wfzGVJV9/FsTSmgXtqUcaPLMCRkMmgZjKZuDB28XMZvTdFAuLpS9zNozgHGO3THy/VoJHqJjLbd/JwRiQR3Xdic/ufJDmZZNSSBtKMaPdnjTPsGUB83HwNRDqlwkU4CKQA/WZ66GaEwiyLDKT4ee9rr5ajZPd3SLNn8DTN94ya0nqEuaD38338GUutdp15r9LoEPkZc5TVwrmiGvUoLvf/PoFAOfBUAAAABXjBgz3Cp9BpLAw19Df1k78ah4iXtoFfFdo6AT/0cYpnD2LD8BDI6a9i3E9yofxSs7/9P8/cf8ZFDSsmG17hPr</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
