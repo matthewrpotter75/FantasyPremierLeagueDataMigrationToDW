@@ -1,0 +1,1279 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/4/2020 4:35:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MATTASUS"
+  DTS:CreatorName="MattASUS\Matthew"
+  DTS:DelayValidation="True"
+  DTS:DTSID="{DB1D4F1F-6754-4E4B-A6FE-91547C4F0B67}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:ISOLevel="4096"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="UserTeamPickStagingToUserTeamPickTransfer"
+  DTS:PackagePriorityClass="1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{80D8F682-9FBE-48EA-9899-EF90006B0B88}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6FE108AE-9EE2-468B-8105-CEE3B617DF1C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT UserTeamPickStaging to UserTeamPick Transfer"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO_DST UserTeamPickStaging"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."UserTeamPick"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">1000</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Connections[IDbConnection]"
+                  connectionManagerID="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MATTASUS_SQL2017.FantasyPremierLeagueUserTeam]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].Columns[playerid]"
+                      cachedDataType="i4"
+                      cachedName="playerid"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[playerid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[playerid]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].Columns[position]"
+                      cachedDataType="i4"
+                      cachedName="position"
+                      cachedSortKeyPosition="3"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[position]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[position]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].Columns[multiplier]"
+                      cachedDataType="i4"
+                      cachedName="multiplier"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[multiplier]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[multiplier]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].Columns[is_captain]"
+                      cachedDataType="bool"
+                      cachedName="is_captain"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[is_captain]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[is_captain]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].Columns[is_vice_captain]"
+                      cachedDataType="bool"
+                      cachedName="is_vice_captain"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[is_vice_captain]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[is_vice_captain]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].Columns[userteamid]"
+                      cachedDataType="i4"
+                      cachedName="userteamid"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[userteamid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[userteamid]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].Columns[gameweekid]"
+                      cachedDataType="i4"
+                      cachedName="gameweekid"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[gameweekid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[gameweekid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[playerid]"
+                      dataType="i4"
+                      name="playerid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[position]"
+                      dataType="i4"
+                      name="position" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[multiplier]"
+                      dataType="i4"
+                      name="multiplier" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[is_captain]"
+                      dataType="bool"
+                      name="is_captain" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[is_vice_captain]"
+                      dataType="bool"
+                      name="is_vice_captain" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[userteamid]"
+                      dataType="i4"
+                      name="userteamid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input].ExternalColumns[gameweekid]"
+                      dataType="i4"
+                      name="gameweekid" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO_SRC UserTeamPick"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT userteamid
+,gameweekid
+,position
+FROM dbo.UserTeamPick WITH (NOLOCK)
+ORDER BY userteamid ,gameweekid ,position</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">1000</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Connections[IDbConnection]"
+                  connectionManagerID="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MATTASUS_SQL2017.FantasyPremierLeagueUserTeam]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output]"
+                  isSorted="true"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[userteamid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].ExternalColumns[userteamid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[userteamid]"
+                      name="userteamid"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[gameweekid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].ExternalColumns[gameweekid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[gameweekid]"
+                      name="gameweekid"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[position]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].ExternalColumns[position]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[position]"
+                      name="position"
+                      sortKeyPosition="3"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].ExternalColumns[userteamid]"
+                      dataType="i4"
+                      name="userteamid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].ExternalColumns[gameweekid]"
+                      dataType="i4"
+                      name="gameweekid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].ExternalColumns[position]"
+                      dataType="i4"
+                      name="position" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[userteamid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[userteamid]"
+                      name="userteamid" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[gameweekid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[gameweekid]"
+                      name="gameweekid" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[position]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[position]"
+                      name="position" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO_SRC UserTeamPickStaging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT playerid
+,position
+,multiplier
+,is_captain
+,is_vice_captain
+,userteamid
+,gameweekid
+FROM dbo.UserTeamPickStaging WITH (NOLOCK)
+ORDER BY userteamid ,gameweekid ,position</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">1000</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Connections[IDbConnection]"
+                  connectionManagerID="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MATTASUS_SQL2017.FantasyPremierLeagueUserTeam]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output]"
+                  isSorted="true"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[playerid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[playerid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[playerid]"
+                      name="playerid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[position]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[position]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[position]"
+                      name="position"
+                      sortKeyPosition="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[multiplier]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[multiplier]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[multiplier]"
+                      name="multiplier"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[is_captain]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[is_captain]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[is_captain]"
+                      name="is_captain"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[is_vice_captain]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[is_vice_captain]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[is_vice_captain]"
+                      name="is_vice_captain"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[userteamid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[userteamid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[userteamid]"
+                      name="userteamid"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[gameweekid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[gameweekid]"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[gameweekid]"
+                      name="gameweekid"
+                      sortKeyPosition="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[playerid]"
+                      dataType="i4"
+                      name="playerid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[position]"
+                      dataType="i4"
+                      name="position" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[multiplier]"
+                      dataType="i4"
+                      name="multiplier" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[is_captain]"
+                      dataType="bool"
+                      name="is_captain" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[is_vice_captain]"
+                      dataType="bool"
+                      name="is_vice_captain" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[userteamid]"
+                      dataType="i4"
+                      name="userteamid" />
+                    <externalMetadataColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].ExternalColumns[gameweekid]"
+                      dataType="i4"
+                      name="gameweekid" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[playerid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[playerid]"
+                      name="playerid" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[position]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[position]"
+                      name="position" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[multiplier]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[multiplier]"
+                      name="multiplier" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[is_captain]"
+                      dataType="bool"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[is_captain]"
+                      name="is_captain" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[is_vice_captain]"
+                      dataType="bool"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[is_vice_captain]"
+                      name="is_vice_captain" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[userteamid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[userteamid]"
+                      name="userteamid" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[gameweekid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[gameweekid]"
+                      name="gameweekid" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="CSPL Filter non matching rows"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Inputs[Conditional Split Input].Columns[existinguserteamid]"
+                      cachedDataType="i4"
+                      cachedName="existinguserteamid"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[existinguserteamid]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Non match]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Non match"
+                  synchronousInputId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[existinguserteamid]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(existinguserteamid)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="MRJ UserTeamPickStaging matched to UserTeamPick"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[position]"
+                      cachedDataType="i4"
+                      cachedName="position"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[position]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[userteamid]"
+                      cachedDataType="i4"
+                      cachedName="userteamid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[userteamid]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[gameweekid]"
+                      cachedDataType="i4"
+                      cachedName="gameweekid"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[gameweekid]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[playerid]"
+                      cachedDataType="i4"
+                      cachedName="playerid"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[playerid]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[multiplier]"
+                      cachedDataType="i4"
+                      cachedName="multiplier"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[multiplier]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[is_captain]"
+                      cachedDataType="bool"
+                      cachedName="is_captain"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[is_captain]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[is_vice_captain]"
+                      cachedDataType="bool"
+                      cachedName="is_vice_captain"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output].Columns[is_vice_captain]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Right Input].Columns[userteamid]"
+                      cachedDataType="i4"
+                      cachedName="userteamid"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[userteamid]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Right Input].Columns[gameweekid]"
+                      cachedDataType="i4"
+                      cachedName="gameweekid"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[gameweekid]" />
+                    <inputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Right Input].Columns[position]"
+                      cachedDataType="i4"
+                      cachedName="position"
+                      cachedSortKeyPosition="3"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output].Columns[position]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[existinguserteamid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[existinguserteamid]"
+                      name="existinguserteamid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Right Input].Columns[userteamid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[playerid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[playerid]"
+                      name="playerid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[playerid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[position]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[position]"
+                      name="position"
+                      sortKeyPosition="3">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[position]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[multiplier]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[multiplier]"
+                      name="multiplier">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[multiplier]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[is_captain]"
+                      dataType="bool"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[is_captain]"
+                      name="is_captain">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[is_captain]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[is_vice_captain]"
+                      dataType="bool"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[is_vice_captain]"
+                      name="is_vice_captain">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[is_vice_captain]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[userteamid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[userteamid]"
+                      name="userteamid"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[userteamid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[gameweekid]"
+                      dataType="i4"
+                      lineageId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output].Columns[gameweekid]"
+                      name="gameweekid"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input].Columns[gameweekid]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[ADO NET Source Output]"
+              endId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Left Input]"
+              name="ADO NET Source Output"
+              startId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[ADO NET Source Output1]"
+              endId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Inputs[Merge Join Right Input]"
+              name="ADO NET Source Output"
+              startId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[Merge Join Output]"
+              endId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[Non match]"
+              endId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging.Inputs[ADO NET Destination Input]"
+              name="Non match"
+              startId="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows.Outputs[Non match]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Delete dups from staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{85206708-455B-4B39-AAD4-9822CF9C5A3C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Delete dups from staging table"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
+          SQLTask:SqlStatementSource=";WITH dups AS&#xA;(&#xA;&#x9;SELECT userteamid, gameweekid, position&#xA;&#x9;FROM dbo.UserTeamPickStaging WITH (NOLOCK)&#xA;&#x9;GROUP BY userteamid, gameweekid, position&#xA;&#x9;HAVING COUNT(*) &gt; 1&#xA;)&#xA;DELETE st&#xA;FROM dbo.UserTeamPickStaging st WITH (NOLOCK)&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM dups&#xA;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;AND position = st.position&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Delete inserted UserTeamPickStaging rows to UserTeamPick"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{852eb746-d69a-4e83-be4f-fa5da57ac296}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Delete inserted UserTeamPickStaging rows to UserTeamPick"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
+          SQLTask:SqlStatementSource="--Delete UserTeamPickStaging rows already on UserTeamPick&#xA;DELETE st&#xA;FROM dbo.UserTeamPickStaging st&#xA;WHERE EXISTS&#xA;(&#xA; SELECT 1&#xA; FROM dbo.UserTeamPick WITH (NOLOCK)&#xA; WHERE userteamid = st.userteamid&#xA; AND gameweekid = st.gameweekid&#xA; AND position = st.position&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Delete UserTeamPickStaging rows already on UserTeamPick"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{103E3C80-47FF-4D6C-860D-B6BD712F2180}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Delete UserTeamPickStaging rows already on UserTeamPick"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
+          SQLTask:SqlStatementSource="--Delete UserTeamPickStaging rows already on UserTeamPick&#xA;DELETE st&#xA;FROM dbo.UserTeamPickStaging st&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM dbo.UserTeamPick WITH (NOLOCK)&#xA;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;AND position = st.position&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Insert dups into dup table for later inspection"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C52D5CA6-72C9-4C8F-B710-0301B13D1F0A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Insert dups into dup table for later inspection"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
+          SQLTask:SqlStatementSource=";WITH dups AS&#xA;(&#xA;&#x9;SELECT userteamid, gameweekid, position&#xA;&#x9;FROM dbo.UserTeamPickStaging WITH (NOLOCK)&#xA;&#x9;GROUP BY userteamid, gameweekid, position&#xA;&#x9;HAVING COUNT(*) &gt; 1&#xA;)&#xA;INSERT INTO dbo.UserTeamPickStagingDups&#xA;SELECT st.*&#xA;FROM dbo.UserTeamPickStaging st WITH (NOLOCK)&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM dups&#xA;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;AND position = st.position&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E44C0705-103E-4542-BDFC-05B48437BF37}"
+      DTS:From="Package\SQL Delete UserTeamPickStaging rows already on UserTeamPick"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL Insert dups into dup table for later inspection" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A89BB73F-0EBE-4F8A-8B47-C10933CCA613}"
+      DTS:From="Package\SQL Insert dups into dup table for later inspection"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SQL Delete dups from staging table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{700EF55D-5B64-42CC-819B-B86F4A4203B9}"
+      DTS:From="Package\SQL Delete dups from staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DFT UserTeamPickStaging to UserTeamPick Transfer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{925D219C-F37C-405F-B8A1-8387C80EDA96}"
+      DTS:From="Package\DFT UserTeamPickStaging to UserTeamPick Transfer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\SQL Delete inserted UserTeamPickStaging rows to UserTeamPick" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnInformation]"
+      DTS:CreationName="OnInformation"
+      DTS:DTSID="{5091B8FA-B986-43C3-8274-FF693C01404B}"
+      DTS:EventID="6881357"
+      DTS:EventName="OnInformation"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{B05FAC23-E188-4961-80F2-C41F95CF0301}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables />
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="328,42"
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer"
+          TopLeft="347,382" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\SQL Delete dups from staging table"
+          TopLeft="389,269" />
+        <NodeLayout
+          Size="384,42"
+          Id="Package\SQL Delete UserTeamPickStaging rows already on UserTeamPick"
+          TopLeft="322,66" />
+        <NodeLayout
+          Size="315,42"
+          Id="Package\SQL Insert dups into dup table for later inspection"
+          TopLeft="355,166" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="513.25,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="512.25,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="511.5,311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71"
+              Start="0,0"
+              End="0,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="385,42"
+          Id="Package\SQL Delete inserted UserTeamPickStaging rows to UserTeamPick"
+          TopLeft="322,484" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="512.75,424">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT UserTeamPickStaging to UserTeamPick Transfer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="230,42"
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging"
+          TopLeft="382,62" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\CSPL Filter non matching rows"
+          TopLeft="397,264" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick"
+          TopLeft="688,65" />
+        <NodeLayout
+          Size="241,47"
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\MRJ UserTeamPickStaging matched to UserTeamPick"
+          TopLeft="387,167" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging"
+          TopLeft="391,364" />
+        <EdgeLayout
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[Non match]"
+          TopLeft="507.25,306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.31193359375,20.37548828125,48.6238671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[Merge Join Output]"
+          TopLeft="508,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[ADO NET Source Output1]"
+          TopLeft="785,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-238.666666666667,60"
+              Start="0,0"
+              End="-238.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.762572135202" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.762572135202"
+                    Point2="0,35.762572135202"
+                    Point3="-4,35.762572135202" />
+                  <mssgle:LineSegment
+                    End="-234.666666666667,35.762572135202" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-234.666666666667,35.762572135202"
+                    Point2="-238.666666666667,35.762572135202"
+                    Point3="-238.666666666667,39.762572135202" />
+                  <mssgle:LineSegment
+                    End="-238.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer.Paths[ADO NET Source Output]"
+          TopLeft="497.333333333333,104">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPick">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_DST UserTeamPickStaging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT UserTeamPickStaging to UserTeamPick Transfer\ADO_SRC UserTeamPickStaging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -5,6 +5,10 @@
   DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeam;Integrated Security=True;Application Name=SSIS-FantasyPremierLeagueDataMigrationToDW-{257AC8FD-943C-4D99-94F4-445A12D8EA2E}MATTASUS\SQL2017.FantasyPremierLeagueUserTeam;" />
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;User ID=FantasyPremierLeagueUserTeam202021;Initial Catalog=FantasyPremierLeagueUserTeam202021;Application Name=SSIS-FantasyPremierLeagueDataMigrationToDW-{257AC8FD-943C-4D99-94F4-445A12D8EA2E}MATTASUS\SQL2017.FantasyPremierLeagueUserTeam;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RQlBXNWfUyozsRQX1RrcgAAAAACAAAAAAAQZgAAAAEAACAAAABuK6UuE4YDQ6EvC3SLkZVz0sXu30LS+i4CHUdMVnM8JgAAAAAOgAAAAAIAACAAAABdFsWJa+D6sPUMQ6xkDvPo2WLkp0pmms/M0/CYBMnXcaAAAABbPXm6lKrOJ7XY8L1E2PCBBq+J3h5tE6x4JDnK7IzwDonQgxfWlm+wN8V9T4xCmVFmG9obqAJH9yM8D/D+huP14Un2Sy+rcVjZ+ryFC5CQjLZ0ILvu6J/QMTtS9kEE/AtAai+3enZsgJ/HUuaGM/J8GZdeZXsAENazcQaqEdhryUsDt2BXfsG0p7YJhDuAxCUQdOR5dkhEVBRACHdeOKMqQAAAAAEuOZKY74S8W0m41r9CP69rLF1YxaUpPOkelz8ONtT9prt4Yrz4fRBJmypSesXSHOgwQYllP6RXO4vnQ4B3cWs=</DTS:Password>
+    </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
