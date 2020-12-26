@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:DelayValidation="True"
   DTS:ObjectName="MATTASUS_SQL2017.FantasyPremierLeagueUserTeam"
   DTS:DTSID="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
   DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -8,7 +9,7 @@
       DTS:ConnectionString="Data Source=MATTASUS\SQL2017;User ID=FantasyPremierLeagueUserTeam202021;Initial Catalog=FantasyPremierLeagueUserTeam202021;Application Name=SSIS-FantasyPremierLeagueDataMigrationToDW-{257AC8FD-943C-4D99-94F4-445A12D8EA2E}MATTASUS\SQL2017.FantasyPremierLeagueUserTeam;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RQlBXNWfUyozsRQX1RrcgAAAAACAAAAAAAQZgAAAAEAACAAAABuK6UuE4YDQ6EvC3SLkZVz0sXu30LS+i4CHUdMVnM8JgAAAAAOgAAAAAIAACAAAABdFsWJa+D6sPUMQ6xkDvPo2WLkp0pmms/M0/CYBMnXcaAAAABbPXm6lKrOJ7XY8L1E2PCBBq+J3h5tE6x4JDnK7IzwDonQgxfWlm+wN8V9T4xCmVFmG9obqAJH9yM8D/D+huP14Un2Sy+rcVjZ+ryFC5CQjLZ0ILvu6J/QMTtS9kEE/AtAai+3enZsgJ/HUuaGM/J8GZdeZXsAENazcQaqEdhryUsDt2BXfsG0p7YJhDuAxCUQdOR5dkhEVBRACHdeOKMqQAAAAAEuOZKY74S8W0m41r9CP69rLF1YxaUpPOkelz8ONtT9prt4Yrz4fRBJmypSesXSHOgwQYllP6RXO4vnQ4B3cWs=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RQlBXNWfUyozsRQX1RrcgAAAAACAAAAAAAQZgAAAAEAACAAAADTPDnqmYCObMp6db6hpQt3bk5HVmEFroqhseF/y2jxyAAAAAAOgAAAAAIAACAAAADUR9lhwFq41OQts+nDMnl/9R7ofWEgSo7HxEkEExu68KAAAAA0lvfvlEtZOb/Z+Bx6GsgIFCy3ShoSpjywD0uwqCVn41lH4/vDfPuGZzFxYepqk9T+QRDyd4ZunANDDM9BaBAH14Cz/ZJmX6KeniQ/ZU0dr6ml79viCw0TudQ7l/ytUUda8E+vaxAz8q4PT8CivGocBR7LsJV/3EMaLi2arT7IbXcU9lN5EgsEdj+QVijg2DaOADcgiitPpc1MJsC7+7FvQAAAAHFcx39zKeJaDg2Jn+oLZjvMTMJi8WilNJ4gizJ+eJizw0an2nbOOYEzlOvn/9pQX4FJCAIzko59kMrgINBPCK8=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

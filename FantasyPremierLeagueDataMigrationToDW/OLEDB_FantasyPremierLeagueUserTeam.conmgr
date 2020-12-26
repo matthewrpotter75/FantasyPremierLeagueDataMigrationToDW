@@ -8,10 +8,10 @@
     <DTS:ConnectionManager
       DTS:Retain="True"
       DTS:ConnectUsingManagedIdentity="True"
-      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;User ID=FantasyPremierLeagueUserTeam202021;Initial Catalog=FantasyPremierLeagueUserTeam202021;Connection Timeout=300;Provider=SQLNCLI11.1;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;User ID=FantasyPremierLeagueUserTeam202021;Initial Catalog=FantasyPremierLeagueUserTeam202021;Provider=SQLNCLI11.1;Auto Translate=False;connection timeout=300;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RQlBXNWfUyozsRQX1RrcgAAAAACAAAAAAAQZgAAAAEAACAAAAAcHZDGgW26GeYSL4Zl4fMiBcOoZ9iopKhqdz+NU0UXUgAAAAAOgAAAAAIAACAAAAAo7Gz7+X/QkhejYN92Y2vljKByHeQ51UEl6nEM88oV7qAAAADdyio07N22yXeLrM6S5kBeGG7O3/g6l1ZPJun2AzLiGE2lzTascxrDdLUQKjcKdPJONBZSn79Wp9E9109UYgN2dS2T9AQyE7q1I3V75TneYdf3z+Sxq0tysUvoT9ruBawIagLW8O6OkNbbRJykUtQ7a28DfJIGcmvasAtTCZDVpWf4FcxGucCLHY/pYpl0lc6yij6eSpWhcrmTxLiJpwahQAAAAHcWfeKXOK1yZ5qdKvzPsuEaZ9Yj3U45vdv17fncu7Tj38yTX6caAEaqxACCRdBjzjrml6Fcb3YRZwTAaA4ksRY=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RQlBXNWfUyozsRQX1RrcgAAAAACAAAAAAAQZgAAAAEAACAAAACGqJEpgHHlk4S9Xs7n0nXaX6f4xFR3P9Hj0RAsz2qdrQAAAAAOgAAAAAIAACAAAACNATeJcUAl3ykFv/qDhjaFbsuEVWFQ/V7f9TFyVNIlX6AAAAD8y6p/epI3iaMOFOfaDNo/3C5yKG+hSMOKGYJTqo9BGusvSZikdCB+Tf7djaZvmUV/3POoiRNjdpuPXEsO4G3sdWDNPa6YjYzPsTWIZggnlWd3GDAuoHcsulAiqAh9oi/AGZxL47quNxX9N2wQZKuS3H3qGSYj4mjJVgHSS348cqViMbuLuw5WaE4vk8l8SdfZ0GeWoo7CO6YsUofs1y72QAAAALVktFQveJXF4k5e1lzFOgwt/Ua+KBlPV8b6dmE0/63mpJV/MRCj4EIMB1jUajiGJu5ICuP5wOwSIv6lBEDkL74=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
