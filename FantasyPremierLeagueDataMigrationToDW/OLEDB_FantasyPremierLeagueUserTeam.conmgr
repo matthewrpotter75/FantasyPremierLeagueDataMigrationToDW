@@ -7,11 +7,9 @@
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Retain="True"
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
       DTS:ConnectUsingManagedIdentity="True"
-      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;User ID=FantasyPremierLeagueUserTeam202021;Initial Catalog=FantasyPremierLeagueUserTeam202021;Provider=SQLNCLI11.1;Auto Translate=False;connection timeout=300;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA0RQlBXNWfUyozsRQX1RrcgAAAAACAAAAAAAQZgAAAAEAACAAAACGqJEpgHHlk4S9Xs7n0nXaX6f4xFR3P9Hj0RAsz2qdrQAAAAAOgAAAAAIAACAAAACNATeJcUAl3ykFv/qDhjaFbsuEVWFQ/V7f9TFyVNIlX6AAAAD8y6p/epI3iaMOFOfaDNo/3C5yKG+hSMOKGYJTqo9BGusvSZikdCB+Tf7djaZvmUV/3POoiRNjdpuPXEsO4G3sdWDNPa6YjYzPsTWIZggnlWd3GDAuoHcsulAiqAh9oi/AGZxL47quNxX9N2wQZKuS3H3qGSYj4mjJVgHSS348cqViMbuLuw5WaE4vk8l8SdfZ0GeWoo7CO6YsUofs1y72QAAAALVktFQveJXF4k5e1lzFOgwt/Ua+KBlPV8b6dmE0/63mpJV/MRCj4EIMB1jUajiGJu5ICuP5wOwSIv6lBEDkL74=</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeam;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;connection timeout=300;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

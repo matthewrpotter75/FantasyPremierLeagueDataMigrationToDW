@@ -7,12 +7,12 @@
   DTS:CreatorName="MattASUS\Matthew"
   DTS:DTSID="{886C6960-C475-4047-97C6-7C50DEFBC7ED}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.123"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeagueToDWMigrationNewSeason"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{E5968CED-FC06-42AF-A355-F6CA06061ED8}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{E2F60DF6-2455-4C3A-88FA-32604C1AB270}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,8 @@
       DTS:ObjectName="OLEDB FantasyPremierLeagueDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueDW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -57,7 +59,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">23/08/2020</DTS:VariableValue>
+        DTS:DataType="8">23/08/2021</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -5162,7 +5164,7 @@ where [refTable].[IsTeamHome] = ? and [refTable].[SeasonKey] = ? and [refTable].
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Reference table data\DFT DimTeamDifficulty\949:invalid};#{Package\SEQ Reference table data\DFT DimTeamDifficulty\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};#{Package\SEQ Reference table data\DFT DimTeamDifficulty\LKP DimTeamSeason.Outputs[Lookup Match Output].Columns[TeamKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Reference table data\DFT DimTeamDifficulty\516:invalid};#{Package\SEQ Reference table data\DFT DimTeamDifficulty\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};#{Package\SEQ Reference table data\DFT DimTeamDifficulty\LKP DimTeamSeason.Outputs[Lookup Match Output].Columns[TeamKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5337,7 +5339,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Reference table data\DFT DimTeamDifficulty\950:invalid};#{Package\SEQ Reference table data\DFT DimTeamDifficulty\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Reference table data\DFT DimTeamDifficulty\517:invalid};#{Package\SEQ Reference table data\DFT DimTeamDifficulty\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6526,6 +6528,10 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
           Size="180,42"
           Id="Package\SEQ Reference table data\DFT DimTeamSeason"
           TopLeft="106,518" />
+        <NodeLayout
+          Size="307,42"
+          Id="Package\SEQ Reference table data\SQL Add dates into DimDate for the new season"
+          TopLeft="36,317" />
         <EdgeLayout
           Id="Package\SEQ Reference table data.PrecedenceConstraints[Constraint]"
           TopLeft="185.25,69">
@@ -6636,10 +6642,6 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="307,42"
-          Id="Package\SEQ Reference table data\SQL Add dates into DimDate for the new season"
-          TopLeft="36,317" />
         <EdgeLayout
           Id="Package\SEQ Reference table data.PrecedenceConstraints[Constraint 5]"
           TopLeft="187.25,271">
@@ -6916,7 +6918,9 @@ where [refTable].[SeasonKey] = ? and [refTable].[TeamKey] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout

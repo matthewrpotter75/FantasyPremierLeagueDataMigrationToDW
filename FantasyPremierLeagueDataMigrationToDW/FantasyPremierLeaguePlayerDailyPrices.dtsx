@@ -8,12 +8,12 @@
   DTS:DTSID="{A70ADE3C-88C7-4ADA-B04E-6FEEC009401C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:ISOLevel="4096"
-  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="2057"
   DTS:ObjectName="FantasyPremierLeaguePlayerDailyPrices"
   DTS:PackageType="5"
-  DTS:VersionBuild="207"
-  DTS:VersionGUID="{013D859E-EEB7-4092-A034-4B18D1189CD2}">
+  DTS:VersionBuild="216"
+  DTS:VersionGUID="{6C680354-6680-4FC4-8EDF-177646DF37E5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -105,14 +105,6 @@
  FROM dbo.DimPlayer p 
 INNER JOIN dbo.DimPlayerAttribute pa 
 ON p.PlayerKey = pa.PlayerKey
- AND pa.SeasonKey = 10 
-
-UNION 
-
-SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId, pa.TeamKey
- FROM dbo.DimPlayer p 
-INNER JOIN dbo.DimPlayerAttribute pa 
-ON p.PlayerKey = pa.PlayerKey
  AND pa.SeasonKey = 11 
 
 UNION 
@@ -142,10 +134,18 @@ ON p.PlayerKey = pa.PlayerKey
 UNION 
 
 SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId, pa.TeamKey
+ FROM dbo.DimPlayer p 
+INNER JOIN dbo.DimPlayerAttribute pa 
+ON p.PlayerKey = pa.PlayerKey
+ AND pa.SeasonKey = 15 
+
+UNION 
+
+SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId, pa.TeamKey
 FROM dbo.DimPlayer p 
 INNER JOIN  dbo.DimPlayerAttribute pa 
 ON p.PlayerKey = pa.PlayerKey 
-AND pa.SeasonKey = 15</DTS:VariableValue>
+AND pa.SeasonKey = 16</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -160,7 +160,7 @@ AND pa.SeasonKey = 15</DTS:VariableValue>
 FROM dbo.DimPlayer p
 INNER JOIN dbo.DimPlayerAttribute pa 
 ON p.PlayerKey = pa.PlayerKey
- AND pa.SeasonKey = 14 
+ AND pa.SeasonKey = 15 
 
 UNION 
 
@@ -168,7 +168,7 @@ SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPla
  FROM dbo.DimPlayer p 
 INNER JOIN dbo.DimPlayerAttribute pa 
 ON p.PlayerKey = pa.PlayerKey 
-AND pa.SeasonKey = 15</DTS:VariableValue>
+AND pa.SeasonKey = 16</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -183,7 +183,7 @@ AND pa.SeasonKey = 15</DTS:VariableValue>
 FROM dbo.DimPlayer p 
 INNER JOIN dbo.DimPlayerAttribute pa
  ON p.PlayerKey = pa.PlayerKey 
-AND pa.SeasonKey = 15</DTS:VariableValue>
+AND pa.SeasonKey = 16</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -196,7 +196,7 @@ AND pa.SeasonKey = 15</DTS:VariableValue>
       <DTS:VariableValue
         DTS:DataType="8">SELECT TeamKey, TeamId, SeasonKey 
 FROM dbo.DimTeamSeason
- WHERE SeasonKey = 15</DTS:VariableValue>
+ WHERE SeasonKey = 16</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -208,14 +208,6 @@ FROM dbo.DimTeamSeason
       DTS:ObjectName="LookupSQL">
       <DTS:VariableValue
         DTS:DataType="8">SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey, p.LatestPlayerId
-FROM dbo.DimPlayer p
-INNER JOIN dbo.DimPlayerAttribute pa
-ON p.PlayerKey = pa.PlayerKey
-AND pa.SeasonKey = 5
-
-UNION
-
-SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey, p.LatestPlayerId
 FROM dbo.DimPlayer p
 INNER JOIN dbo.DimPlayerAttribute pa
 ON p.PlayerKey = pa.PlayerKey
@@ -291,7 +283,15 @@ SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey
 FROM dbo.DimPlayer p
 INNER JOIN dbo.DimPlayerAttribute pa
 ON p.PlayerKey = pa.PlayerKey
-AND pa.SeasonKey = 15</DTS:VariableValue>
+AND pa.SeasonKey = 15
+
+UNION
+
+SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey, p.LatestPlayerId
+FROM dbo.DimPlayer p
+INNER JOIN dbo.DimPlayerAttribute pa
+ON p.PlayerKey = pa.PlayerKey
+AND pa.SeasonKey = 16</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -311,7 +311,7 @@ AND pa.SeasonKey = 15</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="RunDate">
       <DTS:VariableValue
-        DTS:DataType="8">21/05/2021</DTS:VariableValue>
+        DTS:DataType="8">16/11/2021</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -320,7 +320,7 @@ AND pa.SeasonKey = 15</DTS:VariableValue>
       DTS:Namespace="User"
       DTS:ObjectName="SeasonKey">
       <DTS:VariableValue
-        DTS:DataType="3">15</DTS:VariableValue>
+        DTS:DataType="3">16</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -340,7 +340,7 @@ FROM dbo.DimSeason s
 INNER JOIN dbo.DimGameweek gw
 ON s.SeasonKey = gw.SeasonKey
 AND gw.GameweekKey = 1
-AND s.SeasonKey = 15</DTS:VariableValue>
+AND s.SeasonKey = 16</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
@@ -964,7 +964,7 @@ where [refTable].[GameweekKey] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixture\DFT DimGameweek\ADO_SRC Gameweek.Outputs[ADO NET Source Output].Columns[id]};#{Package\SEQ Fixture\DFT DimGameweek\902:invalid};</property>
+                      name="ParameterMap">#{Package\SEQ Fixture\DFT DimGameweek\ADO_SRC Gameweek.Outputs[ADO NET Source Output].Columns[id]};#{Package\SEQ Fixture\DFT DimGameweek\485:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2657,7 +2657,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\903:invalid};#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\486:invalid};#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2833,7 +2833,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\904:invalid};#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\487:invalid};#{Package\SEQ Fixture\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4500,7 +4500,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\905:invalid};#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\488:invalid};#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4676,7 +4676,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\906:invalid};#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\489:invalid};#{Package\SEQ Fixture\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6480,7 +6480,7 @@ where [refTable].[gameweekid] = ? and [refTable].[homeTeamId] = ? and [refTable]
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixture\DFT GameweekFixtures\907:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\908:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\909:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\910:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\911:invalid};</property>
+                      name="ParameterMap">#{Package\SEQ Fixture\DFT GameweekFixtures\490:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\491:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\492:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\493:invalid};#{Package\SEQ Fixture\DFT GameweekFixtures\494:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8083,7 +8083,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\912:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\495:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8259,7 +8259,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\913:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\496:invalid};#{Package\SEQ Fixtures\DFT DimTeamGameweekFixture\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9737,7 +9737,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\914:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\497:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9913,7 +9913,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\915:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\498:invalid};#{Package\SEQ Fixtures\DFT FactGameweekFixture (Fixtures only)\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12829,7 +12829,7 @@ where [refTable].[PlayerId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\916:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\499:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -13007,7 +13007,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\917:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\500:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -13328,7 +13328,7 @@ where [refTable].[Cost] = ? and [refTable].[PlayerKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\918:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\501:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerCurrentStatus\LKP DimPlayerSeason.Outputs[Lookup Match Output].Columns[PlayerKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -16208,7 +16208,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerDailyAttributes\919:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerDailyAttributes\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerDailyAttributes\502:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerDailyAttributes\DER Add RunDate and SeasonKey.Outputs[Derived Column Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -17707,7 +17707,7 @@ where [refTable].[DateKey] = ? and [refTable].[PlayerKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\920:invalid};</property>
+                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\503:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -17867,7 +17867,7 @@ where [refTable].[Cost] = ? and [refTable].[DateKey] = ? and [refTable].[PlayerK
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\921:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\922:invalid};</property>
+                      name="ParameterMap">#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\504:invalid};#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\LKP DimDate.Outputs[Lookup Match Output].Columns[DateKey]};#{Package\SEQ Players Data Load\DFT FactPlayerDailyPrices\505:invalid};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -19960,14 +19960,6 @@ WHERE [DeadlineTime] &lt;= ?
  FROM dbo.DimPlayer p 
 INNER JOIN dbo.DimPlayerAttribute pa 
 ON p.PlayerKey = pa.PlayerKey
- AND pa.SeasonKey = 10 
-
-UNION 
-
-SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId, pa.TeamKey
- FROM dbo.DimPlayer p 
-INNER JOIN dbo.DimPlayerAttribute pa 
-ON p.PlayerKey = pa.PlayerKey
  AND pa.SeasonKey = 11 
 
 UNION 
@@ -19997,10 +19989,18 @@ ON p.PlayerKey = pa.PlayerKey
 UNION 
 
 SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId, pa.TeamKey
+ FROM dbo.DimPlayer p 
+INNER JOIN dbo.DimPlayerAttribute pa 
+ON p.PlayerKey = pa.PlayerKey
+ AND pa.SeasonKey = 15 
+
+UNION 
+
+SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.PlayerPositionKey, p.LatestPlayerId, pa.TeamKey
 FROM dbo.DimPlayer p 
 INNER JOIN  dbo.DimPlayerAttribute pa 
 ON p.PlayerKey = pa.PlayerKey 
-AND pa.SeasonKey = 15</property>
+AND pa.SeasonKey = 16</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -20055,7 +20055,7 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\923:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\924:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\506:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\507:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -20443,17 +20443,17 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[LatestTeamId] = ? and [ref
 FROM dbo.DimPlayer p 
 INNER JOIN dbo.DimPlayerAttribute pa
  ON p.PlayerKey = pa.PlayerKey 
-AND pa.SeasonKey = 15</property>
+AND pa.SeasonKey = 16</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
                       expressionType="Notify"
                       name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.TeamKey, pa.PlayerPositionKey, p.LatestPlayerId 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT p.PlayerKey, p.FirstName, p.SecondName, pa.TeamKey, pa.PlayerPositionKey, p.LatestPlayerId, p.LatestPlayerId 
 FROM dbo.DimPlayer p 
 INNER JOIN dbo.DimPlayerAttribute pa
  ON p.PlayerKey = pa.PlayerKey 
-AND pa.SeasonKey = 15) [refTable]
+AND pa.SeasonKey = 16) [refTable]
 where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and [refTable].[FirstName] = ? and [refTable].[SecondName] = ?</property>
                     <property
                       dataType="System.Int32"
@@ -20485,7 +20485,7 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SecondName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PlayerPositionKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LatestPlayerId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PlayerKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FirstName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SecondName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TeamKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PlayerPositionKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LatestPlayerId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LatestPlayerId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -20839,14 +20839,6 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[FirstName] = ? and [refTab
 FROM dbo.DimPlayer p
 INNER JOIN dbo.DimPlayerAttribute pa
 ON p.PlayerKey = pa.PlayerKey
-AND pa.SeasonKey = 5
-
-UNION
-
-SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey, p.LatestPlayerId
-FROM dbo.DimPlayer p
-INNER JOIN dbo.DimPlayerAttribute pa
-ON p.PlayerKey = pa.PlayerKey
 AND pa.SeasonKey = 6
 
 UNION
@@ -20919,7 +20911,15 @@ SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey
 FROM dbo.DimPlayer p
 INNER JOIN dbo.DimPlayerAttribute pa
 ON p.PlayerKey = pa.PlayerKey
-AND pa.SeasonKey = 15</property>
+AND pa.SeasonKey = 15
+
+UNION
+
+SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey, p.LatestPlayerId
+FROM dbo.DimPlayer p
+INNER JOIN dbo.DimPlayerAttribute pa
+ON p.PlayerKey = pa.PlayerKey
+AND pa.SeasonKey = 16</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -20929,14 +20929,6 @@ AND pa.SeasonKey = 15</property>
 FROM dbo.DimPlayer p
 INNER JOIN dbo.DimPlayerAttribute pa
 ON p.PlayerKey = pa.PlayerKey
-AND pa.SeasonKey = 5
-
-UNION
-
-SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey, p.LatestPlayerId
-FROM dbo.DimPlayer p
-INNER JOIN dbo.DimPlayerAttribute pa
-ON p.PlayerKey = pa.PlayerKey
 AND pa.SeasonKey = 6
 
 UNION
@@ -21009,8 +21001,16 @@ SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey
 FROM dbo.DimPlayer p
 INNER JOIN dbo.DimPlayerAttribute pa
 ON p.PlayerKey = pa.PlayerKey
-AND pa.SeasonKey = 15) [refTable]
-where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and [refTable].[TeamKey] = ? and [refTable].[FirstName] = ? and [refTable].[SecondName] = ?</property>
+AND pa.SeasonKey = 15
+
+UNION
+
+SELECT p.PlayerKey,  p.FirstName, p.SecondName, pa.PlayerPositionKey, pa.TeamKey, p.LatestPlayerId
+FROM dbo.DimPlayer p
+INNER JOIN dbo.DimPlayerAttribute pa
+ON p.PlayerKey = pa.PlayerKey
+AND pa.SeasonKey = 16) [refTable]
+where [refTable].[PlayerPositionKey] = ? and [refTable].[FirstName] = ? and [refTable].[SecondName] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -21046,7 +21046,7 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC PlayerPrices.Outputs[ADO NET Source Output].Columns[PlayerId]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC PlayerPrices.Outputs[ADO NET Source Output].Columns[PlayerPositionId]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output].Columns[TeamKey]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC PlayerPrices.Outputs[ADO NET Source Output].Columns[PlayerPositionId]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[FirstNameSTR]};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output].Columns[SecondNameSTR]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -21106,22 +21106,6 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Inputs[Lookup Input].Columns[PlayerId]"
-                          cachedDataType="i4"
-                          cachedName="PlayerId"
-                          lineageId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC PlayerPrices.Outputs[ADO NET Source Output].Columns[PlayerId]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">LatestPlayerId</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Inputs[Lookup Input].Columns[PlayerPositionId]"
                           cachedDataType="i4"
                           cachedName="PlayerPositionId"
@@ -21131,22 +21115,6 @@ where [refTable].[LatestPlayerId] = ? and [refTable].[PlayerPositionKey] = ? and
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">PlayerPositionKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Inputs[Lookup Input].Columns[TeamKey]"
-                          cachedDataType="i4"
-                          cachedName="TeamKey"
-                          lineageId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output].Columns[TeamKey]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">TeamKey</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -21391,7 +21359,7 @@ and [refTable].[SeasonEndDate] &gt;= ?</property>
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT TeamKey, TeamId, SeasonKey 
 FROM dbo.DimTeamSeason
- WHERE SeasonKey = 15</property>
+ WHERE SeasonKey = 16</property>
                     <property
                       dataType="System.String"
                       description="Specifies a SQL statement that uses parameters to generate the lookup table."
@@ -21436,7 +21404,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\925:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\508:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -22172,14 +22140,14 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC PlayerPrices.Outputs[ADO NET Source Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Data Conversion Output]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add PlayerName.Inputs[Derived Column Input]"
-                  name="Data Conversion Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output]" />
-                <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Data Conversion Output1]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Inputs[Lookup Input]"
                   name="Data Conversion Output"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert PlayerName to STR.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Data Conversion Output1]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add PlayerName.Inputs[Derived Column Input]"
+                  name="Data Conversion Output"
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Derived Column Output]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert PlayerName to STR.Inputs[Data Conversion Input]"
@@ -22192,9 +22160,9 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer for changed player position.Inputs[Lookup Input]"
                   name="Lookup Match Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer for changed player position.Outputs[Lookup Match Output]" />
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check if team changed.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode.Inputs[Data Conversion Input]"
@@ -22202,9 +22170,9 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer for changed player position.Inputs[Lookup Input]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players.Inputs[Union All Input 3]"
                   name="Lookup Match Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check if team changed.Outputs[Lookup Match Output]" />
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer for changed player position.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Inputs[Lookup Input]"
@@ -22222,29 +22190,29 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason.Outputs[Lookup Match Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
-                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check if team changed.Inputs[Lookup Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup No Match Output]" />
-                <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestPlayerId.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestPlayerId.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output2]"
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer.Inputs[ADO NET Destination Input]"
                   name="Lookup No Match Output"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check if team changed.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output2]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\Row Count.Inputs[Row Count Input 1]"
                   name="Lookup No Match Output"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer for changed player position.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output4]"
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId.Inputs[OLE DB Command Input]"
                   name="Lookup No Match Output"
                   startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output4]"
+                  endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check if team changed.Inputs[Lookup Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position.Outputs[Lookup No Match Output]" />
                 <path
                   refId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 1]"
                   endId="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestPlayerId.Inputs[Lookup Input]"
@@ -24160,7 +24128,7 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\926:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
+                      name="ParameterMap">#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\509:invalid};#{Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute\LKP DimSeason.Outputs[Lookup Match Output].Columns[SeasonKey]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -24420,19 +24388,19 @@ where [refTable].[TeamId] = ? and [refTable].[SeasonKey] = ?</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Populate or update DimPlayer.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{BF17B8CA-6A69-4696-B677-53D45DD279B2}"
-          DTS:From="Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute"
+          DTS:DTSID="{A0786B7A-EA89-4A5E-B82F-9127F0F1E864}"
+          DTS:From="Package\SEQ Populate or update DimPlayer\DFT DimPlayer"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\SEQ Populate or update DimPlayer\DFT DimNewPlayers" />
+          DTS:To="Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Populate or update DimPlayer.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{80d4052a-102f-40d9-853c-bf393d223455}"
-          DTS:From="Package\SEQ Populate or update DimPlayer\DFT DimPlayer"
+          DTS:DTSID="{A441BFBB-95BD-4AFA-AA46-DBD6023FDFE3}"
+          DTS:From="Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute" />
+          DTS:To="Package\SEQ Populate or update DimPlayer\DFT DimNewPlayers" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -27818,25 +27786,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="149,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer"
-          TopLeft="137.5,19" />
+          TopLeft="138.5,27" />
         <NodeLayout
           Size="295,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayerSeason and DimPlayerAttribute"
-          TopLeft="69.5,125" />
+          TopLeft="61.5,130" />
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer.PrecedenceConstraints[Constraint]"
-          TopLeft="214,167">
+          TopLeft="211,69">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,68"
+              EndConnector="0,61"
               Start="0,0"
-              End="0,60.5">
+              End="0,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.5" />
+                    End="0,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27847,18 +27815,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer.PrecedenceConstraints[Constraint 1]"
-          TopLeft="214.5,61">
+          TopLeft="210,172">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,63"
               Start="0,0"
-              End="0,56.5">
+              End="0,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,55.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -31087,82 +31055,262 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         <NodeLayout
           Size="256,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestTeamId"
-          TopLeft="1023,1523" />
+          TopLeft="1023,1643" />
         <NodeLayout
-          Size="216,44"
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players"
-          TopLeft="859,1208" />
-        <NodeLayout
-          Size="269,42"
+          Size="279,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer name and player position"
-          TopLeft="369,884" />
+          TopLeft="360,1004" />
         <NodeLayout
           Size="233,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert PlayerName to STR"
-          TopLeft="388,779" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason"
-          TopLeft="414,336" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek"
-          TopLeft="409,210" />
+          TopLeft="384,788" />
         <NodeLayout
           Size="130,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\Row Count"
-          TopLeft="427,1209" />
+          TopLeft="427,1329" />
         <NodeLayout
-          Size="178,42"
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason"
-          TopLeft="403,442" />
+          Size="152,42"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimSeason"
+          TopLeft="410,345" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimGameweek"
+          TopLeft="405,219" />
         <NodeLayout
           Size="259,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CMD Update DimPlayer LatestPlayerId"
-          TopLeft="666,1524" />
+          TopLeft="666,1644" />
         <NodeLayout
           Size="184,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_SRC PlayerPrices"
-          TopLeft="406,2" />
+          TopLeft="402,11" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimTeamSeason"
+          TopLeft="399,451" />
         <NodeLayout
           Size="247,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\CNV Convert names to non unicode"
-          TopLeft="373,561" />
+          TopLeft="369,570" />
         <NodeLayout
           Size="261,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestPlayerId"
-          TopLeft="665,1426" />
-        <NodeLayout
-          Size="330,42"
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId"
-          TopLeft="800,1318" />
+          TopLeft="665,1546" />
         <NodeLayout
           Size="164,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add RunDate"
-          TopLeft="411,112" />
+          TopLeft="407,121" />
         <NodeLayout
           Size="258,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer changed LatestTeamId"
-          TopLeft="1020,1427" />
+          TopLeft="1020,1547" />
         <NodeLayout
           Size="257,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer check if team changed"
-          TopLeft="85,1011" />
+          TopLeft="85,1131" />
+        <NodeLayout
+          Size="330,42"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\MLT Split to update LatestPlayerId and LatestTeamId"
+          TopLeft="800,1438" />
         <NodeLayout
           Size="180,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\DER Add PlayerName"
-          TopLeft="407,668" />
+          TopLeft="403,677" />
+        <NodeLayout
+          Size="216,44"
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\UA Combine existing and changed position players"
+          TopLeft="859,1328" />
         <NodeLayout
           Size="279,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\LKP DimPlayer for changed player position"
-          TopLeft="554,1109" />
+          TopLeft="554,1229" />
         <NodeLayout
           Size="176,42"
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer\ADO_DST DimPlayer"
-          TopLeft="131,1127" />
+          TopLeft="131,1247" />
+        <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
+          TopLeft="1150,1589">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,17.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output2]"
+          TopLeft="674.333333333333,1271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-182.333333333333,58"
+              Start="0,0"
+              End="-182.333333333333,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3984319315753" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.3984319315753"
+                    Point2="0,27.3984319315753"
+                    Point3="-4,27.3984319315753" />
+                  <mssgle:LineSegment
+                    End="-178.333333333333,27.3984319315753" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-178.333333333333,27.3984319315753"
+                    Point2="-182.333333333333,27.3984319315753"
+                    Point3="-182.333333333333,31.3984319315753" />
+                  <mssgle:LineSegment
+                    End="-182.333333333333,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-155.841705729167,32.3984319315753,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
+          TopLeft="218.5,1173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74"
+              Start="0,0"
+              End="0,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-64.6750390625,25.25,129.350078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
+          TopLeft="795.5,1588">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,18.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
+          TopLeft="255,1173">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="438.5,56"
+              Start="0,0"
+              End="438.5,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6078886310905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.6078886310905"
+                    Point2="0,22.6078886310905"
+                    Point3="4,22.6078886310905" />
+                  <mssgle:LineSegment
+                    End="434.5,22.6078886310905" />
+                  <mssgle:CubicBezierSegment
+                    Point1="434.5,22.6078886310905"
+                    Point2="438.5,22.6078886310905"
+                    Point3="438.5,26.6078886310905" />
+                  <mssgle:LineSegment
+                    End="438.5,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="153.1899609375,27.6078886310905,114.120078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
+          TopLeft="738.666666666667,1271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="203,57"
+              Start="0,0"
+              End="203,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4413752571261" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.4413752571261"
+                    Point2="0,28.4413752571261"
+                    Point3="4,28.4413752571261" />
+                  <mssgle:LineSegment
+                    End="199,28.4413752571261" />
+                  <mssgle:CubicBezierSegment
+                    Point1="199,28.4413752571261"
+                    Point2="203,28.4413752571261"
+                    Point3="203,32.4413752571261" />
+                  <mssgle:LineSegment
+                    End="203,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="44.4399609375,33.4413752571261,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output3]"
-          TopLeft="493.25,484">
+          TopLeft="489.25,493">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31186,7 +31334,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output2]"
-          TopLeft="491,378">
+          TopLeft="487,387">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31210,7 +31358,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output1]"
-          TopLeft="492,252">
+          TopLeft="488,261">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31234,43 +31382,43 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output]"
-          TopLeft="547,926">
+          TopLeft="544.666666666667,1046">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="420.333333333333,282"
+              EndConnector="415.666666666667,282"
               Start="0,0"
-              End="420.333333333333,274.5">
+              End="415.666666666667,274.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.746995294038" />
+                    End="0,120.709961798413" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,66.746995294038"
-                    Point2="0,70.746995294038"
-                    Point3="4,70.746995294038" />
+                    Point1="0,120.709961798413"
+                    Point2="0,124.709961798413"
+                    Point3="4,124.709961798413" />
                   <mssgle:LineSegment
-                    End="416.333333333333,70.746995294038" />
+                    End="411.666666666667,124.709961798413" />
                   <mssgle:CubicBezierSegment
-                    Point1="416.333333333333,70.746995294038"
-                    Point2="420.333333333333,70.746995294038"
-                    Point3="420.333333333333,74.746995294038" />
+                    Point1="411.666666666667,124.709961798413"
+                    Point2="415.666666666667,124.709961798413"
+                    Point3="415.666666666667,128.709961798413" />
                   <mssgle:LineSegment
-                    End="420.333333333333,274.5" />
+                    End="415.666666666667,274.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="161.975279947916,75.746995294038,96.3827734375,11.609375"
+              BoundingBox="159.641946614583,129.709961798413,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Derived Column Output1]"
-          TopLeft="493.5,154">
+          TopLeft="489.5,163">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31294,7 +31442,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Derived Column Output]"
-          TopLeft="500.75,710">
+          TopLeft="496.75,719">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31318,31 +31466,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Data Conversion Output1]"
-          TopLeft="504,821">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,63"
-              Start="0,0"
-              End="0,55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Data Conversion Output]"
-          TopLeft="496.75,603">
+          TopLeft="492.75,612">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31365,8 +31489,32 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Data Conversion Output]"
+          TopLeft="500,830">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,174"
+              Start="0,0"
+              End="0,166.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,166.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[ADO NET Source Output]"
-          TopLeft="495.5,44">
+          TopLeft="491.5,53">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31390,7 +31538,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Union All Output 1]"
-          TopLeft="966,1252">
+          TopLeft="966,1372">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31414,7 +31562,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 3]"
-          TopLeft="1018.66666666667,1360">
+          TopLeft="1018.66666666667,1480">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31450,7 +31598,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Multicast Output 1]"
-          TopLeft="911.33333333333,1360">
+          TopLeft="911.33333333333,1480">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -31486,217 +31634,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output4]"
-          TopLeft="1150,1469">
+          TopLeft="454.333333333333,1046">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54"
+              EndConnector="-240.833333333333,85"
               Start="0,0"
-              End="0,46.5">
+              End="-240.833333333333,77.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.5" />
+                    End="0,30.2908054169636" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.2908054169636"
+                    Point2="0,34.2908054169636"
+                    Point3="-4,34.2908054169636" />
+                  <mssgle:LineSegment
+                    End="-236.833333333333,34.2908054169636" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-236.833333333333,34.2908054169636"
+                    Point2="-240.833333333333,34.2908054169636"
+                    Point3="-240.833333333333,38.2908054169636" />
+                  <mssgle:LineSegment
+                    End="-240.833333333333,77.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,17.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output3]"
-          TopLeft="674.333333333333,1151">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-182.333333333333,58"
-              Start="0,0"
-              End="-182.333333333333,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.3984319315753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.3984319315753"
-                    Point2="0,27.3984319315753"
-                    Point3="-4,27.3984319315753" />
-                  <mssgle:LineSegment
-                    End="-178.333333333333,27.3984319315753" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-178.333333333333,27.3984319315753"
-                    Point2="-182.333333333333,27.3984319315753"
-                    Point3="-182.333333333333,31.3984319315753" />
-                  <mssgle:LineSegment
-                    End="-182.333333333333,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-155.841705729167,32.3984319315753,129.350078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output2]"
-          TopLeft="218.5,1053">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,74"
-              Start="0,0"
-              End="0,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-64.6750390625,25.25,129.350078125,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output1]"
-          TopLeft="795.5,1468">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,18.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup No Match Output]"
-          TopLeft="460,926">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-246.5,85"
-              Start="0,0"
-              End="-246.5,77.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.3015521064302" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.3015521064302"
-                    Point2="0,34.3015521064302"
-                    Point3="-4,34.3015521064302" />
-                  <mssgle:LineSegment
-                    End="-242.5,34.3015521064302" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-242.5,34.3015521064302"
-                    Point2="-246.5,34.3015521064302"
-                    Point3="-246.5,38.3015521064302" />
-                  <mssgle:LineSegment
-                    End="-246.5,77.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-179.05638671875,39.3015521064302,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output5]"
-          TopLeft="738.666666666667,1151">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="203,57"
-              Start="0,0"
-              End="203,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.4413752571261" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.4413752571261"
-                    Point2="0,28.4413752571261"
-                    Point3="4,28.4413752571261" />
-                  <mssgle:LineSegment
-                    End="199,28.4413752571261" />
-                  <mssgle:CubicBezierSegment
-                    Point1="199,28.4413752571261"
-                    Point2="203,28.4413752571261"
-                    Point3="203,32.4413752571261" />
-                  <mssgle:LineSegment
-                    End="203,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="53.30861328125,33.4413752571261,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\SEQ Populate or update DimPlayer\DFT DimPlayer.Paths[Lookup Match Output4]"
-          TopLeft="255,1053">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="438.5,56"
-              Start="0,0"
-              End="438.5,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.6078886310905" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.6078886310905"
-                    Point2="0,22.6078886310905"
-                    Point3="4,22.6078886310905" />
-                  <mssgle:LineSegment
-                    End="434.5,22.6078886310905" />
-                  <mssgle:CubicBezierSegment
-                    Point1="434.5,22.6078886310905"
-                    Point2="438.5,22.6078886310905"
-                    Point3="438.5,26.6078886310905" />
-                  <mssgle:LineSegment
-                    End="438.5,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="162.1899609375,27.6078886310905,114.120078125,16"
+              BoundingBox="-176.223053385417,39.2908054169636,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

@@ -9,13 +9,13 @@
   DTS:DTSID="{DB1D4F1F-6754-4E4B-A6FE-91547C4F0B67}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:ISOLevel="256"
-  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="2057"
   DTS:ObjectName="UserTeamPickStagingToUserTeamPickTransfer"
   DTS:PackagePriorityClass="1"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{C4F3CF5D-1488-4B35-9707-9F8A0292B498}">
+  DTS:VersionBuild="85"
+  DTS:VersionGUID="{040AEE4F-ED87-4FA6-A399-5787EEF596B3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3755,7 +3755,7 @@ WHERE NOT EXISTS
           Id="Package\SEQ UserTeamPick insert"
           TopLeft="280,737" />
         <NodeLayout
-          Size="303,42"
+          Size="317,42"
           Id="Package\SEQ UserTeamPickStaging cleanup\SQL Delete inserted UserTeamPickStaging rows"
           TopLeft="55,22" />
         <NodeLayout
@@ -3790,7 +3790,7 @@ WHERE NOT EXISTS
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ UserTeamPickStaging cleanup.PrecedenceConstraints[Constraint 7]"
-          TopLeft="209.25,64">
+          TopLeft="212.75,64">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3962,7 +3962,7 @@ WHERE NOT EXISTS
     design-time-name="Package\DFT Delete inserted UserTeamPickStaging rows to UserTeamPick">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="306,42"
           Id="Package\DFT Delete inserted UserTeamPickStaging rows to UserTeamPick\CMD Delete UserTeamPickStaging inserted rows"
@@ -3990,9 +3990,7 @@ WHERE NOT EXISTS
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4455,7 +4453,7 @@ WHERE NOT EXISTS
     design-time-name="Package\SEQ UserTeamPick insert\DFT Insert into UserTeamPickStagingInsert">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="230,42"
           Id="Package\SEQ UserTeamPick insert\DFT Insert into UserTeamPickStagingInsert\ADO_SRC UserTeamPickStaging"
@@ -4483,9 +4481,7 @@ WHERE NOT EXISTS
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
