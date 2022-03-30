@@ -6,6 +6,6 @@
   DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeam;Integrated Security=True;Application Name=SSIS-FantasyPremierLeagueDataMigrationToDW-{257AC8FD-943C-4D99-94F4-445A12D8EA2E}MATTASUS\SQL2017.FantasyPremierLeagueUserTeam;" />
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeam;Integrated Security=True;Connect Timeout=0;Application Name=SSIS-FantasyPremierLeagueDataMigrationToDW-{257AC8FD-943C-4D99-94F4-445A12D8EA2E}MATTASUS\SQL2017.FantasyPremierLeagueUserTeam;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

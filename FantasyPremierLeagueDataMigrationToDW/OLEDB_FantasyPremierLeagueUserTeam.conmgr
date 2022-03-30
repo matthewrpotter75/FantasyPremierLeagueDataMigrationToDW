@@ -10,6 +10,6 @@
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
       DTS:ConnectUsingManagedIdentity="True"
-      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeam;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;connection timeout=300;" />
+      DTS:ConnectionString="Data Source=MATTASUS\SQL2017;Initial Catalog=FantasyPremierLeagueUserTeam;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;connection timeout=0;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
