@@ -14,8 +14,8 @@
   DTS:ObjectName="UserTeamPickStagingToUserTeamPickTransfer"
   DTS:PackagePriorityClass="1"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{79DC902B-2299-46A3-8C2E-7AA5A962C0DF}">
+  DTS:VersionBuild="121"
+  DTS:VersionGUID="{C60FC3ED-7AF9-4067-B18F-67531F1B164E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1262,7 +1262,6 @@ ORDER BY userteamid ,gameweekid ,position</property>
           DTS:refId="Package\SEQ UserTeamPick insert\DFT Insert into UserTeamPickStagingInsert"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{EEE40114-B48E-44BD-BCB9-C7CFD65F0250}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:ISOLevel="256"
@@ -2498,9 +2497,9 @@ WHERE NOT EXISTS
           Id="Package\SEQ Remove duplicates"
           TopLeft="315,12" />
         <NodeLayout
-          Size="283,42"
+          Size="292,42"
           Id="Package\SEQ UserTeamPick insert\DFT Insert into UserTeamPickStagingInsert"
-          TopLeft="187,33" />
+          TopLeft="174,25" />
         <NodeLayout
           Size="371,42"
           Id="Package\SEQ UserTeamPick insert\DFT UserTeamPickStagingInsert to UserTeamPick Transfer"
@@ -2575,18 +2574,18 @@ WHERE NOT EXISTS
           TopLeft="167,133" />
         <EdgeLayout
           Id="Package\SEQ UserTeamPick insert.PrecedenceConstraints[Constraint]"
-          TopLeft="321.75,75">
+          TopLeft="321.5,67">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58"
+              EndConnector="0,66"
               Start="0,0"
-              End="0,50.5">
+              End="0,58.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
+                    End="0,58.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2877,18 +2876,30 @@ WHERE NOT EXISTS
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="535.25,1356">
+          TopLeft="523,1356">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="12.5,55"
               Start="0,0"
-              End="0,47.5">
+              End="12.5,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="8.5,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,27.5"
+                    Point2="12.5,27.5"
+                    Point3="12.5,31.5" />
+                  <mssgle:LineSegment
+                    End="12.5,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
