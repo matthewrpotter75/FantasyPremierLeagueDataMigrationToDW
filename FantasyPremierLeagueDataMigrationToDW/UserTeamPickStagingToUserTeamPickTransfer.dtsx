@@ -14,8 +14,8 @@
   DTS:ObjectName="UserTeamPickStagingToUserTeamPickTransfer"
   DTS:PackagePriorityClass="1"
   DTS:PackageType="5"
-  DTS:VersionBuild="121"
-  DTS:VersionGUID="{C60FC3ED-7AF9-4067-B18F-67531F1B164E}">
+  DTS:VersionBuild="122"
+  DTS:VersionGUID="{CF202DFF-0163-4BD8-8443-3368C75FC266}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -2059,7 +2059,7 @@ WHERE NOT EXISTS
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Delete UserTeamPickStagingInsert rows already on UserTeamPick"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2143,7 +2143,6 @@ WHERE NOT EXISTS
           DTS:CreationName=""
           DTS:DTSID="{E4673F9C-CEC7-4DF2-8701-4D05CC0E12C7}"
           DTS:From="Package\SEQ UserTeamPick insert\SQL Delete UserTeamPickStaging rows inserted into UserTeamPickStagingInsert"
-          DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
           DTS:To="Package\SEQ UserTeamPick insert\SQL Delete UserTeamPickStagingInsert rows already on UserTeamPick" />
         <DTS:PrecedenceConstraint
@@ -2187,7 +2186,6 @@ WHERE NOT EXISTS
           DTS:CreationName=""
           DTS:DTSID="{1F857DFF-CA63-4425-AF37-D1CE00E012DF}"
           DTS:From="Package\SEQ UserTeamPick insert\SQL Truncate UserTeamPickStaging"
-          DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
           DTS:To="Package\SEQ UserTeamPick insert\SQL Delete UserTeamPickStagingInsert rows already on UserTeamPick" />
       </DTS:PrecedenceConstraints>
