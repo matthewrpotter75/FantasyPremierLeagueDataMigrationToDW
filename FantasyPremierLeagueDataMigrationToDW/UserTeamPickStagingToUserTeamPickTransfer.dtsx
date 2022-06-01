@@ -14,8 +14,8 @@
   DTS:ObjectName="UserTeamPickStagingToUserTeamPickTransfer"
   DTS:PackagePriorityClass="1"
   DTS:PackageType="5"
-  DTS:VersionBuild="122"
-  DTS:VersionGUID="{CF202DFF-0163-4BD8-8443-3368C75FC266}">
+  DTS:VersionBuild="133"
+  DTS:VersionGUID="{22CAFE05-A012-482B-A559-0F7A80023658}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -1189,6 +1189,7 @@ ORDER BY userteamid ,gameweekid ,position</property>
           DTS:refId="Package\SEQ Remove duplicates\SQL Delete UserTeamPickStaging rows already on UserTeamPick"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
+          DTS:Disabled="True"
           DTS:DTSID="{103E3C80-47FF-4D6C-860D-B6BD712F2180}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -1198,7 +1199,7 @@ ORDER BY userteamid ,gameweekid ,position</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
-              SQLTask:SqlStatementSource="--Delete UserTeamPickStaging rows on UserTeamPick&#xA;SET NOCOUNT ON;&#xA;DECLARE @rowcnt INT = 1;&#xA;DECLARE @loop INT = 1;&#xA;&#xA;WHILE @rowcnt &gt; 0&#xA;BEGIN&#xA;&#xA;&#x9;DELETE TOP (50000) st&#xA;&#x9;FROM dbo.UserTeamPickStaging st&#xA;&#x9;WHERE EXISTS&#xA;&#x9;(&#xA;&#x9; SELECT 1&#xA;&#x9; FROM dbo.UserTeamPick WITH (NOLOCK)&#xA;&#x9; WHERE userteamid = st.userteamid&#xA;&#x9; AND gameweekid = st.gameweekid&#xA;&#x9; AND playerid = st.playerid&#xA;&#x9;);&#xA;&#xA;&#x9;SET @rowcnt = @@ROWCOUNT;&#xA;&#xA;&#x9;SET @loop = @loop + 1;&#xA;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="--Delete UserTeamPickStaging rows on UserTeamPick&#xA;SET NOCOUNT ON;&#xA;DECLARE @rowcnt INT = 1;&#xA;DECLARE @loop INT = 1;&#xA;DECLARE @time VARCHAR(30);&#xA;&#xA;WHILE @rowcnt &gt; 0&#xA;BEGIN&#xA;&#xA;&#x9;DELETE TOP (5000) st&#xA;&#x9;FROM dbo.UserTeamPickStaging st&#xA;&#x9;WHERE EXISTS&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT 1&#xA;&#x9;&#x9;FROM dbo.UserTeamPick WITH (NOLOCK)&#xA;&#x9;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;&#x9;AND position = st.position&#xA;&#x9;&#x9;--AND playerid = st.playerid&#xA;&#x9;);&#xA;&#xA;&#x9;SET @rowcnt = @@ROWCOUNT;&#xA;&#xA;&#x9;SELECT @time = CAST(GETDATE() AS VARCHAR(30));&#xA;&#x9;RAISERROR('%s: Loop %d - %d/%d rows deleted', 10, 1, @time, @loop, @rowcnt) WITH NOWAIT;&#xA;&#xA;&#x9;SET @loop = @loop + 1;&#xA;&#xA;&#x9;WAITFOR DELAY '00:00:10:000';&#xA;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1216,7 +1217,7 @@ ORDER BY userteamid ,gameweekid ,position</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
-              SQLTask:SqlStatementSource=";WITH dups AS&#xA;(&#xA;&#x9;SELECT userteamid, gameweekid, position&#xA;&#x9;FROM dbo.UserTeamPickStaging WITH (NOLOCK)&#xA;&#x9;GROUP BY userteamid, gameweekid, position&#xA;&#x9;HAVING COUNT(*) &gt; 1&#xA;),&#xA;trueDups AS&#xA;(&#xA;&#x9;SELECT userteamid, gameweekid, position, playerid&#xA;&#x9;FROM dbo.UserTeamPickStaging WITH (NOLOCK)&#xA;&#x9;GROUP BY userteamid, gameweekid, position, playerid&#xA;&#x9;HAVING COUNT(*) &gt; 1&#xA;)&#xA;INSERT INTO dbo.UserTeamPickStagingDups&#xA;SELECT st.*&#xA;FROM dbo.UserTeamPickStaging st WITH (NOLOCK)&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM dups&#xA;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;AND position = st.position&#xA;)&#xA;AND NOT  EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM trueDups&#xA;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;AND position = st.position&#xA;&#x9;AND playerid = st.playerid&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource=";WITH dups AS&#xA;(&#xA;&#x9;SELECT userteamid, gameweekid, position&#xA;&#x9;FROM dbo.UserTeamPickStaging WITH (NOLOCK)&#xA;&#x9;GROUP BY userteamid, gameweekid, position&#xA;&#x9;HAVING COUNT(*) &gt; 1&#xA;),&#xA;trueDups AS&#xA;(&#xA;&#x9;SELECT userteamid, gameweekid, position, playerid&#xA;&#x9;FROM dbo.UserTeamPickStaging WITH (NOLOCK)&#xA;&#x9;GROUP BY userteamid, gameweekid, position, playerid&#xA;&#x9;HAVING COUNT(*) &gt; 1&#xA;)&#xA;INSERT INTO dbo.UserTeamPickStagingDups&#xA;SELECT [playerid]&#xA;      ,[position]&#xA;      ,[multiplier]&#xA;      ,[is_captain]&#xA;      ,[is_vice_captain]&#xA;      ,[userteamid]&#xA;      ,[gameweekid]&#xA;      ,[DateInserted]&#xA;FROM dbo.UserTeamPickStaging st WITH (NOLOCK)&#xA;WHERE EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM dups&#xA;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;AND position = st.position&#xA;)&#xA;AND NOT EXISTS&#xA;(&#xA;&#x9;SELECT 1&#xA;&#x9;FROM trueDups&#xA;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;AND position = st.position&#xA;&#x9;AND playerid = st.playerid&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1224,11 +1225,11 @@ ORDER BY userteamid ,gameweekid ,position</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Remove duplicates.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{DDA2DCE5-EC03-4BB8-8B28-1138D2550186}"
+          DTS:DTSID="{C8F6D234-9704-4783-BB1B-4579BCF6D65C}"
           DTS:From="Package\SEQ Remove duplicates\SQL Delete actual dups from staging table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\SEQ Remove duplicates\SQL Insert dups into dup table for later inspection" />
+          DTS:To="Package\SEQ Remove duplicates\SQL Delete UserTeamPickStaging rows already on UserTeamPick" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Remove duplicates.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
@@ -1240,11 +1241,11 @@ ORDER BY userteamid ,gameweekid ,position</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\SEQ Remove duplicates.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{9B9FA4BF-47B7-43E0-805C-0B172CD8A7EC}"
+          DTS:DTSID="{92AD0E39-A102-4F5F-A06B-FFF8D33EDB4D}"
           DTS:From="Package\SEQ Remove duplicates\SQL Delete UserTeamPickStaging rows already on UserTeamPick"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
-          DTS:To="Package\SEQ Remove duplicates\SQL Delete actual dups from staging table" />
+          DTS:To="Package\SEQ Remove duplicates\SQL Insert dups into dup table for later inspection" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -1440,7 +1441,8 @@ ORDER BY userteamid ,gameweekid ,position</property>
                       expressionType="Notify"
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT userteamid, gameweekid, position, multiplier, is_captain, is_vice_captain, playerid
-FROM dbo.UserTeamPickStaging</property>
+FROM dbo.UserTeamPickStaging
+WHERE DeleteFlag = 1;</property>
                     <property
                       dataType="System.Int32"
                       description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -2042,12 +2044,12 @@ WHERE NOT EXISTS
           DTS:ISOLevel="256"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Delete UserTeamPickStaging rows inserted into UserTeamPickStagingInsert"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{257AC8FD-943C-4D99-94F4-445A12D8EA2E}"
-              SQLTask:SqlStatementSource="--Delete UserTeamPickStaging rows on UserTeamPickStagingInsert&#xA;DECLARE @rowcnt INT = 1;&#xA;DECLARE @TotalRowsDeleted INT = 0;&#xA;DECLARE @Time VARCHAR(30);&#xA;DECLARE @Delay VARCHAR(12) =  '00:00:20:000'&#xA;&#xA;SET NOCOUNT ON;&#xA;&#xA;SELECT @Time = GETDATE();&#xA;RAISERROR('%s: Starting...', 10, 1, @Time) WITH NOWAIT;&#xA;&#xA;WHILE @rowcnt &gt; 0&#xA;BEGIN&#xA;&#xA;&#x9;DELETE TOP (50000) st&#xA;&#x9;FROM dbo.UserTeamPickStaging st&#xA;&#x9;WHERE EXISTS&#xA;&#x9;(&#xA;&#x9;&#x9;SELECT 1&#xA;&#x9;&#x9;FROM dbo.UserTeamPickStagingInsert WITH (NOLOCK)&#xA;&#x9;&#x9;WHERE userteamid = st.userteamid&#xA;&#x9;&#x9;AND gameweekid = st.gameweekid&#xA;&#x9;&#x9;AND position = st.position&#xA;&#x9;)&#xA;&#x9;OPTION (MAXDOP 1);&#xA;&#xA;&#x9;SET @rowcnt = @@ROWCOUNT;&#xA;&#xA;&#x9;SET @TotalRowsDeleted = @TotalRowsDeleted + @rowcnt&#xA;&#xA;&#x9;SELECT @Time = CAST(GETDATE() AS VARCHAR(30));&#xA;&#x9;RAISERROR('%s: %d rows deleted, %d total rows deleted', 0, 1, @Time, @rowcnt, @TotalRowsDeleted) WITH NOWAIT;&#xA;&#xA;&#x9;WAITFOR DELAY @Delay;&#xA;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="--Delete UserTeamPickStaging rows on UserTeamPickStagingInsert&#xA;DECLARE @rowcnt INT = 1;&#xA;DECLARE @TotalRowsDeleted INT = 0;&#xA;DECLARE @Time VARCHAR(30);&#xA;DECLARE @Delay VARCHAR(12) =  '00:00:20:000'&#xA;&#xA;SET NOCOUNT ON;&#xA;&#xA;SELECT @Time = GETDATE();&#xA;RAISERROR('%s: Starting...', 10, 1, @Time) WITH NOWAIT;&#xA;&#xA;WHILE @rowcnt &gt; 0&#xA;BEGIN&#xA;&#xA;&#x9;DELETE TOP (50000) st&#xA;&#x9;FROM dbo.UserTeamPickStaging st&#xA;&#x9;WHERE DeleteFlag = 1&#xA;&#x9;OPTION (MAXDOP 1);&#xA;&#xA;&#x9;SET @rowcnt = @@ROWCOUNT;&#xA;&#xA;&#x9;SET @TotalRowsDeleted = @TotalRowsDeleted + @rowcnt&#xA;&#xA;&#x9;SELECT @Time = CAST(GETDATE() AS VARCHAR(30));&#xA;&#x9;RAISERROR('%s: %d rows deleted, %d total rows deleted', 0, 1, @Time, @rowcnt, @TotalRowsDeleted) WITH NOWAIT;&#xA;&#xA;&#x9;WAITFOR DELAY @Delay;&#xA;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2119,7 +2121,7 @@ WHERE NOT EXISTS
           DTS:ISOLevel="256"
           DTS:LocaleID="-1"
           DTS:ObjectName="SQL Truncate UserTeamPickStaging"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2166,7 +2168,7 @@ WHERE NOT EXISTS
           DTS:CreationName=""
           DTS:DTSID="{C76F0EBF-CADA-4287-8F3C-857041D0220C}"
           DTS:EvalOp="3"
-          DTS:Expression="@[User::UserTeamPickStagingRowCount] ==  @[User::UserTeamPickStagingInsertRowCount] ? TRUE : FALSE"
+          DTS:Expression="@[User::UserTeamPickStagingRowCount] !=  @[User::UserTeamPickStagingInsertRowCount] ? TRUE : FALSE"
           DTS:From="Package\SEQ UserTeamPick insert\SQL Populate UserTeamPickStagingInsert Rowcount"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -2176,7 +2178,7 @@ WHERE NOT EXISTS
           DTS:CreationName=""
           DTS:DTSID="{39497B8D-42D0-4A4D-A7D3-C5B625B8DE7C}"
           DTS:EvalOp="3"
-          DTS:Expression="@[User::UserTeamPickStagingRowCount] !=  @[User::UserTeamPickStagingInsertRowCount] ? TRUE : FALSE"
+          DTS:Expression="@[User::UserTeamPickStagingRowCount] ==  @[User::UserTeamPickStagingInsertRowCount] ? TRUE : FALSE"
           DTS:From="Package\SEQ UserTeamPick insert\SQL Populate UserTeamPickStagingInsert Rowcount"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 5"
@@ -2331,6 +2333,22 @@ WHERE NOT EXISTS
           SQLTask:SqlStatementSource="--Delete UserTeamPickStaging rows already on UserTeamPick&#xA;DELETE st&#xA;FROM dbo.UserTeamPickStaging st&#xA;WHERE EXISTS&#xA;(&#xA; SELECT 1&#xA; FROM dbo.UserTeamPick WITH (NOLOCK)&#xA; WHERE userteamid = st.userteamid&#xA; AND gameweekid = st.gameweekid&#xA; AND position = st.position&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Update DeleteFlag"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{052A2513-D684-4F18-B9AB-CF81C5D3232A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Update DeleteFlag"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BA1D83AB-131E-42CC-A9B9-1E79D2AF5D4E}"
+          SQLTask:SqlStatementSource="--Update UserTeamPickStaging rows DeleteFlag column to 1 ready for inserting&#xA;DECLARE @rowcnt INT = 1;&#xA;DECLARE @TotalRowsUpdated INT = 0;&#xA;DECLARE @Time VARCHAR(30);&#xA;DECLARE @Delay VARCHAR(12) =  '00:00:20:000'&#xA;&#xA;SET NOCOUNT ON;&#xA;&#xA;SELECT @Time = GETDATE();&#xA;RAISERROR('%s: Starting...', 10, 1, @Time) WITH NOWAIT;&#xA;&#xA;WHILE @rowcnt &gt; 0&#xA;BEGIN&#xA;&#xA;&#x9;UPDATE TOP (500000) st&#xA;&#x9;SET DeleteFlag = 1&#xA;&#x9;FROM dbo.UserTeamPickStaging st&#xA;&#x9;WHERE DeleteFlag = 0&#xA;&#x9;OPTION (MAXDOP 1);&#xA;&#xA;&#x9;SET @rowcnt = @@ROWCOUNT;&#xA;&#xA;&#x9;SET @TotalRowsUpdated = @TotalRowsUpdated + @rowcnt&#xA;&#xA;&#x9;SELECT @Time = CAST(GETDATE() AS VARCHAR(30));&#xA;&#x9;RAISERROR('%s: %d rows updated, %d total rows updated', 0, 1, @Time, @rowcnt, @TotalRowsUpdated) WITH NOWAIT;&#xA;&#xA;&#x9;WAITFOR DELAY @Delay;&#xA;&#xA;END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2352,10 +2370,18 @@ WHERE NOT EXISTS
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{7A241DF4-CB10-4042-9E73-AD049FEF5B8F}"
+      DTS:DTSID="{DE4F6084-8D18-4DED-8585-29D91CA0E0A9}"
       DTS:From="Package\DFT UserTeamPickStaging to UserTeamPick Transfer Merge (modified)"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SQL Update DeleteFlag" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{E6C7A1BE-C5A0-4124-B00B-A240DF293869}"
+      DTS:From="Package\SQL Update DeleteFlag"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
       DTS:To="Package\SEQ UserTeamPick insert" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
@@ -2404,11 +2430,11 @@ WHERE NOT EXISTS
         <NodeLayout
           Size="412,42"
           Id="Package\DFT UserTeamPickStaging to UserTeamPick Transfer Merge (modified)"
-          TopLeft="316,529" />
+          TopLeft="310,485" />
         <NodeLayout
           Size="285,42"
           Id="Package\SEQ Remove duplicates\SQL Delete actual dups from staging table"
-          TopLeft="62,110" />
+          TopLeft="61,17" />
         <NodeLayout
           Size="246,42"
           Id="Package\SEQ Remove duplicates\SQL Delete dups from staging table"
@@ -2416,25 +2442,25 @@ WHERE NOT EXISTS
         <NodeLayout
           Size="384,42"
           Id="Package\SEQ Remove duplicates\SQL Delete UserTeamPickStaging rows already on UserTeamPick"
-          TopLeft="14,25" />
+          TopLeft="13,106" />
         <NodeLayout
           Size="315,42"
           Id="Package\SEQ Remove duplicates\SQL Insert dups into dup table for later inspection"
           TopLeft="44.5,191" />
         <EdgeLayout
           Id="Package\SEQ Remove duplicates.PrecedenceConstraints[Constraint]"
-          TopLeft="203.25,152">
+          TopLeft="204.25,59">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="0,47"
               Start="0,0"
-              End="0,31.5">
+              End="0,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2467,7 +2493,7 @@ WHERE NOT EXISTS
         </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ Remove duplicates.PrecedenceConstraints[Constraint 2]"
-          TopLeft="205.25,67">
+          TopLeft="203.5,148">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2510,6 +2536,40 @@ WHERE NOT EXISTS
           Size="431,42"
           Id="Package\SEQ UserTeamPick insert\SQL Delete UserTeamPickStagingInsert rows already on UserTeamPick"
           TopLeft="127,465" />
+        <NodeLayout
+          Size="312,42"
+          Id="Package\SEQ UserTeamPick insert\SQL Populate UserTeamPickStaging Rowcount"
+          TopLeft="167,133" />
+        <NodeLayout
+          Size="339,42"
+          Id="Package\SEQ UserTeamPick insert\SQL Populate UserTeamPickStagingInsert Rowcount"
+          TopLeft="150,248" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\SEQ UserTeamPick insert\SQL Truncate UserTeamPickStaging"
+          TopLeft="362,364" />
+        <EdgeLayout
+          Id="Package\SEQ UserTeamPick insert.PrecedenceConstraints[Constraint]"
+          TopLeft="321.5,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\SEQ UserTeamPick insert.PrecedenceConstraints[Constraint 1]"
           TopLeft="171,408">
@@ -2566,36 +2626,6 @@ WHERE NOT EXISTS
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="312,42"
-          Id="Package\SEQ UserTeamPick insert\SQL Populate UserTeamPickStaging Rowcount"
-          TopLeft="167,133" />
-        <EdgeLayout
-          Id="Package\SEQ UserTeamPick insert.PrecedenceConstraints[Constraint]"
-          TopLeft="321.5,67">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66"
-              Start="0,0"
-              End="0,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="339,42"
-          Id="Package\SEQ UserTeamPick insert\SQL Populate UserTeamPickStagingInsert Rowcount"
-          TopLeft="150,248" />
         <EdgeLayout
           Id="Package\SEQ UserTeamPick insert.PrecedenceConstraints[Constraint 3]"
           TopLeft="321.25,175">
@@ -2654,10 +2684,6 @@ WHERE NOT EXISTS
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="260,42"
-          Id="Package\SEQ UserTeamPick insert\SQL Truncate UserTeamPickStaging"
-          TopLeft="362,364" />
         <EdgeLayout
           Id="Package\SEQ UserTeamPick insert.PrecedenceConstraints[Constraint 5]"
           TopLeft="374.666666666667,290">
@@ -2828,6 +2854,10 @@ WHERE NOT EXISTS
           Size="385,42"
           Id="Package\SQL Delete inserted UserTeamPickStaging rows to UserTeamPick"
           TopLeft="343,1411" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\SQL Update DeleteFlag"
+          TopLeft="421,571" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="537.25,1453">
@@ -2852,52 +2882,18 @@ WHERE NOT EXISTS
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="521,452">
+          TopLeft="518,452">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,77"
+              EndConnector="0,33"
               Start="0,0"
-              End="0,69.5">
+              End="0,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="523,1356">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.5,55"
-              Start="0,0"
-              End="12.5,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="8.5,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.5,27.5"
-                    Point2="12.5,27.5"
-                    Point3="12.5,31.5" />
-                  <mssgle:LineSegment
-                    End="12.5,47.5" />
+                    End="0,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2908,18 +2904,62 @@ WHERE NOT EXISTS
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="522.5,571">
+          TopLeft="517.5,527">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,87"
+              EndConnector="0,44"
               Start="0,0"
-              End="0,79.5">
+              End="0,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.5" />
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="521,613">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="534.75,1356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3220,7 +3260,7 @@ WHERE NOT EXISTS
     design-time-name="Package\SEQ UserTeamPick insert\DFT UserTeamPickStagingInsert to UserTeamPick Transfer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="257,42"
           Id="Package\SEQ UserTeamPick insert\DFT UserTeamPickStagingInsert to UserTeamPick Transfer\ADO_SRC UserTeamPickStagingInsert"
@@ -3248,7 +3288,9 @@ WHERE NOT EXISTS
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
